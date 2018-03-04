@@ -6,18 +6,18 @@ import com.github.seratch.jslack.api.methods.response.dialog.DialogOpenResponse;
 import com.github.seratch.jslack.api.model.dialog.Dialog;
 import com.github.seratch.jslack.api.model.dialog.DialogSubType;
 import com.github.seratch.jslack.api.model.dialog.DialogTextElement;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.util.Arrays;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_dialogs_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_dialogs_Test.class);
     Slack slack = new Slack();
     String token = System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN);
 

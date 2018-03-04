@@ -9,17 +9,17 @@ import com.github.seratch.jslack.api.methods.response.chat.*;
 import com.github.seratch.jslack.api.methods.response.conversations.ConversationsHistoryResponse;
 import com.github.seratch.jslack.api.model.Channel;
 import com.github.seratch.jslack.api.model.Message;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_channels_chat_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_channels_chat_Test.class);
     Slack slack = Slack.getInstance();
 
     @Test

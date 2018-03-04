@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.rtm;
 
-import lombok.extern.slf4j.Slf4j;
+
+import net.socialhub.logger.Logger;
 
 import javax.websocket.*;
 import java.io.Closeable;
@@ -11,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ClientEndpoint
-@Slf4j
 public class RTMClient implements Closeable {
 
+    private static final Logger log = Logger.getLogger(RTMClient.class);
     private final URI wssUri;
     private Session currentSession = null;
 
@@ -31,7 +32,7 @@ public class RTMClient implements Closeable {
     public void connect() throws IOException, DeploymentException {
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
         container.connectToServer(this, wssUri);
-        log.debug("client connected to the server: {}", wssUri);
+        log.debug("client connected to the server: " + wssUri);
     }
 
     public void disconnect() throws IOException {
@@ -47,13 +48,13 @@ public class RTMClient implements Closeable {
 
     @OnOpen
     public void onOpen(Session session) {
-        log.debug("session opened: {}", session.getId());
+        log.debug("session opened: " + session.getId());
         this.currentSession = session;
     }
 
     @OnClose
     public void onClose(Session session, CloseReason reason) {
-        log.debug("session closed: {}, reason: {}", session.getId(), reason.getReasonPhrase());
+        log.debug("session closed: " + session.getId() + " reason: " + reason.getReasonPhrase());
         this.currentSession = null;
 
         closeHandlers.forEach(closeHandler -> {
@@ -73,7 +74,7 @@ public class RTMClient implements Closeable {
 
     @OnMessage
     public void onMessage(String message) {
-        log.debug("message: {}", message);
+        log.debug("message: " + message);
         messageHandlers.forEach(messageHandler -> {
             messageHandler.handle(message);
         });

@@ -7,19 +7,20 @@ import com.github.seratch.jslack.api.methods.request.users.UsersListRequest;
 import com.github.seratch.jslack.api.methods.response.dnd.DndInfoResponse;
 import com.github.seratch.jslack.api.methods.response.dnd.DndTeamInfoResponse;
 import com.github.seratch.jslack.api.model.User;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.util.List;
 
-import static java.util.stream.Collectors.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static java.util.stream.Collectors.toList;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_dnd_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_dnd_Test.class);
     Slack slack = Slack.getInstance();
 
     @Test

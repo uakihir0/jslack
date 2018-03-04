@@ -4,15 +4,15 @@ import com.github.seratch.jslack.api.model.Attachment;
 import com.github.seratch.jslack.api.model.Field;
 import com.github.seratch.jslack.api.webhook.Payload;
 import com.github.seratch.jslack.api.webhook.WebhookResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-@Slf4j
 public class Slack_incomingWebhooks_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_incomingWebhooks_Test.class);
     Slack slack = Slack.getInstance();
 
     @Test

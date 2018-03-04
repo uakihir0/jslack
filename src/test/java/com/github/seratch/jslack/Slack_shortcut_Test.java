@@ -11,20 +11,21 @@ import com.github.seratch.jslack.shortcut.model.ApiToken;
 import com.github.seratch.jslack.shortcut.model.ChannelId;
 import com.github.seratch.jslack.shortcut.model.ChannelName;
 import com.github.seratch.jslack.shortcut.model.ReactionName;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_shortcut_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_shortcut_Test.class);
     Slack slack = Slack.getInstance();
     ApiToken token = ApiToken.of(System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN));
 

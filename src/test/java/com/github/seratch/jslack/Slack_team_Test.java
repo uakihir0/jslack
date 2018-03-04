@@ -11,15 +11,15 @@ import com.github.seratch.jslack.api.methods.response.team.TeamBillableInfoRespo
 import com.github.seratch.jslack.api.methods.response.team.TeamInfoResponse;
 import com.github.seratch.jslack.api.methods.response.team.TeamIntegrationLogsResponse;
 import com.github.seratch.jslack.api.methods.response.team.profile.TeamProfileGetResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_team_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_team_Test.class);
     Slack slack = Slack.getInstance();
     String token = System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN);
 

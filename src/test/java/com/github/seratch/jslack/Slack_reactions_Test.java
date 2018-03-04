@@ -13,17 +13,18 @@ import com.github.seratch.jslack.api.methods.response.reactions.ReactionsAddResp
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsGetResponse;
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsListResponse;
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsRemoveResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_reactions_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_reactions_Test.class);
     Slack slack = new Slack();
     String token = System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN);
 

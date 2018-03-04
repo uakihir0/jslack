@@ -8,17 +8,18 @@ import com.github.seratch.jslack.api.methods.response.search.SearchAllResponse;
 import com.github.seratch.jslack.api.methods.response.search.SearchFilesResponse;
 import com.github.seratch.jslack.api.methods.response.search.SearchMessagesResponse;
 import com.github.seratch.jslack.api.model.MatchedItem;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_search_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_search_Test.class);
     Slack slack = Slack.getInstance();
     String token = System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN);
 

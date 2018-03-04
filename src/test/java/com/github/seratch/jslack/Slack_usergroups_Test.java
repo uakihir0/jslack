@@ -6,15 +6,15 @@ import com.github.seratch.jslack.api.methods.request.usergroups.users.UsergroupU
 import com.github.seratch.jslack.api.methods.response.usergroups.UsergroupsCreateResponse;
 import com.github.seratch.jslack.api.methods.response.usergroups.UsergroupsListResponse;
 import com.github.seratch.jslack.api.methods.response.usergroups.users.UsergroupUsersListResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_usergroups_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_usergroups_Test.class);
     Slack slack = Slack.getInstance();
     String token = System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN);
 

@@ -3,17 +3,18 @@ package com.github.seratch.jslack;
 import com.github.seratch.jslack.api.methods.SlackApiException;
 import com.github.seratch.jslack.api.methods.request.emoji.EmojiListRequest;
 import com.github.seratch.jslack.api.methods.response.emoji.EmojiListResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_emoji_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_emoji_Test.class);
     Slack slack = Slack.getInstance();
 
     @Test

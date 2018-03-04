@@ -8,15 +8,15 @@ import com.github.seratch.jslack.api.methods.response.reminders.RemindersAddResp
 import com.github.seratch.jslack.api.methods.response.reminders.RemindersCompleteResponse;
 import com.github.seratch.jslack.api.methods.response.reminders.RemindersDeleteResponse;
 import com.github.seratch.jslack.api.methods.response.reminders.RemindersInfoResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_reminders_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_reminders_Test.class);
     Slack slack = new Slack();
     String token = System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN);
 

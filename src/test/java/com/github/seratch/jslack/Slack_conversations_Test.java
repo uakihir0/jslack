@@ -8,19 +8,20 @@ import com.github.seratch.jslack.api.methods.response.users.UsersListResponse;
 import com.github.seratch.jslack.api.model.Conversation;
 import com.github.seratch.jslack.api.model.ConversationType;
 import com.github.seratch.jslack.api.model.User;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_conversations_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_conversations_Test.class);
     Slack slack = Slack.getInstance();
     String token = System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN);
 

@@ -4,12 +4,12 @@ import com.github.seratch.jslack.api.rtm.RTMClient;
 import com.github.seratch.jslack.api.rtm.RTMMessageHandler;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
-@Slf4j
 public class Slack_rtm_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_rtm_Test.class);
     Slack slack = Slack.getInstance();
 
     //    private static int SLEEP_MILLIS = 10000;

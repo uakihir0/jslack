@@ -6,20 +6,20 @@ import com.github.seratch.jslack.api.methods.request.users.UsersListRequest;
 import com.github.seratch.jslack.api.methods.response.mpim.*;
 import com.github.seratch.jslack.api.methods.response.users.UsersListResponse;
 import com.github.seratch.jslack.api.model.User;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.util.List;
 
-import static java.util.stream.Collectors.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static java.util.stream.Collectors.toList;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_mpim_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_mpim_Test.class);
     Slack slack = Slack.getInstance();
     String token = System.getenv(Constants.SLACK_TEST_OAUTH_ACCESS_TOKEN);
 

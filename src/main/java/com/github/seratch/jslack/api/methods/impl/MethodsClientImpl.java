@@ -94,18 +94,18 @@ import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfile
 import com.github.seratch.jslack.api.model.ConversationType;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
 import com.github.seratch.jslack.common.json.GsonFactory;
-import lombok.extern.slf4j.Slf4j;
+import net.socialhub.logger.Logger;
 import okhttp3.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.joining;
 
-@Slf4j
 public class MethodsClientImpl implements MethodsClient {
 
+    private static final Logger log = Logger.getLogger(MethodsClientImpl.class);
     private String endpointUrlPrefix = "https://slack.com/api/";
 
     private final SlackHttpClient slackHttpClient;

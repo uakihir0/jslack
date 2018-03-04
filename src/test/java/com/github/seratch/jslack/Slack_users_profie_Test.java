@@ -6,17 +6,18 @@ import com.github.seratch.jslack.api.methods.request.users.profile.UsersProfileS
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileGetResponse;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileSetResponse;
 import com.github.seratch.jslack.api.model.User;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_users_profie_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_users_profie_Test.class);
     Slack slack = Slack.getInstance();
 
     @Test

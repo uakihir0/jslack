@@ -4,21 +4,21 @@ import com.github.seratch.jslack.api.methods.SlackApiException;
 import com.github.seratch.jslack.api.methods.request.api.ApiTestRequest;
 import com.github.seratch.jslack.api.methods.response.api.ApiTestResponse;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
-import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-@Slf4j
 public class Slack_api_test_Test {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slack_api_test_Test.class);
     Slack slack = Slack.getInstance();
 
     @Test
