@@ -27,7 +27,6 @@ public class Group {
     private Integer unreadCount;
     private Integer unreadCountDisplay;
 
-    @java.beans.ConstructorProperties({"id", "name", "group", "created", "creator", "archived", "mpim", "members", "topic", "purpose", "lastRead", "latest", "unreadCount", "unreadCountDisplay"})
     Group(String id, String name, boolean group, Integer created, String creator, boolean archived, boolean mpim, List<String> members, Topic topic, Purpose purpose, String lastRead, Latest latest, Integer unreadCount, Integer unreadCountDisplay) {
         this.id = id;
         this.name = name;

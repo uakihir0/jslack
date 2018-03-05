@@ -6,7 +6,6 @@ public class UsersSetActiveRequest implements SlackApiRequest {
 
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     UsersSetActiveRequest(String token) {
         this.token = token;
     }

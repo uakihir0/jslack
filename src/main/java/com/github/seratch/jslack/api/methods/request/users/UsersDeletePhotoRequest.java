@@ -6,7 +6,6 @@ public class UsersDeletePhotoRequest implements SlackApiRequest {
 
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     UsersDeletePhotoRequest(String token) {
         this.token = token;
     }

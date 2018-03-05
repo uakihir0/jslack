@@ -13,7 +13,6 @@ public class ConversationsListRequest implements SlackApiRequest {
     private Integer limit;
     private List<ConversationType> types;
 
-    @java.beans.ConstructorProperties({"token", "cursor", "excludeArchived", "limit", "types"})
     ConversationsListRequest(String token, String cursor, boolean excludeArchived, Integer limit, List<ConversationType> types) {
         this.token = token;
         this.cursor = cursor;

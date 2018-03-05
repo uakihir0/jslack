@@ -16,7 +16,6 @@ public class FilesUploadRequest implements SlackApiRequest {
     private String initialComment;
     private List<String> channels;
 
-    @java.beans.ConstructorProperties({"token", "file", "content", "filetype", "filename", "title", "initialComment", "channels"})
     FilesUploadRequest(String token, File file, String content, String filetype, String filename, String title, String initialComment, List<String> channels) {
         this.token = token;
         this.file = file;

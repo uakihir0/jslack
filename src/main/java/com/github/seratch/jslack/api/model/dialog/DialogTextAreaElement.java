@@ -64,7 +64,6 @@ public class DialogTextAreaElement implements DialogElement {
      */
     DialogSubType subtype;
 
-    @java.beans.ConstructorProperties({"label", "name", "value", "placeholder", "optional", "maxLength", "minLength", "hint", "subtype"})
     DialogTextAreaElement(String label, String name, String value, String placeholder, boolean optional, int maxLength, int minLength, String hint, DialogSubType subtype) {
         this.label = label;
         this.name = name;

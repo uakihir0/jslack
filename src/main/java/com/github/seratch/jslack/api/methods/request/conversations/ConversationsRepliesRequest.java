@@ -10,7 +10,6 @@ public class ConversationsRepliesRequest implements SlackApiRequest {
     private String cursor;
     private String limit;
 
-    @java.beans.ConstructorProperties({"token", "channel", "ts", "cursor", "limit"})
     ConversationsRepliesRequest(String token, String channel, String ts, String cursor, String limit) {
         this.token = token;
         this.channel = channel;

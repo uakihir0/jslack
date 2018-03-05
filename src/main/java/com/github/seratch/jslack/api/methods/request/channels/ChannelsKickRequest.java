@@ -8,7 +8,6 @@ public class ChannelsKickRequest implements SlackApiRequest {
     private String channel;
     private String user;
 
-    @java.beans.ConstructorProperties({"token", "channel", "user"})
     ChannelsKickRequest(String token, String channel, String user) {
         this.token = token;
         this.channel = channel;

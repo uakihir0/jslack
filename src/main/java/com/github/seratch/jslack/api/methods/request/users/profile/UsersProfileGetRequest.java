@@ -8,7 +8,6 @@ public class UsersProfileGetRequest implements SlackApiRequest {
     private String user;
     private Integer includeLabels;
 
-    @java.beans.ConstructorProperties({"token", "user", "includeLabels"})
     UsersProfileGetRequest(String token, String user, Integer includeLabels) {
         this.token = token;
         this.user = user;

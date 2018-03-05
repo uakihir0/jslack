@@ -13,7 +13,6 @@ public class ConversationsRenameRequest {
      */
     private String name;
 
-    @java.beans.ConstructorProperties({"token", "channel", "name"})
     ConversationsRenameRequest(String token, String channel, String name) {
         this.token = token;
         this.channel = channel;

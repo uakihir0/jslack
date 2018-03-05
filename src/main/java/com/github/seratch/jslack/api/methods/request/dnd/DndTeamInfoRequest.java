@@ -9,7 +9,6 @@ public class DndTeamInfoRequest implements SlackApiRequest {
     private String token;
     private List<String> users;
 
-    @java.beans.ConstructorProperties({"token", "users"})
     DndTeamInfoRequest(String token, List<String> users) {
         this.token = token;
         this.users = users;

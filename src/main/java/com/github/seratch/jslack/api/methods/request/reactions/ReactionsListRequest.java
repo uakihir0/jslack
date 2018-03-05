@@ -10,7 +10,6 @@ public class ReactionsListRequest implements SlackApiRequest {
     private Integer count;
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "user", "full", "count", "page"})
     ReactionsListRequest(String token, String user, boolean full, Integer count, Integer page) {
         this.token = token;
         this.user = user;

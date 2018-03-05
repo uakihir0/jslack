@@ -8,7 +8,6 @@ public class UsergroupUsersListRequest implements SlackApiRequest {
     private String usergroup;
     private Integer includeDisabled;
 
-    @java.beans.ConstructorProperties({"token", "usergroup", "includeDisabled"})
     UsergroupUsersListRequest(String token, String usergroup, Integer includeDisabled) {
         this.token = token;
         this.usergroup = usergroup;

@@ -8,7 +8,6 @@ public class ConversationsInfoRequest implements SlackApiRequest {
     private String channel;
     private boolean includeLocale;
 
-    @java.beans.ConstructorProperties({"token", "channel", "includeLocale"})
     ConversationsInfoRequest(String token, String channel, boolean includeLocale) {
         this.token = token;
         this.channel = channel;

@@ -16,7 +16,6 @@ public class ChatUpdateRequest implements SlackApiRequest {
     private Integer linkNames;
     private boolean asUser;
 
-    @java.beans.ConstructorProperties({"token", "ts", "channel", "text", "attachments", "parse", "linkNames", "asUser"})
     ChatUpdateRequest(String token, String ts, String channel, String text, List<Attachment> attachments, String parse, Integer linkNames, boolean asUser) {
         this.token = token;
         this.ts = ts;

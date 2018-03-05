@@ -8,7 +8,6 @@ public class ChannelsInviteRequest implements SlackApiRequest {
     private String channel;
     private String user;
 
-    @java.beans.ConstructorProperties({"token", "channel", "user"})
     ChannelsInviteRequest(String token, String channel, String user) {
         this.token = token;
         this.channel = channel;

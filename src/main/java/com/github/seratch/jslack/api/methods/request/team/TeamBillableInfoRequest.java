@@ -7,7 +7,6 @@ public class TeamBillableInfoRequest implements SlackApiRequest {
     private String token;
     private String user;
 
-    @java.beans.ConstructorProperties({"token", "user"})
     TeamBillableInfoRequest(String token, String user) {
         this.token = token;
         this.user = user;

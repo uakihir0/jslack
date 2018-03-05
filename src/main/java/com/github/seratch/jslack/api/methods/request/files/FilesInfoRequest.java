@@ -9,7 +9,6 @@ public class FilesInfoRequest implements SlackApiRequest {
     private Integer count;
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "file", "count", "page"})
     FilesInfoRequest(String token, String file, Integer count, Integer page) {
         this.token = token;
         this.file = file;

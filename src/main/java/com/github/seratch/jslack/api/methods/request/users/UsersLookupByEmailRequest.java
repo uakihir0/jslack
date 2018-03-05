@@ -7,7 +7,6 @@ public class UsersLookupByEmailRequest implements SlackApiRequest {
     private String token;
     private String email;
 
-    @java.beans.ConstructorProperties({"token", "email"})
     UsersLookupByEmailRequest(String token, String email) {
         this.token = token;
         this.email = email;

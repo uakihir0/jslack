@@ -7,7 +7,6 @@ public class UsersListRequest implements SlackApiRequest {
     private String token;
     private Integer presence;
 
-    @java.beans.ConstructorProperties({"token", "presence"})
     UsersListRequest(String token, Integer presence) {
         this.token = token;
         this.presence = presence;

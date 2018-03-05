@@ -7,7 +7,6 @@ public class GroupsCloseRequest implements SlackApiRequest {
     private String token;
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "channel"})
     GroupsCloseRequest(String token, String channel) {
         this.token = token;
         this.channel = channel;

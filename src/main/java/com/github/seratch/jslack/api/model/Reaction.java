@@ -11,7 +11,6 @@ public class Reaction {
     private Integer count;
     private List<String> users;
 
-    @java.beans.ConstructorProperties({"name", "count", "users"})
     Reaction(String name, Integer count, List<String> users) {
         this.name = name;
         this.count = count;

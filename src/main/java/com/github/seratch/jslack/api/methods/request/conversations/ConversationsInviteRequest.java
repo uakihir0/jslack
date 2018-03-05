@@ -10,7 +10,6 @@ public class ConversationsInviteRequest implements SlackApiRequest {
     private String channel;
     private List<String> users;
 
-    @java.beans.ConstructorProperties({"token", "channel", "users"})
     ConversationsInviteRequest(String token, String channel, List<String> users) {
         this.token = token;
         this.channel = channel;

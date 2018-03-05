@@ -13,7 +13,6 @@ public class Reminder {
     private Integer time;
     private Integer completeTs;
 
-    @java.beans.ConstructorProperties({"id", "creator", "user", "text", "recurring", "time", "completeTs"})
     Reminder(String id, String creator, String user, String text, boolean recurring, Integer time, Integer completeTs) {
         this.id = id;
         this.creator = creator;

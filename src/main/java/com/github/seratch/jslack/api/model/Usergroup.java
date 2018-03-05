@@ -29,7 +29,6 @@ public class Usergroup {
     private List<String> users;
     private Integer userCount;
 
-    @java.beans.ConstructorProperties({"id", "teamId", "usergroup", "name", "description", "handle", "external", "dateCreate", "dateUpdate", "dateDelete", "autoType", "createdBy", "updatedBy", "deletedBy", "prefs", "users", "userCount"})
     Usergroup(String id, String teamId, boolean usergroup, String name, String description, String handle, boolean external, Integer dateCreate, Integer dateUpdate, Integer dateDelete, String autoType, String createdBy, String updatedBy, String deletedBy, Prefs prefs, List<String> users, Integer userCount) {
         this.id = id;
         this.teamId = teamId;

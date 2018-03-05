@@ -45,7 +45,6 @@ public class Payload {
      */
     private List<Attachment> attachments = new ArrayList<>();
 
-    @java.beans.ConstructorProperties({"text", "channel", "username", "iconUrl", "iconEmoji", "attachments"})
     Payload(String text, String channel, String username, String iconUrl, String iconEmoji, List<Attachment> attachments) {
         this.text = text;
         this.channel = channel;

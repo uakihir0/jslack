@@ -169,7 +169,6 @@ public class Attachment {
      */
     private List<Action> actions = new ArrayList<>();
 
-    @java.beans.ConstructorProperties({"fallback", "callbackId", "color", "pretext", "authorName", "authorLink", "authorIcon", "fromUrl", "authorSubname", "channelId", "channelName", "id", "msgUnfurl", "replyUnfurl", "title", "titleLink", "text", "fields", "imageUrl", "thumbUrl", "footer", "footerIcon", "ts", "mrkdwnIn", "actions"})
     Attachment(String fallback, String callbackId, String color, String pretext, String authorName, String authorLink, String authorIcon, String fromUrl, String authorSubname, String channelId, String channelName, String id, boolean msgUnfurl, boolean replyUnfurl, String title, String titleLink, String text, List<Field> fields, String imageUrl, String thumbUrl, String footer, String footerIcon, String ts, List<String> mrkdwnIn, List<Action> actions) {
         this.fallback = fallback;
         this.callbackId = callbackId;

@@ -6,7 +6,6 @@ public class ImListRequest implements SlackApiRequest {
 
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     ImListRequest(String token) {
         this.token = token;
     }

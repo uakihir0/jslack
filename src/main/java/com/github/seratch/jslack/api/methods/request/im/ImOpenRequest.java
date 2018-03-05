@@ -8,7 +8,6 @@ public class ImOpenRequest implements SlackApiRequest {
     private String user;
     private boolean returnIm;
 
-    @java.beans.ConstructorProperties({"token", "user", "returnIm"})
     ImOpenRequest(String token, String user, boolean returnIm) {
         this.token = token;
         this.user = user;

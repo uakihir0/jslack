@@ -11,7 +11,6 @@ public class TeamIntegrationLogsRequest implements SlackApiRequest {
     private Integer count;
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "serviceId", "user", "changeType", "count", "page"})
     TeamIntegrationLogsRequest(String token, String serviceId, String user, String changeType, Integer count, Integer page) {
         this.token = token;
         this.serviceId = serviceId;

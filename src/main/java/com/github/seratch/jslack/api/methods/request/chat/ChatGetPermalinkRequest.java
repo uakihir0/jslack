@@ -13,7 +13,6 @@ public class ChatGetPermalinkRequest implements SlackApiRequest {
     private String channel;
     private String messageTs;
 
-    @java.beans.ConstructorProperties({"token", "channel", "messageTs"})
     ChatGetPermalinkRequest(String token, String channel, String messageTs) {
         this.token = token;
         this.channel = channel;

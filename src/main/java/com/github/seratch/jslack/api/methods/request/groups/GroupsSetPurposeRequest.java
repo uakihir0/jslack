@@ -8,7 +8,6 @@ public class GroupsSetPurposeRequest implements SlackApiRequest {
     private String channel;
     private String purpose;
 
-    @java.beans.ConstructorProperties({"token", "channel", "purpose"})
     GroupsSetPurposeRequest(String token, String channel, String purpose) {
         this.token = token;
         this.channel = channel;

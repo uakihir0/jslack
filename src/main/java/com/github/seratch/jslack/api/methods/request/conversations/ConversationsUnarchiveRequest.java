@@ -5,7 +5,6 @@ public class ConversationsUnarchiveRequest {
     private String token;
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "channel"})
     ConversationsUnarchiveRequest(String token, String channel) {
         this.token = token;
         this.channel = channel;

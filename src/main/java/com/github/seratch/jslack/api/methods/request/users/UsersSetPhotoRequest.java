@@ -12,7 +12,6 @@ public class UsersSetPhotoRequest implements SlackApiRequest {
     private Integer cropY;
     private Integer cropW;
 
-    @java.beans.ConstructorProperties({"token", "image", "cropX", "cropY", "cropW"})
     UsersSetPhotoRequest(String token, File image, Integer cropX, Integer cropY, Integer cropW) {
         this.token = token;
         this.image = image;

@@ -8,7 +8,6 @@ public class ChannelsRepliesRequest implements SlackApiRequest {
     private String channel;
     private String threadTs;
 
-    @java.beans.ConstructorProperties({"token", "channel", "threadTs"})
     ChannelsRepliesRequest(String token, String channel, String threadTs) {
         this.token = token;
         this.channel = channel;

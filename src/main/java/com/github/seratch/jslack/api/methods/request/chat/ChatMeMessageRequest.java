@@ -8,7 +8,6 @@ public class ChatMeMessageRequest implements SlackApiRequest {
     private String channel;
     private String text;
 
-    @java.beans.ConstructorProperties({"token", "channel", "text"})
     ChatMeMessageRequest(String token, String channel, String text) {
         this.token = token;
         this.channel = channel;

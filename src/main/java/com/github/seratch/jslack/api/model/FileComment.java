@@ -12,7 +12,6 @@ public class FileComment {
     private String comment;
     private String channel;
 
-    @java.beans.ConstructorProperties({"id", "created", "timestamp", "user", "comment", "channel"})
     FileComment(String id, Integer created, Integer timestamp, String user, String comment, String channel) {
         this.id = id;
         this.created = created;

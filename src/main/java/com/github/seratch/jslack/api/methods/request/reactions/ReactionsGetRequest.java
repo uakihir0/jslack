@@ -11,7 +11,6 @@ public class ReactionsGetRequest implements SlackApiRequest {
     private String timestamp;
     private boolean full;
 
-    @java.beans.ConstructorProperties({"token", "file", "fileComment", "channel", "timestamp", "full"})
     ReactionsGetRequest(String token, String file, String fileComment, String channel, String timestamp, boolean full) {
         this.token = token;
         this.file = file;

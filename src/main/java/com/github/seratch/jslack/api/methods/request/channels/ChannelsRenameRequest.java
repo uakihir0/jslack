@@ -8,7 +8,6 @@ public class ChannelsRenameRequest implements SlackApiRequest {
     private String channel;
     private String name;
 
-    @java.beans.ConstructorProperties({"token", "channel", "name"})
     ChannelsRenameRequest(String token, String channel, String name) {
         this.token = token;
         this.channel = channel;

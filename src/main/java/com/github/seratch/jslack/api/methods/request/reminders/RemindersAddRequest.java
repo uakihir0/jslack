@@ -9,7 +9,6 @@ public class RemindersAddRequest implements SlackApiRequest {
     private String time;
     private String user;
 
-    @java.beans.ConstructorProperties({"token", "text", "time", "user"})
     RemindersAddRequest(String token, String text, String time, String user) {
         this.token = token;
         this.text = text;

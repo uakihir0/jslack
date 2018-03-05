@@ -8,7 +8,6 @@ public class GroupsMarkRequest implements SlackApiRequest {
     private String channel;
     private String ts;
 
-    @java.beans.ConstructorProperties({"token", "channel", "ts"})
     GroupsMarkRequest(String token, String channel, String ts) {
         this.token = token;
         this.channel = channel;

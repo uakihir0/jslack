@@ -7,7 +7,6 @@ public class ChannelsJoinRequest implements SlackApiRequest {
     private String token;
     private String name;
 
-    @java.beans.ConstructorProperties({"token", "name"})
     ChannelsJoinRequest(String token, String name) {
         this.token = token;
         this.name = name;

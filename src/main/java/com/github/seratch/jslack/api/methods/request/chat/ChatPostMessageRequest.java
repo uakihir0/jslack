@@ -26,7 +26,6 @@ public class ChatPostMessageRequest implements SlackApiRequest {
     private String threadTs;
     private boolean replyBroadcast;
 
-    @java.beans.ConstructorProperties({"token", "channel", "text", "parse", "linkNames", "attachments", "unfurlLinks", "unfurlMedia", "username", "asUser", "mrkdwn", "iconUrl", "iconEmoji", "threadTs", "replyBroadcast"})
     ChatPostMessageRequest(String token, String channel, String text, String parse, Integer linkNames, List<Attachment> attachments, boolean unfurlLinks, boolean unfurlMedia, String username, boolean asUser, boolean mrkdwn, String iconUrl, String iconEmoji, String threadTs, boolean replyBroadcast) {
         this.token = token;
         this.channel = channel;

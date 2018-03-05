@@ -8,7 +8,6 @@ public class TeamAccessLogsRequest implements SlackApiRequest {
     private Integer count;
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "count", "page"})
     TeamAccessLogsRequest(String token, Integer count, Integer page) {
         this.token = token;
         this.count = count;

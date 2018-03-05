@@ -7,7 +7,6 @@ public class UsersInfoRequest implements SlackApiRequest {
     private String token;
     private String user;
 
-    @java.beans.ConstructorProperties({"token", "user"})
     UsersInfoRequest(String token, String user) {
         this.token = token;
         this.user = user;

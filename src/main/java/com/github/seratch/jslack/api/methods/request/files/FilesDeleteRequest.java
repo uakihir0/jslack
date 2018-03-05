@@ -7,7 +7,6 @@ public class FilesDeleteRequest implements SlackApiRequest {
     private String token;
     private String file;
 
-    @java.beans.ConstructorProperties({"token", "file"})
     FilesDeleteRequest(String token, String file) {
         this.token = token;
         this.file = file;

@@ -7,7 +7,6 @@ public class ConversationsMembersRequest {
     private String cursor;
     private Integer limit;
 
-    @java.beans.ConstructorProperties({"token", "channel", "cursor", "limit"})
     ConversationsMembersRequest(String token, String channel, String cursor, Integer limit) {
         this.token = token;
         this.channel = channel;

@@ -7,7 +7,6 @@ public class GroupsCreateRequest implements SlackApiRequest {
     private String token;
     private String name;
 
-    @java.beans.ConstructorProperties({"token", "name"})
     GroupsCreateRequest(String token, String name) {
         this.token = token;
         this.name = name;

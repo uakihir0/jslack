@@ -7,7 +7,6 @@ public class RemindersCompleteRequest implements SlackApiRequest {
     private String token;
     private String reminder;
 
-    @java.beans.ConstructorProperties({"token", "reminder"})
     RemindersCompleteRequest(String token, String reminder) {
         this.token = token;
         this.reminder = reminder;

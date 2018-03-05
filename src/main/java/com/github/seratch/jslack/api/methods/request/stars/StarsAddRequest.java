@@ -10,7 +10,6 @@ public class StarsAddRequest implements SlackApiRequest {
     private String channel;
     private String timestamp;
 
-    @java.beans.ConstructorProperties({"token", "file", "fileComment", "channel", "timestamp"})
     StarsAddRequest(String token, String file, String fileComment, String channel, String timestamp) {
         this.token = token;
         this.file = file;

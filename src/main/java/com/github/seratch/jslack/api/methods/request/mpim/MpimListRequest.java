@@ -6,7 +6,6 @@ public class MpimListRequest implements SlackApiRequest {
 
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     MpimListRequest(String token) {
         this.token = token;
     }

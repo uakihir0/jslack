@@ -7,7 +7,6 @@ public class AuthRevokeRequest implements SlackApiRequest {
     private String token;
     private String test;
 
-    @java.beans.ConstructorProperties({"token", "test"})
     AuthRevokeRequest(String token, String test) {
         this.token = token;
         this.test = test;

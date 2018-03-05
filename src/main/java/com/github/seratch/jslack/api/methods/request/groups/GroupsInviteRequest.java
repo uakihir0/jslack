@@ -8,7 +8,6 @@ public class GroupsInviteRequest implements SlackApiRequest {
     private String channel;
     private String user;
 
-    @java.beans.ConstructorProperties({"token", "channel", "user"})
     GroupsInviteRequest(String token, String channel, String user) {
         this.token = token;
         this.channel = channel;

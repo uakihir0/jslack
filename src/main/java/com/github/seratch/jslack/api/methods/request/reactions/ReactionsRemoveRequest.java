@@ -11,7 +11,6 @@ public class ReactionsRemoveRequest implements SlackApiRequest {
     private String channel;
     private String timestamp;
 
-    @java.beans.ConstructorProperties({"token", "name", "file", "fileComment", "channel", "timestamp"})
     ReactionsRemoveRequest(String token, String name, String file, String fileComment, String channel, String timestamp) {
         this.token = token;
         this.name = name;

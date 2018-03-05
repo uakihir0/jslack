@@ -11,7 +11,6 @@ public class ConversationsHistoryRequest implements SlackApiRequest {
     private Integer limit;
     private String oldest;
 
-    @java.beans.ConstructorProperties({"token", "channel", "cursor", "latest", "limit", "oldest"})
     ConversationsHistoryRequest(String token, String channel, String cursor, String latest, Integer limit, String oldest) {
         this.token = token;
         this.channel = channel;

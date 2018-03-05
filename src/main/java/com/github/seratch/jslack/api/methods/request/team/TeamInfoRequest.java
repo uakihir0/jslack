@@ -6,7 +6,6 @@ public class TeamInfoRequest implements SlackApiRequest {
 
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     TeamInfoRequest(String token) {
         this.token = token;
     }

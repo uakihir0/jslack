@@ -11,7 +11,6 @@ public class RTMStartRequest implements SlackApiRequest {
     private Boolean noUnreads;
     private Boolean mpimAware;
 
-    @java.beans.ConstructorProperties({"token", "noUnreads", "mpimAware"})
     RTMStartRequest(String token, Boolean noUnreads, Boolean mpimAware) {
         this.token = token;
         this.noUnreads = noUnreads;

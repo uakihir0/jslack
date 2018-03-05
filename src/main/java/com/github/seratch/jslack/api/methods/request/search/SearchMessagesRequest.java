@@ -12,7 +12,6 @@ public class SearchMessagesRequest implements SlackApiRequest {
     private Integer count;
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "query", "sort", "sortDir", "highlight", "count", "page"})
     SearchMessagesRequest(String token, String query, String sort, String sortDir, Integer highlight, Integer count, Integer page) {
         this.token = token;
         this.query = query;

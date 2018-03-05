@@ -6,7 +6,6 @@ public class ConversationsSetTopicRequest {
     private String channel;
     private String topic;
 
-    @java.beans.ConstructorProperties({"token", "channel", "topic"})
     ConversationsSetTopicRequest(String token, String channel, String topic) {
         this.token = token;
         this.channel = channel;

@@ -7,7 +7,6 @@ public class GroupsListRequest implements SlackApiRequest {
     private String token;
     private Integer excludeArchived;
 
-    @java.beans.ConstructorProperties({"token", "excludeArchived"})
     GroupsListRequest(String token, Integer excludeArchived) {
         this.token = token;
         this.excludeArchived = excludeArchived;
