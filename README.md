@@ -1,11 +1,10 @@
 ## jSlack
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.seratch/jslack/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.seratch/jslack) [![](https://jitpack.io/v/uakihir0/jslack.svg)](https://jitpack.io/#uakihir0/jslack)
+[![](https://jitpack.io/v/uakihir0/jslack.svg)](https://jitpack.io/#uakihir0/jslack)
 
-jSlack is a Java library to easily integrate your operations with [Slack](https://slack.com/). The library currently supports the following APIs.
+jSlack is a Java library to easily integrate your operations with [Slack](https://slack.com/).
+This library can complie with J2Objc.The library currently supports the following APIs.
 
-- [Incoming Webhook](https://api.slack.com/incoming-webhooks)
-- [Real Time Messaging API](https://api.slack.com/rtm)
 - [API Methods](https://api.slack.com/methods)
   - api.test
   - auth.*
@@ -35,106 +34,8 @@ jSlack is a Java library to easily integrate your operations with [Slack](https:
   - users.*
   - users.profile.*
 
-### Getting Started
-
-Check the latest version on [the Maven Central repository](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.github.seratch%22%20AND%20a%3A%22jslack%22).
-
-The following is an example using Maven. Of course, it's also possible to grab the library via Gradle, sbt and any other build tools.
-
-```xml
-<groupId>com.github.seratch</groupId>
-<artifactId>jslack</artifactId>
-<version>{latest version}</version>
-```
-
-See also: [Getting started with groovysh](https://github.com/seratch/jslack/wiki/Getting-Started-with-groovysh)
 
 ### Examples
-
-#### Incoming Webhook
-
-Incoming Webhook is a simple way to post messages from external sources into Slack via ordinary HTTP requests.
-
-https://api.slack.com/incoming-webhooks
-
-jSlack naturally wraps its interface in Java. After lightly reading the official guide, you should be able to use it immediately.
-
-```java
-import com.github.seratch.jslack.*;
-import com.github.seratch.jslack.api.webhook.*;
-
-// https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
-String url = System.getenv("SLACK_WEBHOOK_URL");
-
-Payload payload = Payload.builder()
-  .channel("#random")
-  .username("jSlack Bot")
-  .iconEmoji(":smile_cat:")
-  .text("Hello World!")
-  .build();
-
-Slack slack = Slack.getInstance();
-WebhookResponse response = slack.send(url, payload);
-// response.code, response.message, response.body
-```
-
-#### Real Time Messaging API
-
-Real Time Messaging API is a WebSocket-based API that allows you to receive events from Slack in real time and send messages as user.
-
-https://api.slack.com/rtm
-
-When you use this API through jSlack library, you need adding additional WebSocket libraries:
-
-```xml
-<dependency>
-    <groupId>javax.websocket</groupId>
-    <artifactId>javax.websocket-api</artifactId>
-    <version>1.1</version>
-</dependency>
-<dependency>
-    <groupId>org.glassfish.tyrus.bundles</groupId>
-    <artifactId>tyrus-standalone-client</artifactId>
-    <version>1.13</version>
-</dependency>
-```
-
-The following example shows you a simple usage of RTM API. 
-
-```java
-import com.github.seratch.jslack.*;
-import com.github.seratch.jslack.api.rtm.*;
-import com.google.gson.*;
-
-JsonParser jsonParser = new JsonParser();
-String token = System.getenv("SLACK_BOT_API_TOKEN");
-
-try (RTMClient rtm = new Slack().rtm(token)) {
-
-  rtm.addMessageHandler((message) -> {
-    JsonObject json = jsonParser.parse(message).getAsJsonObject();
-    if (json.get("type") != null) {
-      log.info("Handled type: {}", json.get("type").getAsString());
-    }
-  });
-
-  RTMMessageHandler handler2 = (message) -> {
-    log.info("Hello!");
-  };
-
-  rtm.addMessageHandler(handler2);
-
-  // must connect within 30 seconds after issuing wss endpoint
-  rtm.connect();
-
-  rtm.removeMessageHandler(handler2);
-
-} // #close method does #disconnect
-```
-
-The `message`, argument of messageHandler, is a string value in JSON format. You need to deserialize it with your favorite JSON library.
-
-jSlack already depends on [google-gson](https://github.com/google/gson) library. So you can use Gson as above example shows. If you prefer Jackson or other libraries, it's also possible.
 
 #### API Methods
 
@@ -303,17 +204,6 @@ https://api.slack.com/apps
 ### Setting up "OAuth & Permissions" for it
 
 You need to select all permission scopes except for `identity.*`. After that, you also need to run "Reinstall App".
-
-#### Setting up OAuth access tokens (both the normal one and the one as a bot)
-
-<img src="https://user-images.githubusercontent.com/19658/34647360-38a7bc9e-f3c4-11e7-8c68-64c9be5b6fc3.png">
-
-Set the OAuth access tokens as env variables.
-
-```bash
-export SLACK_TEST_OAUTH_ACCESS_TOKEN=xoxp-*******************************************************
-export SLACK_BOT_USER_TEST_OAUTH_ACCESS_TOKEN=xoxb-************************************
-```
 
 #### Creating at least one Slack user who has its email
 
