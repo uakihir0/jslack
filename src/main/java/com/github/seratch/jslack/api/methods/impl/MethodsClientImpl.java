@@ -33,8 +33,6 @@ import com.github.seratch.jslack.api.methods.request.reactions.ReactionsGetReque
 import com.github.seratch.jslack.api.methods.request.reactions.ReactionsListRequest;
 import com.github.seratch.jslack.api.methods.request.reactions.ReactionsRemoveRequest;
 import com.github.seratch.jslack.api.methods.request.reminders.*;
-import com.github.seratch.jslack.api.methods.request.rtm.RTMConnectRequest;
-import com.github.seratch.jslack.api.methods.request.rtm.RTMStartRequest;
 import com.github.seratch.jslack.api.methods.request.search.SearchAllRequest;
 import com.github.seratch.jslack.api.methods.request.search.SearchFilesRequest;
 import com.github.seratch.jslack.api.methods.request.search.SearchMessagesRequest;
@@ -82,8 +80,6 @@ import com.github.seratch.jslack.api.methods.response.reactions.ReactionsGetResp
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsListResponse;
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsRemoveResponse;
 import com.github.seratch.jslack.api.methods.response.reminders.*;
-import com.github.seratch.jslack.api.methods.response.rtm.RTMConnectResponse;
-import com.github.seratch.jslack.api.methods.response.rtm.RTMStartResponse;
 import com.github.seratch.jslack.api.methods.response.search.SearchAllResponse;
 import com.github.seratch.jslack.api.methods.response.search.SearchFilesResponse;
 import com.github.seratch.jslack.api.methods.response.search.SearchMessagesResponse;
@@ -1091,27 +1087,6 @@ public class MethodsClientImpl implements MethodsClient {
     public RemindersListResponse remindersList(RemindersListRequest req) throws IOException, SlackApiException {
         FormBody.Builder form = new FormBody.Builder();
         return doPostFormWithToken(form, Methods.REMINDERS_LIST, req.getToken(), RemindersListResponse.class);
-    }
-
-    @Override
-    public RTMConnectResponse rtmConnect(RTMConnectRequest req) throws IOException, SlackApiException {
-        FormBody.Builder form = new FormBody.Builder();
-        setIfNotNull("batch_presence_aware", req.isBatchPresenceAware(), form);
-        setIfNotNull("presence_sub", req.isPresenceSub(), form);
-        return doPostFormWithToken(form, Methods.RTM_CONNECT, req.getToken(), RTMConnectResponse.class);
-    }
-
-    @Override
-    public RTMStartResponse rtmStart(RTMStartRequest req) throws IOException, SlackApiException {
-        FormBody.Builder form = new FormBody.Builder();
-        setIfNotNull("include_locale", req.isIncludeLocale(), form);
-        setIfNotNull("batch_presence_aware", req.isBatchPresenceAware(), form);
-        setIfNotNull("no_latest", req.isNoLatest(), form);
-        setIfNotNull("no_unreads", req.isNoUnreads(), form);
-        setIfNotNull("presence_sub", req.isPresenceSub(), form);
-        setIfNotNull("simple_latest", req.isSimpleLatest(), form);
-        setIfNotNull("mpim_aware", req.isMpimAware(), form);
-        return doPostFormWithToken(form, Methods.RTM_START, req.getToken(), RTMStartResponse.class);
     }
 
     @Override
