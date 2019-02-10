@@ -39,7 +39,6 @@ public class ImHistoryRequest implements SlackApiRequest {
      */
     private boolean unreads;
 
-    @java.beans.ConstructorProperties({"token", "channel", "oldest", "latest", "inclusive", "count", "unreads"})
     ImHistoryRequest(String token, String channel, String oldest, String latest, boolean inclusive, Integer count, boolean unreads) {
         this.token = token;
         this.channel = channel;

@@ -52,7 +52,6 @@ public class DialogSelectElement implements DialogElement {
      */
     private List<DialogOption> options;
 
-    @java.beans.ConstructorProperties({"label", "name", "value", "placeholder", "optional", "options"})
     DialogSelectElement(String label, String name, String value, String placeholder, boolean optional, List<DialogOption> options) {
         this.label = label;
         this.name = name;

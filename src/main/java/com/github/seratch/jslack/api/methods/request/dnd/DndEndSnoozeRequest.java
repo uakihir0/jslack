@@ -9,7 +9,6 @@ public class DndEndSnoozeRequest implements SlackApiRequest {
      */
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     DndEndSnoozeRequest(String token) {
         this.token = token;
     }

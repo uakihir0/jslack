@@ -4,7 +4,6 @@ public class Option {
     private String text;
     private String value;
 
-    @java.beans.ConstructorProperties({"text", "value"})
     Option(String text, String value) {
         this.text = text;
         this.value = value;

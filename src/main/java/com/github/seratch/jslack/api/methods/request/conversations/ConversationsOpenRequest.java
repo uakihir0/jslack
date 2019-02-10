@@ -28,7 +28,6 @@ public class ConversationsOpenRequest implements SlackApiRequest {
      */
     private List<String> users;
 
-    @java.beans.ConstructorProperties({"token", "channel", "returnIm", "users"})
     ConversationsOpenRequest(String token, String channel, boolean returnIm, List<String> users) {
         this.token = token;
         this.channel = channel;

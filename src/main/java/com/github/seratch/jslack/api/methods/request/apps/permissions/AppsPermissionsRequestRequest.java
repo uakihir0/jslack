@@ -21,7 +21,6 @@ public class AppsPermissionsRequestRequest implements SlackApiRequest {
      */
     private List<String> scopes;
 
-    @java.beans.ConstructorProperties({"token", "triggerId", "scopes"})
     AppsPermissionsRequestRequest(String token, String triggerId, List<String> scopes) {
         this.token = token;
         this.triggerId = triggerId;

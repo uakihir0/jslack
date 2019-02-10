@@ -14,7 +14,6 @@ public class UsersSetPresenceRequest implements SlackApiRequest {
      */
     private String presence;
 
-    @java.beans.ConstructorProperties({"token", "presence"})
     UsersSetPresenceRequest(String token, String presence) {
         this.token = token;
         this.presence = presence;

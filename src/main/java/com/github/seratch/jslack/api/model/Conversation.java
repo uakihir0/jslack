@@ -64,7 +64,6 @@ public class Conversation {
     @SerializedName("is_mpim")
     private boolean isMpim;
 
-    @java.beans.ConstructorProperties({"id", "name", "created", "creator", "unlinked", "nameNormalized", "pendingShared", "lastRead", "topic", "purpose", "previousNames", "numOfMembers", "members", "latest", "locale", "unreadCount", "unreadCountDisplay", "isChannel", "isGroup", "isIm", "isArchived", "isGeneral", "isReadOnly", "isShared", "isExtShared", "isOrgShared", "isPendingExtShared", "isMember", "isPrivate", "isMpim"})
     Conversation(String id, String name, String created, String creator, Integer unlinked, String nameNormalized, List<String> pendingShared, String lastRead, Topic topic, Purpose purpose, List<String> previousNames, Integer numOfMembers, List<String> members, Latest latest, String locale, Integer unreadCount, Integer unreadCountDisplay, boolean isChannel, boolean isGroup, boolean isIm, boolean isArchived, boolean isGeneral, boolean isReadOnly, boolean isShared, boolean isExtShared, boolean isOrgShared, boolean isPendingExtShared, boolean isMember, boolean isPrivate, boolean isMpim) {
         this.id = id;
         this.name = name;

@@ -13,7 +13,6 @@ public class StarsListRequest implements SlackApiRequest {
 
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "count", "page"})
     StarsListRequest(String token, Integer count, Integer page) {
         this.token = token;
         this.count = count;

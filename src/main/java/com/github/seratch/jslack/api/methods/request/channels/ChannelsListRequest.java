@@ -32,7 +32,6 @@ public class ChannelsListRequest implements SlackApiRequest {
      */
     private boolean excludeArchived;
 
-    @java.beans.ConstructorProperties({"token", "excludeMembers", "cursor", "limit", "excludeArchived"})
     ChannelsListRequest(String token, boolean excludeMembers, String cursor, Integer limit, boolean excludeArchived) {
         this.token = token;
         this.excludeMembers = excludeMembers;

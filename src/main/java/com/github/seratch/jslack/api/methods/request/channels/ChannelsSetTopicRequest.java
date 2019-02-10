@@ -19,7 +19,6 @@ public class ChannelsSetTopicRequest implements SlackApiRequest {
      */
     private String topic;
 
-    @java.beans.ConstructorProperties({"token", "channel", "topic"})
     ChannelsSetTopicRequest(String token, String channel, String topic) {
         this.token = token;
         this.channel = channel;

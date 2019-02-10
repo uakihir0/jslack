@@ -8,7 +8,6 @@ public class Confirmation {
     private String ok_text = OKAY;
     private String dismiss_text = DISMISS;
 
-    @java.beans.ConstructorProperties({"title", "text", "ok_text", "dismiss_text"})
     Confirmation(String title, String text, String ok_text, String dismiss_text) {
         this.title = title;
         this.text = text;

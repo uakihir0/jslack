@@ -24,7 +24,6 @@ public class Field {
     @SerializedName("short")
     private boolean valueShortEnough;
 
-    @java.beans.ConstructorProperties({"title", "value", "valueShortEnough"})
     Field(String title, String value, boolean valueShortEnough) {
         this.title = title;
         this.value = value;

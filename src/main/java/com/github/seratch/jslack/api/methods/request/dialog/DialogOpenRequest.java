@@ -28,7 +28,6 @@ public class DialogOpenRequest implements SlackApiRequest {
      */
     private String triggerId;
 
-    @java.beans.ConstructorProperties({"token", "dialog", "triggerId"})
     DialogOpenRequest(String token, Dialog dialog, String triggerId) {
         this.token = token;
         this.dialog = dialog;

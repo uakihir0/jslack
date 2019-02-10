@@ -19,7 +19,6 @@ public class ChannelsSetPurposeRequest implements SlackApiRequest {
      */
     private String purpose;
 
-    @java.beans.ConstructorProperties({"token", "channel", "purpose"})
     ChannelsSetPurposeRequest(String token, String channel, String purpose) {
         this.token = token;
         this.channel = channel;

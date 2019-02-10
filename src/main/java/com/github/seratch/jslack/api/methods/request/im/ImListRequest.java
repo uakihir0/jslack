@@ -22,7 +22,6 @@ public class ImListRequest implements SlackApiRequest {
      */
     private Integer limit;
 
-    @java.beans.ConstructorProperties({"token", "cursor", "limit"})
     ImListRequest(String token, String cursor, Integer limit) {
         this.token = token;
         this.cursor = cursor;

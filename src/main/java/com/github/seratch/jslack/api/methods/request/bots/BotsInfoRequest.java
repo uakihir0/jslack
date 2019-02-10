@@ -14,7 +14,6 @@ public class BotsInfoRequest implements SlackApiRequest {
      */
     private String bot;
 
-    @java.beans.ConstructorProperties({"token", "bot"})
     BotsInfoRequest(String token, String bot) {
         this.token = token;
         this.bot = bot;

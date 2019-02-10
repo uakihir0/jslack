@@ -33,7 +33,6 @@ public class SearchFilesRequest implements SlackApiRequest {
 
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "sortDir", "query", "sort", "highlight", "count", "page"})
     SearchFilesRequest(String token, String sortDir, String query, String sort, boolean highlight, Integer count, Integer page) {
         this.token = token;
         this.sortDir = sortDir;

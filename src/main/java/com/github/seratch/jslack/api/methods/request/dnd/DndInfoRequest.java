@@ -14,7 +14,6 @@ public class DndInfoRequest implements SlackApiRequest {
      */
     private String user;
 
-    @java.beans.ConstructorProperties({"token", "user"})
     DndInfoRequest(String token, String user) {
         this.token = token;
         this.user = user;

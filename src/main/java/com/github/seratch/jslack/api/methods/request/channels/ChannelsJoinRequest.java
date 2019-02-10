@@ -19,7 +19,6 @@ public class ChannelsJoinRequest implements SlackApiRequest {
      */
     private boolean validate;
 
-    @java.beans.ConstructorProperties({"token", "name", "validate"})
     ChannelsJoinRequest(String token, String name, boolean validate) {
         this.token = token;
         this.name = name;

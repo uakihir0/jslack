@@ -32,7 +32,6 @@ public class OAuthAccessRequest implements SlackApiRequest {
      */
     private boolean singleChannel;
 
-    @java.beans.ConstructorProperties({"clientId", "clientSecret", "code", "redirectUri", "singleChannel"})
     OAuthAccessRequest(String clientId, String clientSecret, String code, String redirectUri, boolean singleChannel) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;

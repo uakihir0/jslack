@@ -19,7 +19,6 @@ public class UsergroupsEnableRequest implements SlackApiRequest {
      */
     private boolean includeCount;
 
-    @java.beans.ConstructorProperties({"token", "usergroup", "includeCount"})
     UsergroupsEnableRequest(String token, String usergroup, boolean includeCount) {
         this.token = token;
         this.usergroup = usergroup;

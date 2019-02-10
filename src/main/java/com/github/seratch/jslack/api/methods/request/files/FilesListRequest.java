@@ -49,7 +49,6 @@ public class FilesListRequest implements SlackApiRequest {
 
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "user", "channel", "tsFrom", "tsTo", "types", "count", "page"})
     FilesListRequest(String token, String user, String channel, String tsFrom, String tsTo, List<String> types, Integer count, Integer page) {
         this.token = token;
         this.user = user;

@@ -18,7 +18,6 @@ public class TeamAccessLogsRequest implements SlackApiRequest {
 
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "before", "count", "page"})
     TeamAccessLogsRequest(String token, Integer before, Integer count, Integer page) {
         this.token = token;
         this.before = before;

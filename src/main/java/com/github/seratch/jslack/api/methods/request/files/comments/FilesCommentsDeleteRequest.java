@@ -19,7 +19,6 @@ public class FilesCommentsDeleteRequest implements SlackApiRequest {
      */
     private String id;
 
-    @java.beans.ConstructorProperties({"token", "file", "id"})
     FilesCommentsDeleteRequest(String token, String file, String id) {
         this.token = token;
         this.file = file;

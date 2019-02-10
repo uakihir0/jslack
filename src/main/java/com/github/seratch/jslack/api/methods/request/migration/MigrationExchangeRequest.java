@@ -24,7 +24,6 @@ public class MigrationExchangeRequest implements SlackApiRequest {
      */
     private List<String> users;
 
-    @java.beans.ConstructorProperties({"token", "toOld", "users"})
     MigrationExchangeRequest(String token, boolean toOld, List<String> users) {
         this.token = token;
         this.toOld = toOld;

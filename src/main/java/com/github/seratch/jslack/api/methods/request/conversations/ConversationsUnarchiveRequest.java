@@ -14,7 +14,6 @@ public class ConversationsUnarchiveRequest implements SlackApiRequest {
      */
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "channel"})
     ConversationsUnarchiveRequest(String token, String channel) {
         this.token = token;
         this.channel = channel;

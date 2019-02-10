@@ -14,7 +14,6 @@ public class GroupsArchiveRequest implements SlackApiRequest {
      */
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "channel"})
     GroupsArchiveRequest(String token, String channel) {
         this.token = token;
         this.channel = channel;

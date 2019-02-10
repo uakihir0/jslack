@@ -9,7 +9,6 @@ public class DndEndDndRequest implements SlackApiRequest {
      */
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     DndEndDndRequest(String token) {
         this.token = token;
     }

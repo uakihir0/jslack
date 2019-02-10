@@ -33,7 +33,6 @@ public class Dialog {
      */
     private String submitLabel;
 
-    @java.beans.ConstructorProperties({"title", "callbackId", "elements", "submitLabel"})
     Dialog(String title, String callbackId, List<DialogElement> elements, String submitLabel) {
         this.title = title;
         this.callbackId = callbackId;

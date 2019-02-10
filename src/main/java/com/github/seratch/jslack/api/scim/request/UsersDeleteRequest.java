@@ -6,7 +6,6 @@ public class UsersDeleteRequest implements SlackApiRequest {
     private String token;
     private String id;
 
-    @java.beans.ConstructorProperties({"token", "id"})
     UsersDeleteRequest(String token, String id) {
         this.token = token;
         this.id = id;

@@ -39,7 +39,6 @@ public class MpimHistoryRequest implements SlackApiRequest {
      */
     private boolean unreads;
 
-    @java.beans.ConstructorProperties({"token", "channel", "oldest", "latest", "count", "inclusive", "unreads"})
     MpimHistoryRequest(String token, String channel, String oldest, String latest, Integer count, boolean inclusive, boolean unreads) {
         this.token = token;
         this.channel = channel;

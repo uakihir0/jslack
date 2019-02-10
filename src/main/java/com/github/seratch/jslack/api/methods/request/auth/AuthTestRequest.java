@@ -9,7 +9,6 @@ public class AuthTestRequest implements SlackApiRequest {
      */
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     AuthTestRequest(String token) {
         this.token = token;
     }

@@ -33,7 +33,6 @@ public class SearchAllRequest implements SlackApiRequest {
 
     private Integer page;
 
-    @java.beans.ConstructorProperties({"token", "query", "sort", "sortDir", "highlight", "count", "page"})
     SearchAllRequest(String token, String query, String sort, String sortDir, boolean highlight, Integer count, Integer page) {
         this.token = token;
         this.query = query;

@@ -14,7 +14,6 @@ public class ConversationsLeaveRequest implements SlackApiRequest {
      */
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "channel"})
     ConversationsLeaveRequest(String token, String channel) {
         this.token = token;
         this.channel = channel;

@@ -9,7 +9,6 @@ public class UsersIdentityRequest implements SlackApiRequest {
      */
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     UsersIdentityRequest(String token) {
         this.token = token;
     }

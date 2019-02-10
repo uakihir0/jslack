@@ -19,7 +19,6 @@ public class GroupsCreateRequest implements SlackApiRequest {
      */
     private boolean validate;
 
-    @java.beans.ConstructorProperties({"token", "name", "validate"})
     GroupsCreateRequest(String token, String name, boolean validate) {
         this.token = token;
         this.name = name;

@@ -19,7 +19,6 @@ public class GroupsInfoRequest implements SlackApiRequest {
      */
     private boolean includeLocale;
 
-    @java.beans.ConstructorProperties({"token", "channel", "includeLocale"})
     GroupsInfoRequest(String token, String channel, boolean includeLocale) {
         this.token = token;
         this.channel = channel;

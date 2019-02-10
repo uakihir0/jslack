@@ -14,7 +14,6 @@ public class GroupsLeaveRequest implements SlackApiRequest {
      */
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "channel"})
     GroupsLeaveRequest(String token, String channel) {
         this.token = token;
         this.channel = channel;

@@ -19,7 +19,6 @@ public class ChannelsMarkRequest implements SlackApiRequest {
      */
     private String ts;
 
-    @java.beans.ConstructorProperties({"token", "channel", "ts"})
     ChannelsMarkRequest(String token, String channel, String ts) {
         this.token = token;
         this.channel = channel;

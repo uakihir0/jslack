@@ -29,7 +29,6 @@ public class PinsAddRequest implements SlackApiRequest {
      */
     private String timestamp;
 
-    @java.beans.ConstructorProperties({"token", "channel", "file", "fileComment", "timestamp"})
     PinsAddRequest(String token, String channel, String file, String fileComment, String timestamp) {
         this.token = token;
         this.channel = channel;

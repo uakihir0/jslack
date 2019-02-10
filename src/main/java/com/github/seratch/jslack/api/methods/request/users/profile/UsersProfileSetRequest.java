@@ -30,7 +30,6 @@ public class UsersProfileSetRequest implements SlackApiRequest {
      */
     private String value;
 
-    @java.beans.ConstructorProperties({"token", "user", "profile", "name", "value"})
     UsersProfileSetRequest(String token, String user, User.Profile profile, String name, String value) {
         this.token = token;
         this.user = user;

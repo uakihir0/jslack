@@ -26,7 +26,6 @@ public class ChatDeleteRequest implements SlackApiRequest {
      */
     private boolean asUser;
 
-    @java.beans.ConstructorProperties({"token", "ts", "channel", "asUser"})
     ChatDeleteRequest(String token, String ts, String channel, boolean asUser) {
         this.token = token;
         this.ts = ts;

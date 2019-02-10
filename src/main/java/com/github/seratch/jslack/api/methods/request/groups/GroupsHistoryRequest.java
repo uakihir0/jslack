@@ -39,7 +39,6 @@ public class GroupsHistoryRequest implements SlackApiRequest {
      */
     private boolean unreads;
 
-    @java.beans.ConstructorProperties({"token", "channel", "oldest", "latest", "inclusive", "count", "unreads"})
     GroupsHistoryRequest(String token, String channel, String oldest, String latest, boolean inclusive, Integer count, boolean unreads) {
         this.token = token;
         this.channel = channel;

@@ -9,7 +9,6 @@ public class AppsPermissionsInfoRequest implements SlackApiRequest {
      */
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     AppsPermissionsInfoRequest(String token) {
         this.token = token;
     }

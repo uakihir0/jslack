@@ -34,7 +34,6 @@ public class UsersListRequest implements SlackApiRequest {
     @Deprecated
     private boolean presence;
 
-    @java.beans.ConstructorProperties({"token", "cursor", "limit", "includeLocale", "presence"})
     UsersListRequest(String token, String cursor, Integer limit, boolean includeLocale, boolean presence) {
         this.token = token;
         this.cursor = cursor;

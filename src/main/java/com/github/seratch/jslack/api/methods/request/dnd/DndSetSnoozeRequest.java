@@ -14,7 +14,6 @@ public class DndSetSnoozeRequest implements SlackApiRequest {
      */
     private Integer numMinutes;
 
-    @java.beans.ConstructorProperties({"token", "numMinutes"})
     DndSetSnoozeRequest(String token, Integer numMinutes) {
         this.token = token;
         this.numMinutes = numMinutes;

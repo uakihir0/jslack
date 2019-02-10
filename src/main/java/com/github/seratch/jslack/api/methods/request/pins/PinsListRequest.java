@@ -14,7 +14,6 @@ public class PinsListRequest implements SlackApiRequest {
      */
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "channel"})
     PinsListRequest(String token, String channel) {
         this.token = token;
         this.channel = channel;

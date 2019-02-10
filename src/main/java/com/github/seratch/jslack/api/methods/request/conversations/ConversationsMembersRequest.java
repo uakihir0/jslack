@@ -28,7 +28,6 @@ public class ConversationsMembersRequest implements SlackApiRequest {
      */
     private Integer limit;
 
-    @java.beans.ConstructorProperties({"token", "channel", "cursor", "limit"})
     ConversationsMembersRequest(String token, String channel, String cursor, Integer limit) {
         this.token = token;
         this.channel = channel;

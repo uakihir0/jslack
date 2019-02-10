@@ -5,7 +5,6 @@ public class WebhookResponse {
     private String message;
     private String body;
 
-    @java.beans.ConstructorProperties({"code", "message", "body"})
     WebhookResponse(Integer code, String message, String body) {
         this.code = code;
         this.message = message;

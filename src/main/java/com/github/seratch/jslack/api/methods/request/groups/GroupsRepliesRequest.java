@@ -19,7 +19,6 @@ public class GroupsRepliesRequest implements SlackApiRequest {
      */
     private String threadTs;
 
-    @java.beans.ConstructorProperties({"token", "channel", "threadTs"})
     GroupsRepliesRequest(String token, String channel, String threadTs) {
         this.token = token;
         this.channel = channel;

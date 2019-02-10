@@ -43,7 +43,6 @@ public class ConversationsHistoryRequest implements SlackApiRequest {
      */
     private boolean inclusive;
 
-    @java.beans.ConstructorProperties({"token", "channel", "cursor", "oldest", "latest", "limit", "inclusive"})
     ConversationsHistoryRequest(String token, String channel, String cursor, String oldest, String latest, Integer limit, boolean inclusive) {
         this.token = token;
         this.channel = channel;

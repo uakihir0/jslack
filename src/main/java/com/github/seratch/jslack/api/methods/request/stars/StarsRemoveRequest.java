@@ -29,7 +29,6 @@ public class StarsRemoveRequest implements SlackApiRequest {
      */
     private String timestamp;
 
-    @java.beans.ConstructorProperties({"token", "file", "fileComment", "channel", "timestamp"})
     StarsRemoveRequest(String token, String file, String fileComment, String channel, String timestamp) {
         this.token = token;
         this.file = file;

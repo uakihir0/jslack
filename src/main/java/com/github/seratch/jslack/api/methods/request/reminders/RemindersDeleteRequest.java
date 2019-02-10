@@ -14,7 +14,6 @@ public class RemindersDeleteRequest implements SlackApiRequest {
      */
     private String reminder;
 
-    @java.beans.ConstructorProperties({"token", "reminder"})
     RemindersDeleteRequest(String token, String reminder) {
         this.token = token;
         this.reminder = reminder;

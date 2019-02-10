@@ -34,7 +34,6 @@ public class ReactionsAddRequest implements SlackApiRequest {
      */
     private String timestamp;
 
-    @java.beans.ConstructorProperties({"token", "name", "file", "fileComment", "channel", "timestamp"})
     ReactionsAddRequest(String token, String name, String file, String fileComment, String channel, String timestamp) {
         this.token = token;
         this.name = name;

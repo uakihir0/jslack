@@ -19,7 +19,6 @@ public class UsersProfileGetRequest implements SlackApiRequest {
      */
     private boolean includeLabels;
 
-    @java.beans.ConstructorProperties({"token", "user", "includeLabels"})
     UsersProfileGetRequest(String token, String user, boolean includeLabels) {
         this.token = token;
         this.user = user;

@@ -45,7 +45,6 @@ public class UsersConversationsRequest implements SlackApiRequest {
      */
     private List<ConversationType> types;
 
-    @java.beans.ConstructorProperties({"token", "user", "cursor", "excludeArchived", "limit", "types"})
     UsersConversationsRequest(String token, String user, String cursor, boolean excludeArchived, Integer limit, List<ConversationType> types) {
         this.token = token;
         this.user = user;

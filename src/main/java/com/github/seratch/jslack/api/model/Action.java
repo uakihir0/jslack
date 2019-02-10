@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Action {
-    @java.beans.ConstructorProperties({"name", "text", "style", "type", "value", "confirm", "options", "selectedOptions", "dataSource", "minQueryLength", "url"})
     Action(String name, String text, String style, Type type, String value, Confirmation confirm, List<Option> options, List<Option> selectedOptions, String dataSource, Integer minQueryLength, String url) {
         this.name = name;
         this.text = text;

@@ -49,7 +49,6 @@ public class ChatPostEphemeralRequest implements SlackApiRequest {
      */
     private String parse;
 
-    @java.beans.ConstructorProperties({"token", "channel", "text", "user", "asUser", "attachments", "linkNames", "parse"})
     ChatPostEphemeralRequest(String token, String channel, String text, String user, boolean asUser, List<Attachment> attachments, boolean linkNames, String parse) {
         this.token = token;
         this.channel = channel;

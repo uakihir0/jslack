@@ -44,7 +44,6 @@ public class ChatUnfurlRequest implements SlackApiRequest {
      */
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "userAuthMessage", "userAuthRequired", "unfurls", "ts", "userAuthUrl", "channel"})
     ChatUnfurlRequest(String token, String userAuthMessage, boolean userAuthRequired, String unfurls, String ts, String userAuthUrl, String channel) {
         this.token = token;
         this.userAuthMessage = userAuthMessage;

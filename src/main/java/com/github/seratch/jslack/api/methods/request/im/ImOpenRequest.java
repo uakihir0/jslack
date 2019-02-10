@@ -24,7 +24,6 @@ public class ImOpenRequest implements SlackApiRequest {
      */
     private boolean includeLocale;
 
-    @java.beans.ConstructorProperties({"token", "user", "returnIm", "includeLocale"})
     ImOpenRequest(String token, String user, boolean returnIm, boolean includeLocale) {
         this.token = token;
         this.user = user;

@@ -19,7 +19,6 @@ public class UsersInfoRequest implements SlackApiRequest {
      */
     private boolean includeLocale;
 
-    @java.beans.ConstructorProperties({"token", "user", "includeLocale"})
     UsersInfoRequest(String token, String user, boolean includeLocale) {
         this.token = token;
         this.user = user;

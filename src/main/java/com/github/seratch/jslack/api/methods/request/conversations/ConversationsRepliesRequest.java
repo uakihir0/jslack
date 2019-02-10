@@ -47,7 +47,6 @@ public class ConversationsRepliesRequest implements SlackApiRequest {
      */
     private String latest;
 
-    @java.beans.ConstructorProperties({"token", "inclusive", "ts", "cursor", "limit", "channel", "oldest", "latest"})
     ConversationsRepliesRequest(String token, boolean inclusive, String ts, String cursor, Integer limit, String channel, String oldest, String latest) {
         this.token = token;
         this.inclusive = inclusive;

@@ -17,7 +17,6 @@ public class MpimOpenRequest implements SlackApiRequest {
      */
     private List<String> users;
 
-    @java.beans.ConstructorProperties({"token", "users"})
     MpimOpenRequest(String token, List<String> users) {
         this.token = token;
         this.users = users;

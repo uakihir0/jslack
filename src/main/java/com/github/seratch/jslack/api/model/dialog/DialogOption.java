@@ -7,7 +7,6 @@ public class DialogOption {
     private String label;
     private String value;
 
-    @java.beans.ConstructorProperties({"label", "value"})
     DialogOption(String label, String value) {
         this.label = label;
         this.value = value;

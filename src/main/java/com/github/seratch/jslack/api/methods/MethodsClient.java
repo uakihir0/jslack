@@ -30,8 +30,6 @@ import com.github.seratch.jslack.api.methods.request.reactions.ReactionsGetReque
 import com.github.seratch.jslack.api.methods.request.reactions.ReactionsListRequest;
 import com.github.seratch.jslack.api.methods.request.reactions.ReactionsRemoveRequest;
 import com.github.seratch.jslack.api.methods.request.reminders.*;
-import com.github.seratch.jslack.api.methods.request.rtm.RTMConnectRequest;
-import com.github.seratch.jslack.api.methods.request.rtm.RTMStartRequest;
 import com.github.seratch.jslack.api.methods.request.search.SearchAllRequest;
 import com.github.seratch.jslack.api.methods.request.search.SearchFilesRequest;
 import com.github.seratch.jslack.api.methods.request.search.SearchMessagesRequest;
@@ -79,8 +77,6 @@ import com.github.seratch.jslack.api.methods.response.reactions.ReactionsGetResp
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsListResponse;
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsRemoveResponse;
 import com.github.seratch.jslack.api.methods.response.reminders.*;
-import com.github.seratch.jslack.api.methods.response.rtm.RTMConnectResponse;
-import com.github.seratch.jslack.api.methods.response.rtm.RTMStartResponse;
 import com.github.seratch.jslack.api.methods.response.search.SearchAllResponse;
 import com.github.seratch.jslack.api.methods.response.search.SearchFilesResponse;
 import com.github.seratch.jslack.api.methods.response.search.SearchMessagesResponse;
@@ -398,14 +394,6 @@ public interface MethodsClient {
     RemindersInfoResponse remindersInfo(RemindersInfoRequest req) throws IOException, SlackApiException;
 
     RemindersListResponse remindersList(RemindersListRequest req) throws IOException, SlackApiException;
-
-    // ------------------------------
-    // rtm
-    // ------------------------------
-
-    RTMConnectResponse rtmConnect(RTMConnectRequest req) throws IOException, SlackApiException;
-
-    RTMStartResponse rtmStart(RTMStartRequest req) throws IOException, SlackApiException;
 
     // ------------------------------
     // search

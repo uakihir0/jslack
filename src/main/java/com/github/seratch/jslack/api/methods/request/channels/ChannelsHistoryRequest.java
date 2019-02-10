@@ -39,7 +39,6 @@ public class ChannelsHistoryRequest implements SlackApiRequest {
      */
     private boolean unreads;
 
-    @java.beans.ConstructorProperties({"token", "channel", "latest", "oldest", "inclusive", "count", "unreads"})
     ChannelsHistoryRequest(String token, String channel, String latest, String oldest, boolean inclusive, Integer count, boolean unreads) {
         this.token = token;
         this.channel = channel;

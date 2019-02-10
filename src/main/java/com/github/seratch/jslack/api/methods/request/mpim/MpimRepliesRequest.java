@@ -19,7 +19,6 @@ public class MpimRepliesRequest implements SlackApiRequest {
      */
     private String threadTs;
 
-    @java.beans.ConstructorProperties({"token", "channel", "threadTs"})
     MpimRepliesRequest(String token, String channel, String threadTs) {
         this.token = token;
         this.channel = channel;

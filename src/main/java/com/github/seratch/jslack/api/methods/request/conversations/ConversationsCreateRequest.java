@@ -19,7 +19,6 @@ public class ConversationsCreateRequest implements SlackApiRequest {
      */
     private boolean isPrivate;
 
-    @java.beans.ConstructorProperties({"token", "name", "isPrivate"})
     ConversationsCreateRequest(String token, String name, boolean isPrivate) {
         this.token = token;
         this.name = name;

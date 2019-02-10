@@ -14,7 +14,6 @@ public class TeamProfileGetRequest implements SlackApiRequest {
      */
     private String visibility;
 
-    @java.beans.ConstructorProperties({"token", "visibility"})
     TeamProfileGetRequest(String token, String visibility) {
         this.token = token;
         this.visibility = visibility;

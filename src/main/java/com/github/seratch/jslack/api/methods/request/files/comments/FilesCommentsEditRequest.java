@@ -24,7 +24,6 @@ public class FilesCommentsEditRequest implements SlackApiRequest {
      */
     private String comment;
 
-    @java.beans.ConstructorProperties({"token", "file", "id", "comment"})
     FilesCommentsEditRequest(String token, String file, String id, String comment) {
         this.token = token;
         this.file = file;

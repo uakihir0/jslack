@@ -24,7 +24,6 @@ public class GroupsRenameRequest implements SlackApiRequest {
      */
     private boolean validate;
 
-    @java.beans.ConstructorProperties({"token", "channel", "name", "validate"})
     GroupsRenameRequest(String token, String channel, String name, boolean validate) {
         this.token = token;
         this.channel = channel;

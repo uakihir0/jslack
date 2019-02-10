@@ -9,7 +9,6 @@ public class EmojiListRequest implements SlackApiRequest {
      */
     private String token;
 
-    @java.beans.ConstructorProperties({"token"})
     EmojiListRequest(String token) {
         this.token = token;
     }

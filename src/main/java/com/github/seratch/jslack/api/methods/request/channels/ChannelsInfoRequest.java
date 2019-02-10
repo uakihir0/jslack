@@ -19,7 +19,6 @@ public class ChannelsInfoRequest implements SlackApiRequest {
      */
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "includeLocale", "channel"})
     ChannelsInfoRequest(String token, boolean includeLocale, String channel) {
         this.token = token;
         this.includeLocale = includeLocale;

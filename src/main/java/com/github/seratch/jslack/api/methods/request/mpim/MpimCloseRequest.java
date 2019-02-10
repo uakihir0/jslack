@@ -14,7 +14,6 @@ public class MpimCloseRequest implements SlackApiRequest {
      */
     private String channel;
 
-    @java.beans.ConstructorProperties({"token", "channel"})
     MpimCloseRequest(String token, String channel) {
         this.token = token;
         this.channel = channel;

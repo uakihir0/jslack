@@ -14,7 +14,6 @@ public class ApiTestRequest implements SlackApiRequest {
      */
     private String error;
 
-    @java.beans.ConstructorProperties({"foo", "error"})
     ApiTestRequest(String foo, String error) {
         this.foo = foo;
         this.error = error;
