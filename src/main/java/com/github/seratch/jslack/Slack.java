@@ -2,17 +2,10 @@ package com.github.seratch.jslack;
 
 import com.github.seratch.jslack.api.methods.MethodsClient;
 import com.github.seratch.jslack.api.methods.impl.MethodsClientImpl;
-import com.github.seratch.jslack.api.scim.SCIMClient;
-import com.github.seratch.jslack.api.scim.SCIMClientImpl;
-import com.github.seratch.jslack.api.webhook.Payload;
-import com.github.seratch.jslack.api.webhook.WebhookResponse;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
 import com.github.seratch.jslack.shortcut.Shortcut;
 import com.github.seratch.jslack.shortcut.impl.ShortcutImpl;
 import com.github.seratch.jslack.shortcut.model.ApiToken;
-import okhttp3.Response;
-
-import java.io.IOException;
 
 /**
  * Slack Integrations
@@ -41,27 +34,6 @@ public class Slack {
         return new Slack(httpClient);
     }
 
-    /**
-     * Send a data to Incoming Webhook endpoint.
-     */
-    public WebhookResponse send(String url, Payload payload) throws IOException {
-        Response httpResponse = this.httpClient.postJsonPostRequest(url, payload);
-        String body = httpResponse.body().string();
-        SlackHttpClient.debugLog(httpResponse, body);
-
-        return WebhookResponse.builder()
-                .code(httpResponse.code())
-                .message(httpResponse.message())
-                .body(body)
-                .build();
-    }
-
-    /**
-     * Creates a SCIM api client.
-     */
-    public SCIMClient scim() {
-        return new SCIMClientImpl(httpClient);
-    }
 
     /**
      * Creates a Methods API client.

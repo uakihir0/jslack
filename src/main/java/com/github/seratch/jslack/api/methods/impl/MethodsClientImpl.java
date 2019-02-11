@@ -98,10 +98,11 @@ import com.github.seratch.jslack.api.methods.response.users.*;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileGetResponse;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileSetResponse;
 import com.github.seratch.jslack.api.model.ConversationType;
+import com.github.seratch.jslack.common.http.FormBody;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
 import com.github.seratch.jslack.common.json.GsonFactory;
+import net.socialhub.http.HttpResponse;
 import net.socialhub.logger.Logger;
-import okhttp3.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -659,34 +660,37 @@ public class MethodsClientImpl implements MethodsClient {
 
     @Override
     public FilesUploadResponse filesUpload(FilesUploadRequest req) throws IOException, SlackApiException {
-        if (req.getFile() != null) {
-            MultipartBody.Builder form = new MultipartBody.Builder();
+//        if (req.getFile() != null) {
+//            MultipartBody.Builder form = new MultipartBody.Builder();
+//
+//            RequestBody file = RequestBody.create(MultipartBody.FORM, req.getFile());
+//            form.addFormDataPart("file", req.getFilename(), file);
+//
+//            setIfNotNull("filetype", req.getFiletype(), form);
+//            setIfNotNull("filename", req.getFilename(), form);
+//            setIfNotNull("title", req.getTitle(), form);
+//            setIfNotNull("initial_comment", req.getInitialComment(), form);
+//            if (req.getChannels() != null) {
+//                setIfNotNull("channels", req.getChannels().stream().collect(joining(",")), form);
+//            }
+//            setIfNotNull("thread_ts", req.getThreadTs(), form);
+//            return doPostMultipart(form, Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
+//        } else {
+//            FormBody.Builder form = new FormBody.Builder();
+//
+//            setIfNotNull("content", req.getContent(), form);
+//            setIfNotNull("filetype", req.getFiletype(), form);
+//            setIfNotNull("filename", req.getFilename(), form);
+//            setIfNotNull("title", req.getTitle(), form);
+//            setIfNotNull("initial_comment", req.getInitialComment(), form);
+//            if (req.getChannels() != null) {
+//                setIfNotNull("channels", req.getChannels().stream().collect(joining(",")), form);
+//            }
+//            return doPostFormWithToken(form, Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
+//        }
 
-            RequestBody file = RequestBody.create(MultipartBody.FORM, req.getFile());
-            form.addFormDataPart("file", req.getFilename(), file);
-
-            setIfNotNull("filetype", req.getFiletype(), form);
-            setIfNotNull("filename", req.getFilename(), form);
-            setIfNotNull("title", req.getTitle(), form);
-            setIfNotNull("initial_comment", req.getInitialComment(), form);
-            if (req.getChannels() != null) {
-                setIfNotNull("channels", req.getChannels().stream().collect(joining(",")), form);
-            }
-            setIfNotNull("thread_ts", req.getThreadTs(), form);
-            return doPostMultipart(form, Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
-        } else {
-            FormBody.Builder form = new FormBody.Builder();
-
-            setIfNotNull("content", req.getContent(), form);
-            setIfNotNull("filetype", req.getFiletype(), form);
-            setIfNotNull("filename", req.getFilename(), form);
-            setIfNotNull("title", req.getTitle(), form);
-            setIfNotNull("initial_comment", req.getInitialComment(), form);
-            if (req.getChannels() != null) {
-                setIfNotNull("channels", req.getChannels().stream().collect(joining(",")), form);
-            }
-            return doPostFormWithToken(form, Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
-        }
+        // FIXME 未対応
+        throw new IllegalStateException();
     }
 
     @Override
@@ -1334,13 +1338,16 @@ public class MethodsClientImpl implements MethodsClient {
 
     @Override
     public UsersSetPhotoResponse usersSetPhoto(UsersSetPhotoRequest req) throws IOException, SlackApiException {
-        MultipartBody.Builder form = new MultipartBody.Builder();
-        RequestBody image = RequestBody.create(MediaType.parse("image/*"), req.getImage());
-        form.addFormDataPart("image", "image", image);
-        setIfNotNull("crop_x", req.getCropX(), form);
-        setIfNotNull("crop_y", req.getCropY(), form);
-        setIfNotNull("crop_w", req.getCropW(), form);
-        return doPostMultipart(form, Methods.USERS_SET_PHOTO, req.getToken(), UsersSetPhotoResponse.class);
+//        MultipartBody.Builder form = new MultipartBody.Builder();
+//        RequestBody image = RequestBody.create(MediaType.parse("image/*"), req.getImage());
+//        form.addFormDataPart("image", "image", image);
+//        setIfNotNull("crop_x", req.getCropX(), form);
+//        setIfNotNull("crop_y", req.getCropY(), form);
+//        setIfNotNull("crop_w", req.getCropW(), form);
+//        return doPostMultipart(form, Methods.USERS_SET_PHOTO, req.getToken(), UsersSetPhotoResponse.class);
+        // FIXME 未対応
+        throw new IllegalStateException();
+
     }
 
     @Override
@@ -1386,22 +1393,23 @@ public class MethodsClientImpl implements MethodsClient {
         }
     }
 
-    private static void setIfNotNull(String name, Object value, MultipartBody.Builder form) {
-        if (value != null) {
-            if (value instanceof Boolean) {
-                String numValue = ((Boolean) value) ? "1" : "0";
-                form.addFormDataPart(name, numValue);
-            } else {
-                form.addFormDataPart(name, String.valueOf(value));
-            }
-        }
-    }
+//    private static void setIfNotNull(String name, Object value, MultipartBody.Builder form) {
+//        if (value != null) {
+//            if (value instanceof Boolean) {
+//                String numValue = ((Boolean) value) ? "1" : "0";
+//                form.addFormDataPart(name, numValue);
+//            } else {
+//                form.addFormDataPart(name, String.valueOf(value));
+//            }
+//        }
+//    }
 
     protected <T> T doPostForm(
             FormBody.Builder form,
             String endpoint,
             Class<T> clazz) throws IOException, SlackApiException {
-        Response response = slackHttpClient.postForm(endpointUrlPrefix + endpoint, form.build());
+        // Response response = slackHttpClient.postForm(endpointUrlPrefix + endpoint, form.build());
+        HttpResponse response = slackHttpClient.postForm(endpointUrlPrefix + endpoint, form.build());
         return SlackHttpClient.buildJsonResponse(response, clazz);
     }
 
@@ -1410,18 +1418,19 @@ public class MethodsClientImpl implements MethodsClient {
             String endpoint,
             String token,
             Class<T> clazz) throws IOException, SlackApiException {
-        Response response = slackHttpClient.postFormWithBearerHeader(endpointUrlPrefix + endpoint, token, form.build());
+        // Response response = slackHttpClient.postFormWithBearerHeader(endpointUrlPrefix + endpoint, token, form.build());
+        HttpResponse response = slackHttpClient.postFormWithBearerHeader(endpointUrlPrefix + endpoint, token, form.build());
         return SlackHttpClient.buildJsonResponse(response, clazz);
     }
 
-    protected <T> T doPostMultipart(
-            MultipartBody.Builder form,
-            String endpoint,
-            String token,
-            Class<T> clazz) throws IOException, SlackApiException {
-        form.setType(MultipartBody.FORM);
-        Response response = slackHttpClient.postMultipart(endpointUrlPrefix + endpoint, token, form.build());
-        return SlackHttpClient.buildJsonResponse(response, clazz);
-    }
+//    protected <T> T doPostMultipart(
+//            MultipartBody.Builder form,
+//            String endpoint,
+//            String token,
+//            Class<T> clazz) throws IOException, SlackApiException {
+//        form.setType(MultipartBody.FORM);
+//        Response response = slackHttpClient.postMultipart(endpointUrlPrefix + endpoint, token, form.build());
+//        return SlackHttpClient.buildJsonResponse(response, clazz);
+//    }
 
 }
