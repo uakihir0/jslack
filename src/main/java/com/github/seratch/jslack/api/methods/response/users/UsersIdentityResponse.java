@@ -265,10 +265,20 @@ public class UsersIdentityResponse implements SlackApiResponse {
 
         private String id;
         private String name;
-
         private String domain;
-        private TeamIcon icon;
 
+        @SerializedName("image_34")
+        private String image34;
+        @SerializedName("image_44")
+        private String image44;
+        @SerializedName("image_68")
+        private String image68;
+        @SerializedName("image_88")
+        private String image88;
+        @SerializedName("image_102")
+        private String image102;
+        @SerializedName("image_132")
+        private String image132;
 
         public Team() {
         }
@@ -297,13 +307,6 @@ public class UsersIdentityResponse implements SlackApiResponse {
             this.domain = domain;
         }
 
-        public TeamIcon getIcon() {
-            return icon;
-        }
-
-        public void setIcon(TeamIcon icon) {
-            this.icon = icon;
-        }
 
         public boolean equals(final Object o) {
             if (o == this) return true;
@@ -336,6 +339,54 @@ public class UsersIdentityResponse implements SlackApiResponse {
 
         public String toString() {
             return "UsersIdentityResponse.Team(name=" + this.getName() + ", id=" + this.getId() + ")";
+        }
+
+        public String getImage34() {
+            return image34;
+        }
+
+        public void setImage34(String image34) {
+            this.image34 = image34;
+        }
+
+        public String getImage44() {
+            return image44;
+        }
+
+        public void setImage44(String image44) {
+            this.image44 = image44;
+        }
+
+        public String getImage68() {
+            return image68;
+        }
+
+        public void setImage68(String image68) {
+            this.image68 = image68;
+        }
+
+        public String getImage88() {
+            return image88;
+        }
+
+        public void setImage88(String image88) {
+            this.image88 = image88;
+        }
+
+        public String getImage102() {
+            return image102;
+        }
+
+        public void setImage102(String image102) {
+            this.image102 = image102;
+        }
+
+        public String getImage132() {
+            return image132;
+        }
+
+        public void setImage132(String image132) {
+            this.image132 = image132;
         }
     }
 }
