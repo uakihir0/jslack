@@ -24,6 +24,8 @@ public class Message {
     private Icon icons;
     private File file;
 
+    private List<File> files;
+
     // field exists only if the message was edited
     private Edited edited;
 
@@ -206,6 +208,14 @@ public class Message {
 
     public void setRoot(MessageRoot root) {
         this.root = root;
+    }
+
+    public List<File> getFiles() {
+        return files;
+    }
+
+    public void setFiles(List<File> files) {
+        this.files = files;
     }
 
     public boolean equals(final Object o) {

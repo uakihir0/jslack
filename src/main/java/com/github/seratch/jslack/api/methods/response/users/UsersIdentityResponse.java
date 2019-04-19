@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.methods.response.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
+import com.github.seratch.jslack.api.model.TeamIcon;
 import com.google.gson.annotations.SerializedName;
 
 public class UsersIdentityResponse implements SlackApiResponse {
@@ -261,8 +262,13 @@ public class UsersIdentityResponse implements SlackApiResponse {
     }
 
     public static class Team {
-        private String name;
+
         private String id;
+        private String name;
+
+        private String domain;
+        private TeamIcon icon;
+
 
         public Team() {
         }
@@ -281,6 +287,22 @@ public class UsersIdentityResponse implements SlackApiResponse {
 
         public void setId(String id) {
             this.id = id;
+        }
+
+        public String getDomain() {
+            return domain;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
+        }
+
+        public TeamIcon getIcon() {
+            return icon;
+        }
+
+        public void setIcon(TeamIcon icon) {
+            this.icon = icon;
         }
 
         public boolean equals(final Object o) {
