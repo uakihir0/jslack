@@ -1,18 +1,18 @@
 package com.github.seratch.jslack.common.http.listener;
 
+import net.socialhub.logger.Logger;
 import okhttp3.Response;
 import okio.Buffer;
-import org.slf4j.Logger;
 
 import java.io.IOException;
 
 public class DetailedLoggingListener extends HttpResponseListener {
 
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(DetailedLoggingListener.class);
+    private static final Logger log = Logger.getLogger(DetailedLoggingListener.class);
 
     @Override
     public void accept(State state) {
-        if (log.isDebugEnabled()) {
+        if (log.getLogLevel().isLogTarget(Logger.LogLevel.DEBUG)) {
             Response response = state.getResponse();
             String body = state.getParsedResponseBody();
 
@@ -20,42 +20,51 @@ public class DetailedLoggingListener extends HttpResponseListener {
             try {
                 response.request().body().writeTo(requestBody);
             } catch (IOException e) {
-                log.error("Failed to read the request body because {}", e.getMessage(), e);
+                log.error("Failed to read the request body because" + e.getMessage(), e);
             }
 
             String textRequestBody = null;
             try {
                 textRequestBody = requestBody.buffer().readUtf8();
             } catch (Exception e) {
-                log.debug("Failed to read request body because {}, error: {}", e.getMessage(), e.getClass().getCanonicalName());
+                log.debug("Failed to read request body because " + e.getMessage(), e);
             }
 
             Long contentLength = null;
             try {
                 contentLength = response.request().body().contentLength();
             } catch (IOException e) {
-                log.error("Failed to read the content length because {}", e.getMessage(), e);
+                log.error("Failed to read the content length because " + e.getMessage(), e);
             }
 
-            log.debug("\n[Request URL]\n{} {}\n" +
-                            "[Specified Request Headers]\n{}" +
-                            "[Request Body]\n{}\n\n" +
-                            "Content-Type: {}\n" +
-                            "Content Length: {}\n" +
-                            "\n" +
-                            "[Response Status]\n{} {}\n" +
-                            "[Response Headers]\n{}" +
-                            "[Response Body]\n{}\n",
-                    response.request().method(),
-                    response.request().url(),
-                    response.request().headers(),
-                    textRequestBody,
-                    response.request().body().contentType(),
-                    contentLength,
-                    response.code(),
-                    response.message(),
-                    response.headers(),
-                    body);
+            log.debug("\n[Request URL]\n" +
+                    response.request().method() +
+                    " " +
+                    response.request().url() +
+                    "\n" +
+                    "[Specified Request Headers]\n" +
+                    response.request().headers() +
+                    "[Request Body]\n" +
+                    textRequestBody +
+                    "\n\n" +
+                    "Content-Type: " +
+                    response.request().body().contentType() +
+                    "\n" +
+                    "Content Length: " +
+                    contentLength +
+                    "\n" +
+                    "\n" +
+                    "[Response Status]\n" +
+                    response.code() +
+                    " " +
+                    response.message() +
+                    "\n" +
+                    "[Response Headers]\n" +
+                    response.headers() +
+                    "" +
+                    "[Response Body]\n" +
+                    body +
+                    "\n");
         }
     }
 }

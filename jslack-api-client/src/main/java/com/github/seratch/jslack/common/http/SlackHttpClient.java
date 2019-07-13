@@ -6,14 +6,14 @@ import com.github.seratch.jslack.common.http.listener.DetailedLoggingListener;
 import com.github.seratch.jslack.common.http.listener.HttpResponseListener;
 import com.github.seratch.jslack.common.json.GsonFactory;
 import com.google.gson.Gson;
+import net.socialhub.logger.Logger;
 import okhttp3.*;
-import org.slf4j.Logger;
 
 import java.io.IOException;
 
 public class SlackHttpClient {
 
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(SlackHttpClient.class);
+    private static final Logger log = Logger.getLogger(SlackHttpClient.class);
     private final OkHttpClient okHttpClient;
 
     private SlackConfig config = SlackConfig.DEFAULT;

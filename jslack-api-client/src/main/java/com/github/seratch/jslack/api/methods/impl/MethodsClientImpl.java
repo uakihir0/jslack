@@ -115,10 +115,10 @@ import com.github.seratch.jslack.api.methods.response.users.*;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileGetResponse;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileSetResponse;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
+import net.socialhub.logger.Logger;
 import okhttp3.FormBody;
 import okhttp3.MultipartBody;
 import okhttp3.Response;
-import org.slf4j.Logger;
 
 import java.io.IOException;
 
@@ -127,7 +127,7 @@ import static com.github.seratch.jslack.api.methods.RequestFormBuilder.toMultipa
 
 public class MethodsClientImpl implements MethodsClient {
 
-    private static final Logger log = org.slf4j.LoggerFactory.getLogger(MethodsClientImpl.class);
+    private static final Logger log = Logger.getLogger(MethodsClientImpl.class);
     private String endpointUrlPrefix = "https://slack.com/api/";
 
     private final SlackHttpClient slackHttpClient;
