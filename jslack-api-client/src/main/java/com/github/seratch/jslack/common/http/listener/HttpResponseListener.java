@@ -1,7 +1,7 @@
 package com.github.seratch.jslack.common.http.listener;
 
 import com.github.seratch.jslack.SlackConfig;
-import okhttp3.Response;
+import net.socialhub.http.HttpResponse;
 
 import java.util.function.Consumer;
 
@@ -11,10 +11,10 @@ public abstract class HttpResponseListener implements Consumer<HttpResponseListe
 
     public static class State {
         private SlackConfig config;
-        private Response response;
+        private HttpResponse response;
         private String parsedResponseBody;
 
-        public State(SlackConfig config, Response response, String parsedResponseBody) {
+        public State(SlackConfig config, HttpResponse response, String parsedResponseBody) {
             this.config = config;
             this.response = response;
             this.parsedResponseBody = parsedResponseBody;
@@ -24,7 +24,7 @@ public abstract class HttpResponseListener implements Consumer<HttpResponseListe
             return this.config;
         }
 
-        public Response getResponse() {
+        public HttpResponse getResponse() {
             return this.response;
         }
 
@@ -36,7 +36,7 @@ public abstract class HttpResponseListener implements Consumer<HttpResponseListe
             this.config = config;
         }
 
-        public void setResponse(Response response) {
+        public void setResponse(HttpResponse response) {
             this.response = response;
         }
 

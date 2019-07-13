@@ -1,17 +1,17 @@
 package com.github.seratch.jslack.api.methods;
 
 import com.github.seratch.jslack.common.json.GsonFactory;
+import net.socialhub.http.HttpResponse;
 import net.socialhub.logger.Logger;
-import okhttp3.Response;
 
 public class SlackApiException extends Exception {
 
     private static final Logger log = Logger.getLogger(SlackApiException.class);
-    private final Response response;
+    private final HttpResponse response;
     private final String responseBody;
     private final SlackApiErrorResponse error;
 
-    public SlackApiException(Response response, String responseBody) {
+    public SlackApiException(HttpResponse response, String responseBody) {
         this.response = response;
         this.responseBody = responseBody;
         SlackApiErrorResponse parsedErrorResponse = null;
@@ -26,7 +26,7 @@ public class SlackApiException extends Exception {
         this.error = parsedErrorResponse;
     }
 
-    public Response getResponse() {
+    public HttpResponse getResponse() {
         return this.response;
     }
 

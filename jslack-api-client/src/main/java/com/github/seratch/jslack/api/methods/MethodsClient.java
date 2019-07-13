@@ -110,9 +110,7 @@ import com.github.seratch.jslack.api.methods.response.usergroups.users.Usergroup
 import com.github.seratch.jslack.api.methods.response.users.*;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileGetResponse;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileSetResponse;
-import okhttp3.FormBody;
-import okhttp3.MultipartBody;
-import okhttp3.Response;
+import net.socialhub.http.HttpResponse;
 
 import java.io.IOException;
 
@@ -124,19 +122,19 @@ public interface MethodsClient {
 
     void setEndpointUrlPrefix(String endpointUrlPrefix);
 
-    Response runPostForm(
+    HttpResponse runPostForm(
             FormBody.Builder form,
             String endpoint) throws IOException;
 
-    Response runPostFormWithToken(
+    HttpResponse runPostFormWithToken(
             FormBody.Builder form,
             String endpoint,
             String token) throws IOException;
 
-    Response runPostMultipart(
-            MultipartBody.Builder form,
-            String endpoint,
-            String token) throws IOException;
+//    HttpResponse runPostMultipart(
+//            MultipartBody.Builder form,
+//            String endpoint,
+//            String token) throws IOException;
 
     // ------------------------------
     // api

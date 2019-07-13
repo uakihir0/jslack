@@ -1,9 +1,6 @@
 package com.github.seratch.jslack.api.methods.impl;
 
-import com.github.seratch.jslack.api.methods.Methods;
-import com.github.seratch.jslack.api.methods.MethodsClient;
-import com.github.seratch.jslack.api.methods.RequestConfigurator;
-import com.github.seratch.jslack.api.methods.SlackApiException;
+import com.github.seratch.jslack.api.methods.*;
 import com.github.seratch.jslack.api.methods.request.api.ApiTestRequest;
 import com.github.seratch.jslack.api.methods.request.apps.AppsUninstallRequest;
 import com.github.seratch.jslack.api.methods.request.apps.permissions.AppsPermissionsInfoRequest;
@@ -115,15 +112,12 @@ import com.github.seratch.jslack.api.methods.response.users.*;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileGetResponse;
 import com.github.seratch.jslack.api.methods.response.users.profile.UsersProfileSetResponse;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
+import net.socialhub.http.HttpResponse;
 import net.socialhub.logger.Logger;
-import okhttp3.FormBody;
-import okhttp3.MultipartBody;
-import okhttp3.Response;
 
 import java.io.IOException;
 
 import static com.github.seratch.jslack.api.methods.RequestFormBuilder.toForm;
-import static com.github.seratch.jslack.api.methods.RequestFormBuilder.toMultipartBody;
 
 public class MethodsClientImpl implements MethodsClient {
 
@@ -795,11 +789,12 @@ public class MethodsClientImpl implements MethodsClient {
 
     @Override
     public FilesUploadResponse filesUpload(FilesUploadRequest req) throws IOException, SlackApiException {
-        if (req.getFile() != null) {
-            return doPostMultipart(toMultipartBody(req), Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
-        } else {
-            return doPostFormWithToken(toForm(req), Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
-        }
+//        if (req.getFile() != null) {
+//            return doPostMultipart(toMultipartBody(req), Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
+//        } else {
+//            return doPostFormWithToken(toForm(req), Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
+//        }
+        throw new IllegalStateException("Not supported");
     }
 
     @Override
@@ -1539,7 +1534,8 @@ public class MethodsClientImpl implements MethodsClient {
 
     @Override
     public UsersSetPhotoResponse usersSetPhoto(UsersSetPhotoRequest req) throws IOException, SlackApiException {
-        return doPostMultipart(toMultipartBody(req), Methods.USERS_SET_PHOTO, req.getToken(), UsersSetPhotoResponse.class);
+        // return doPostMultipart(toMultipartBody(req), Methods.USERS_SET_PHOTO, req.getToken(), UsersSetPhotoResponse.class);
+        throw new IllegalStateException("Not supported");
     }
 
     @Override
@@ -1581,12 +1577,12 @@ public class MethodsClientImpl implements MethodsClient {
             FormBody.Builder form,
             String endpoint,
             Class<T> clazz) throws IOException, SlackApiException {
-        Response response = runPostForm(form, endpoint);
+        HttpResponse response = runPostForm(form, endpoint);
         return slackHttpClient.parseJsonResponse(response, clazz);
     }
 
     @Override
-    public Response runPostForm(FormBody.Builder form, String endpoint) throws IOException {
+    public HttpResponse runPostForm(FormBody.Builder form, String endpoint) throws IOException {
         return slackHttpClient.postForm(endpointUrlPrefix + endpoint, form.build());
     }
 
@@ -1595,28 +1591,28 @@ public class MethodsClientImpl implements MethodsClient {
             String endpoint,
             String token,
             Class<T> clazz) throws IOException, SlackApiException {
-        Response response = runPostFormWithToken(form, endpoint, token);
+        HttpResponse response = runPostFormWithToken(form, endpoint, token);
         return slackHttpClient.parseJsonResponse(response, clazz);
     }
 
     @Override
-    public Response runPostFormWithToken(FormBody.Builder form, String endpoint, String token) throws IOException {
+    public HttpResponse runPostFormWithToken(FormBody.Builder form, String endpoint, String token) throws IOException {
         return slackHttpClient.postFormWithBearerHeader(endpointUrlPrefix + endpoint, token, form.build());
     }
 
-    public <T> T doPostMultipart(
-            MultipartBody.Builder form,
-            String endpoint,
-            String token,
-            Class<T> clazz) throws IOException, SlackApiException {
-        form.setType(MultipartBody.FORM);
-        Response response = runPostMultipart(form, endpoint, token);
-        return slackHttpClient.parseJsonResponse(response, clazz);
-    }
-
-    @Override
-    public Response runPostMultipart(MultipartBody.Builder form, String endpoint, String token) throws IOException {
-        return slackHttpClient.postMultipart(endpointUrlPrefix + endpoint, token, form.build());
-    }
+//    public <T> T doPostMultipart(
+//            MultipartBody.Builder form,
+//            String endpoint,
+//            String token,
+//            Class<T> clazz) throws IOException, SlackApiException {
+//        form.setType(MultipartBody.FORM);
+//        Response response = runPostMultipart(form, endpoint, token);
+//        return slackHttpClient.parseJsonResponse(response, clazz);
+//    }
+//
+//    @Override
+//    public Response runPostMultipart(MultipartBody.Builder form, String endpoint, String token) throws IOException {
+//        return slackHttpClient.postMultipart(endpointUrlPrefix + endpoint, token, form.build());
+//    }
 
 }

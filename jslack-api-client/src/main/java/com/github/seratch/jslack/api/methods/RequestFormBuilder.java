@@ -57,10 +57,6 @@ import com.github.seratch.jslack.api.methods.request.users.profile.UsersProfileG
 import com.github.seratch.jslack.api.methods.request.users.profile.UsersProfileSetRequest;
 import com.github.seratch.jslack.api.model.ConversationType;
 import com.github.seratch.jslack.common.json.GsonFactory;
-import okhttp3.FormBody;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -631,22 +627,22 @@ public class RequestFormBuilder {
         return form;
     }
 
-    public static MultipartBody.Builder toMultipartBody(FilesUploadRequest req) {
-        MultipartBody.Builder form = new MultipartBody.Builder();
-
-        RequestBody file = RequestBody.create(MultipartBody.FORM, req.getFile());
-        form.addFormDataPart("file", req.getFilename(), file);
-
-        setIfNotNull("filetype", req.getFiletype(), form);
-        setIfNotNull("filename", req.getFilename(), form);
-        setIfNotNull("title", req.getTitle(), form);
-        setIfNotNull("initial_comment", req.getInitialComment(), form);
-        if (req.getChannels() != null) {
-            setIfNotNull("channels", req.getChannels().stream().collect(joining(",")), form);
-        }
-        setIfNotNull("thread_ts", req.getThreadTs(), form);
-        return form;
-    }
+//    public static MultipartBody.Builder toMultipartBody(FilesUploadRequest req) {
+//        MultipartBody.Builder form = new MultipartBody.Builder();
+//
+//        RequestBody file = RequestBody.create(MultipartBody.FORM, req.getFile());
+//        form.addFormDataPart("file", req.getFilename(), file);
+//
+//        setIfNotNull("filetype", req.getFiletype(), form);
+//        setIfNotNull("filename", req.getFilename(), form);
+//        setIfNotNull("title", req.getTitle(), form);
+//        setIfNotNull("initial_comment", req.getInitialComment(), form);
+//        if (req.getChannels() != null) {
+//            setIfNotNull("channels", req.getChannels().stream().collect(joining(",")), form);
+//        }
+//        setIfNotNull("thread_ts", req.getThreadTs(), form);
+//        return form;
+//    }
 
     public static FormBody.Builder toForm(FilesCommentsAddRequest req) {
         FormBody.Builder form = new FormBody.Builder();
@@ -1236,15 +1232,15 @@ public class RequestFormBuilder {
         return form;
     }
 
-    public static MultipartBody.Builder toMultipartBody(UsersSetPhotoRequest req) {
-        MultipartBody.Builder form = new MultipartBody.Builder();
-        RequestBody image = RequestBody.create(MediaType.parse("image/*"), req.getImage());
-        form.addFormDataPart("image", "image", image);
-        setIfNotNull("crop_x", req.getCropX(), form);
-        setIfNotNull("crop_y", req.getCropY(), form);
-        setIfNotNull("crop_w", req.getCropW(), form);
-        return form;
-    }
+//    public static MultipartBody.Builder toMultipartBody(UsersSetPhotoRequest req) {
+//        MultipartBody.Builder form = new MultipartBody.Builder();
+//        RequestBody image = RequestBody.create(MediaType.parse("image/*"), req.getImage());
+//        form.addFormDataPart("image", "image", image);
+//        setIfNotNull("crop_x", req.getCropX(), form);
+//        setIfNotNull("crop_y", req.getCropY(), form);
+//        setIfNotNull("crop_w", req.getCropW(), form);
+//        return form;
+//    }
 
     public static FormBody.Builder toForm(UsersSetPresenceRequest req) {
         FormBody.Builder form = new FormBody.Builder();
@@ -1286,15 +1282,15 @@ public class RequestFormBuilder {
         }
     }
 
-    private static void setIfNotNull(String name, Object value, MultipartBody.Builder form) {
-        if (value != null) {
-            if (value instanceof Boolean) {
-                String numValue = ((Boolean) value) ? "1" : "0";
-                form.addFormDataPart(name, numValue);
-            } else {
-                form.addFormDataPart(name, String.valueOf(value));
-            }
-        }
-    }
+//    private static void setIfNotNull(String name, Object value, MultipartBody.Builder form) {
+//        if (value != null) {
+//            if (value instanceof Boolean) {
+//                String numValue = ((Boolean) value) ? "1" : "0";
+//                form.addFormDataPart(name, numValue);
+//            } else {
+//                form.addFormDataPart(name, String.valueOf(value));
+//            }
+//        }
+//    }
 
 }
