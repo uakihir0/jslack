@@ -1,7 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
-
 /**
  * This Events API-only event is sent via subscription whenever your app is installed by completes migration to Enterprise Grid.
  * <p>
@@ -15,7 +13,6 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/grid_migration_started
  */
-@Data
 public class GridMigrationStartedEvent implements Event {
 
     public static final String TYPE_NAME = "grid_migration_started";
@@ -23,4 +20,51 @@ public class GridMigrationStartedEvent implements Event {
     private final String type = TYPE_NAME;
     private String enterpriseId;
 
+    public GridMigrationStartedEvent() {
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String getEnterpriseId() {
+        return this.enterpriseId;
+    }
+
+    public void setEnterpriseId(String enterpriseId) {
+        this.enterpriseId = enterpriseId;
+    }
+
+    public boolean equals(final Object o) {
+        if (o == this) return true;
+        if (!(o instanceof GridMigrationStartedEvent)) return false;
+        final GridMigrationStartedEvent other = (GridMigrationStartedEvent) o;
+        if (!other.canEqual((Object) this)) return false;
+        final Object this$type = this.getType();
+        final Object other$type = other.getType();
+        if (this$type == null ? other$type != null : !this$type.equals(other$type)) return false;
+        final Object this$enterpriseId = this.getEnterpriseId();
+        final Object other$enterpriseId = other.getEnterpriseId();
+        if (this$enterpriseId == null ? other$enterpriseId != null : !this$enterpriseId.equals(other$enterpriseId))
+            return false;
+        return true;
+    }
+
+    protected boolean canEqual(final Object other) {
+        return other instanceof GridMigrationStartedEvent;
+    }
+
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $type = this.getType();
+        result = result * PRIME + ($type == null ? 43 : $type.hashCode());
+        final Object $enterpriseId = this.getEnterpriseId();
+        result = result * PRIME + ($enterpriseId == null ? 43 : $enterpriseId.hashCode());
+        return result;
+    }
+
+    public String toString() {
+        return "GridMigrationStartedEvent(type=" + this.getType() + ", enterpriseId=" + this.getEnterpriseId() + ")";
+    }
 }

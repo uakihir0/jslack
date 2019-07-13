@@ -1,7 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
-
 /**
  * The member_joined_channel event is sent to all WebSocket connections
  * and event subscriptions when users join public or private channels.
@@ -42,7 +40,6 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/member_joined_channel
  */
-@Data
 public class MemberJoinedChannelEvent implements Event {
 
     public static final String TYPE_NAME = "member_joined_channel";
@@ -54,4 +51,103 @@ public class MemberJoinedChannelEvent implements Event {
     private String team;
     private String inviter;
 
+    public MemberJoinedChannelEvent() {
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getChannelType() {
+        return this.channelType;
+    }
+
+    public String getTeam() {
+        return this.team;
+    }
+
+    public String getInviter() {
+        return this.inviter;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public void setInviter(String inviter) {
+        this.inviter = inviter;
+    }
+
+    public boolean equals(final Object o) {
+        if (o == this) return true;
+        if (!(o instanceof MemberJoinedChannelEvent)) return false;
+        final MemberJoinedChannelEvent other = (MemberJoinedChannelEvent) o;
+        if (!other.canEqual((Object) this)) return false;
+        final Object this$type = this.getType();
+        final Object other$type = other.getType();
+        if (this$type == null ? other$type != null : !this$type.equals(other$type)) return false;
+        final Object this$user = this.getUser();
+        final Object other$user = other.getUser();
+        if (this$user == null ? other$user != null : !this$user.equals(other$user)) return false;
+        final Object this$channel = this.getChannel();
+        final Object other$channel = other.getChannel();
+        if (this$channel == null ? other$channel != null : !this$channel.equals(other$channel)) return false;
+        final Object this$channelType = this.getChannelType();
+        final Object other$channelType = other.getChannelType();
+        if (this$channelType == null ? other$channelType != null : !this$channelType.equals(other$channelType))
+            return false;
+        final Object this$team = this.getTeam();
+        final Object other$team = other.getTeam();
+        if (this$team == null ? other$team != null : !this$team.equals(other$team)) return false;
+        final Object this$inviter = this.getInviter();
+        final Object other$inviter = other.getInviter();
+        if (this$inviter == null ? other$inviter != null : !this$inviter.equals(other$inviter)) return false;
+        return true;
+    }
+
+    protected boolean canEqual(final Object other) {
+        return other instanceof MemberJoinedChannelEvent;
+    }
+
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $type = this.getType();
+        result = result * PRIME + ($type == null ? 43 : $type.hashCode());
+        final Object $user = this.getUser();
+        result = result * PRIME + ($user == null ? 43 : $user.hashCode());
+        final Object $channel = this.getChannel();
+        result = result * PRIME + ($channel == null ? 43 : $channel.hashCode());
+        final Object $channelType = this.getChannelType();
+        result = result * PRIME + ($channelType == null ? 43 : $channelType.hashCode());
+        final Object $team = this.getTeam();
+        result = result * PRIME + ($team == null ? 43 : $team.hashCode());
+        final Object $inviter = this.getInviter();
+        result = result * PRIME + ($inviter == null ? 43 : $inviter.hashCode());
+        return result;
+    }
+
+    public String toString() {
+        return "MemberJoinedChannelEvent(type=" + this.getType() + ", user=" + this.getUser() + ", channel=" + this.getChannel() + ", channelType=" + this.getChannelType() + ", team=" + this.getTeam() + ", inviter=" + this.getInviter() + ")";
+    }
 }

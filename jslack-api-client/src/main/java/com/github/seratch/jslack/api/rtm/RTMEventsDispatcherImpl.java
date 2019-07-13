@@ -2,16 +2,16 @@ package com.github.seratch.jslack.api.rtm;
 
 import com.github.seratch.jslack.api.model.event.Event;
 import com.github.seratch.jslack.common.json.GsonFactory;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-@Slf4j
 public class RTMEventsDispatcherImpl implements RTMEventsDispatcher {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(RTMEventsDispatcherImpl.class);
     private final ConcurrentMap<String, List<RTMEventHandler<?>>> eventTypeAndHandlers = new ConcurrentHashMap<>();
 
     @Override

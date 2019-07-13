@@ -1,13 +1,14 @@
 package com.github.seratch.jslack.common.http.listener;
 
-import lombok.extern.slf4j.Slf4j;
 import okhttp3.Response;
 import okio.Buffer;
+import org.slf4j.Logger;
 
 import java.io.IOException;
 
-@Slf4j
 public class DetailedLoggingListener extends HttpResponseListener {
+
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(DetailedLoggingListener.class);
 
     @Override
     public void accept(State state) {

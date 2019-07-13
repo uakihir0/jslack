@@ -5,7 +5,7 @@ import com.github.seratch.jslack.api.methods.SlackApiException;
 import com.github.seratch.jslack.api.methods.request.rtm.RTMConnectRequest;
 import com.github.seratch.jslack.api.methods.response.rtm.RTMConnectResponse;
 import com.github.seratch.jslack.api.model.User;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 
 import javax.websocket.*;
 import java.io.Closeable;
@@ -21,9 +21,9 @@ import java.util.List;
  * https://api.slack.com/rtm
  */
 @ClientEndpoint
-@Slf4j
 public class RTMClient implements Closeable {
 
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(RTMClient.class);
     /**
      * Slack instance used for building this RTMClient. Used when calling #reconnect()
      */

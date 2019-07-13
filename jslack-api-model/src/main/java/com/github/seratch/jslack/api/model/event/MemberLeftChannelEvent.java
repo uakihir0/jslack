@@ -1,7 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
-
 /**
  * The member_left_channel event is sent to all websocket connections and event subscriptions
  * when users leave public or private channels.
@@ -24,7 +22,6 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/member_left_channel
  */
-@Data
 public class MemberLeftChannelEvent implements Event {
 
     public static final String TYPE_NAME = "member_left_channel";
@@ -35,4 +32,90 @@ public class MemberLeftChannelEvent implements Event {
     private String channelType;
     private String team;
 
+    public MemberLeftChannelEvent() {
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getChannelType() {
+        return this.channelType;
+    }
+
+    public String getTeam() {
+        return this.team;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public boolean equals(final Object o) {
+        if (o == this) return true;
+        if (!(o instanceof MemberLeftChannelEvent)) return false;
+        final MemberLeftChannelEvent other = (MemberLeftChannelEvent) o;
+        if (!other.canEqual((Object) this)) return false;
+        final Object this$type = this.getType();
+        final Object other$type = other.getType();
+        if (this$type == null ? other$type != null : !this$type.equals(other$type)) return false;
+        final Object this$user = this.getUser();
+        final Object other$user = other.getUser();
+        if (this$user == null ? other$user != null : !this$user.equals(other$user)) return false;
+        final Object this$channel = this.getChannel();
+        final Object other$channel = other.getChannel();
+        if (this$channel == null ? other$channel != null : !this$channel.equals(other$channel)) return false;
+        final Object this$channelType = this.getChannelType();
+        final Object other$channelType = other.getChannelType();
+        if (this$channelType == null ? other$channelType != null : !this$channelType.equals(other$channelType))
+            return false;
+        final Object this$team = this.getTeam();
+        final Object other$team = other.getTeam();
+        if (this$team == null ? other$team != null : !this$team.equals(other$team)) return false;
+        return true;
+    }
+
+    protected boolean canEqual(final Object other) {
+        return other instanceof MemberLeftChannelEvent;
+    }
+
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final Object $type = this.getType();
+        result = result * PRIME + ($type == null ? 43 : $type.hashCode());
+        final Object $user = this.getUser();
+        result = result * PRIME + ($user == null ? 43 : $user.hashCode());
+        final Object $channel = this.getChannel();
+        result = result * PRIME + ($channel == null ? 43 : $channel.hashCode());
+        final Object $channelType = this.getChannelType();
+        result = result * PRIME + ($channelType == null ? 43 : $channelType.hashCode());
+        final Object $team = this.getTeam();
+        result = result * PRIME + ($team == null ? 43 : $team.hashCode());
+        return result;
+    }
+
+    public String toString() {
+        return "MemberLeftChannelEvent(type=" + this.getType() + ", user=" + this.getUser() + ", channel=" + this.getChannel() + ", channelType=" + this.getChannelType() + ", team=" + this.getTeam() + ")";
+    }
 }
