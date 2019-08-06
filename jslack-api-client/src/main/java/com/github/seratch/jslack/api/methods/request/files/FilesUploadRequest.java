@@ -3,6 +3,7 @@ package com.github.seratch.jslack.api.methods.request.files;
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 
 public class FilesUploadRequest implements SlackApiRequest {
@@ -16,6 +17,8 @@ public class FilesUploadRequest implements SlackApiRequest {
      * File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`.
      */
     private File file;
+
+    private InputStream filestream;
 
     /**
      * File contents via a POST variable. If omitting this parameter, you must provide a `file`.
@@ -52,9 +55,10 @@ public class FilesUploadRequest implements SlackApiRequest {
      */
     private String threadTs;
 
-    FilesUploadRequest(String token, File file, String content, String filetype, String filename, String title, String initialComment, List<String> channels, String threadTs) {
+    FilesUploadRequest(String token, File file, InputStream filestream, String content, String filetype, String filename, String title, String initialComment, List<String> channels, String threadTs) {
         this.token = token;
         this.file = file;
+        this.filestream = filestream;
         this.content = content;
         this.filetype = filetype;
         this.filename = filename;
@@ -104,6 +108,10 @@ public class FilesUploadRequest implements SlackApiRequest {
         return this.threadTs;
     }
 
+    public InputStream getFilestream() {
+        return filestream;
+    }
+
     public void setToken(String token) {
         this.token = token;
     }
@@ -138,6 +146,10 @@ public class FilesUploadRequest implements SlackApiRequest {
 
     public void setThreadTs(String threadTs) {
         this.threadTs = threadTs;
+    }
+
+    public void setFilestream(InputStream filestream) {
+        this.filestream = filestream;
     }
 
     public boolean equals(final Object o) {
@@ -211,6 +223,7 @@ public class FilesUploadRequest implements SlackApiRequest {
     public static class FilesUploadRequestBuilder {
         private String token;
         private File file;
+        private InputStream filestream;
         private String content;
         private String filetype;
         private String filename;
@@ -229,6 +242,11 @@ public class FilesUploadRequest implements SlackApiRequest {
 
         public FilesUploadRequest.FilesUploadRequestBuilder file(File file) {
             this.file = file;
+            return this;
+        }
+
+        public FilesUploadRequest.FilesUploadRequestBuilder filestream(InputStream filestream) {
+            this.filestream = filestream;
             return this;
         }
 
@@ -268,7 +286,7 @@ public class FilesUploadRequest implements SlackApiRequest {
         }
 
         public FilesUploadRequest build() {
-            return new FilesUploadRequest(token, file, content, filetype, filename, title, initialComment, channels, threadTs);
+            return new FilesUploadRequest(token, file, filestream, content, filetype, filename, title, initialComment, channels, threadTs);
         }
 
         public String toString() {

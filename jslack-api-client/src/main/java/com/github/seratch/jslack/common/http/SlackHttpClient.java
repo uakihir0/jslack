@@ -39,11 +39,15 @@ public class SlackHttpClient {
         this.config = config;
     }
 
-//    public Response postMultipart(String url, String token, MultipartBody multipartBody) throws IOException {
-//        String bearerHeaderValue = "Bearer " + token;
-//        Request request = new Request.Builder().url(url).header("Authorization", bearerHeaderValue).post(multipartBody).build();
-//        return okHttpClient.newCall(request).execute();
-//    }
+    public HttpResponse postMultipart(String url, String token, FormBody multipartBody) throws IOException {
+        try {
+            Map<String, String> header = new HashMap<>();
+            header.put("Authorization", "Bearer " + token);
+            return httpClient.post(url, multipartBody.getParams(), header);
+        } catch (HttpException e) {
+            throw new IOException(e);
+        }
+    }
 
     public HttpResponse postForm(String url, FormBody formBody) throws IOException {
         try {
@@ -52,12 +56,6 @@ public class SlackHttpClient {
             throw new IOException(e);
         }
     }
-
-//    public Response postForm(String url, FormBody formBody) throws IOException {
-//        Request request = new Request.Builder().url(url).post(formBody).build();
-//        return okHttpClient.newCall(request).execute();
-//    }
-
 
     public HttpResponse postFormWithBearerHeader(String url, String token, FormBody formBody) throws IOException {
         try {
@@ -69,21 +67,21 @@ public class SlackHttpClient {
         }
     }
 
-//    public Response postFormWithBearerHeader(String url, String token, FormBody formBody) throws IOException {
-//        String bearerHeaderValue = "Bearer " + token;
-//        Request request = new Request.Builder().url(url).header("Authorization", bearerHeaderValue).post(formBody).build();
-//        return okHttpClient.newCall(request).execute();
-//    }
+    //    public Response postFormWithBearerHeader(String url, String token, FormBody formBody) throws IOException {
+    //        String bearerHeaderValue = "Bearer " + token;
+    //        Request request = new Request.Builder().url(url).header("Authorization", bearerHeaderValue).post(formBody).build();
+    //        return okHttpClient.newCall(request).execute();
+    //    }
 
-//    public Response postJsonPostRequest(String url, Object obj) throws IOException {
-//        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), toJsonString(obj));
-//        Request request = new Request.Builder().url(url).post(body).build();
-//        return okHttpClient.newCall(request).execute();
-//    }
-//
-//    public Response delete(Request.Builder requestBuilder) throws IOException {
-//        return okHttpClient.newCall(requestBuilder.method("DELETE", null).build()).execute();
-//    }
+    //    public Response postJsonPostRequest(String url, Object obj) throws IOException {
+    //        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), toJsonString(obj));
+    //        Request request = new Request.Builder().url(url).post(body).build();
+    //        return okHttpClient.newCall(request).execute();
+    //    }
+    //
+    //    public Response delete(Request.Builder requestBuilder) throws IOException {
+    //        return okHttpClient.newCall(requestBuilder.method("DELETE", null).build()).execute();
+    //    }
 
     private String toJsonString(Object obj) {
         if (obj instanceof String) {
@@ -93,7 +91,6 @@ public class SlackHttpClient {
             return gson.toJson(obj);
         }
     }
-
 
     public void runHttpResponseListeners(HttpResponse response, String body) {
         HttpResponseListener.State state = new HttpResponseListener.State(config, response, body);

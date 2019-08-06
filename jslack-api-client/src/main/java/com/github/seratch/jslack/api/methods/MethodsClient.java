@@ -131,10 +131,10 @@ public interface MethodsClient {
             String endpoint,
             String token) throws IOException;
 
-//    HttpResponse runPostMultipart(
-//            MultipartBody.Builder form,
-//            String endpoint,
-//            String token) throws IOException;
+    HttpResponse runPostMultipart(
+            FormBody.Builder form,
+            String endpoint,
+            String token) throws IOException;
 
     // ------------------------------
     // api
