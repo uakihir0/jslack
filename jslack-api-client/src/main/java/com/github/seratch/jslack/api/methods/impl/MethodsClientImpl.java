@@ -790,7 +790,7 @@ public class MethodsClientImpl implements MethodsClient {
 
     @Override
     public FilesUploadResponse filesUpload(FilesUploadRequest req) throws IOException, SlackApiException {
-        if (req.getFile() != null) {
+        if (req.getFile() != null || req.getFilestream() != null) {
             return doPostMultipart(toMultipartBody(req), Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
         } else {
             return doPostFormWithToken(toForm(req), Methods.FILES_UPLOAD, req.getToken(), FilesUploadResponse.class);
