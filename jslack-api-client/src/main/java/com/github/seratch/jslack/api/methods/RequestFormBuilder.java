@@ -808,6 +808,7 @@ public class RequestFormBuilder {
         FormBody.Builder form = new FormBody.Builder();
         setIfNotNull("cursor", req.getCursor(), form);
         setIfNotNull("limit", req.getLimit(), form);
+        setIfNotNull("get_latest", req.getGetLatest(), form);
         return form;
     }
 
@@ -861,6 +862,9 @@ public class RequestFormBuilder {
 
     public static FormBody.Builder toForm(MpimListRequest req) {
         FormBody.Builder form = new FormBody.Builder();
+        setIfNotNull("cursor", req.getCursor(), form);
+        setIfNotNull("limit", req.getLimit(), form);
+        setIfNotNull("get_latest", req.getGetLatest(), form);
         return form;
     }
 

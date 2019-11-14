@@ -22,10 +22,13 @@ public class ImListRequest implements SlackApiRequest {
      */
     private Integer limit;
 
-    ImListRequest(String token, String cursor, Integer limit) {
+    private Boolean getLatest;
+
+    ImListRequest(String token, String cursor, Integer limit, Boolean getLatest) {
         this.token = token;
         this.cursor = cursor;
         this.limit = limit;
+        this.getLatest = getLatest;
     }
 
     public static ImListRequestBuilder builder() {
@@ -54,6 +57,14 @@ public class ImListRequest implements SlackApiRequest {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public Boolean getGetLatest() {
+        return getLatest;
+    }
+
+    public void setGetLatest(Boolean getLatest) {
+        this.getLatest = getLatest;
     }
 
     public boolean equals(final Object o) {
@@ -93,10 +104,12 @@ public class ImListRequest implements SlackApiRequest {
         return "ImListRequest(token=" + this.getToken() + ", cursor=" + this.getCursor() + ", limit=" + this.getLimit() + ")";
     }
 
+
     public static class ImListRequestBuilder {
         private String token;
         private String cursor;
         private Integer limit;
+        private Boolean getLatest;
 
         ImListRequestBuilder() {
         }
@@ -116,8 +129,13 @@ public class ImListRequest implements SlackApiRequest {
             return this;
         }
 
+        public ImListRequest.ImListRequestBuilder setGetLatest(Boolean getLatest) {
+            this.getLatest = getLatest;
+            return this;
+        }
+
         public ImListRequest build() {
-            return new ImListRequest(token, cursor, limit);
+            return new ImListRequest(token, cursor, limit, getLatest);
         }
 
         public String toString() {

@@ -9,8 +9,26 @@ public class MpimListRequest implements SlackApiRequest {
      */
     private String token;
 
-    MpimListRequest(String token) {
+    /**
+     * Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute
+     * returned by a previous request's `response_metadata`.
+     * Default value fetches the first \"page\" of the collection. See [pagination](/docs/pagination) for more detail.
+     */
+    private String cursor;
+
+    /**
+     * The maximum number of items to return.
+     * Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached.
+     */
+    private Integer limit;
+
+    private Boolean getLatest;
+
+    MpimListRequest(String token, String cursor, Integer limit, Boolean getLatest) {
         this.token = token;
+        this.cursor = cursor;
+        this.limit = limit;
+        this.getLatest = getLatest;
     }
 
     public static MpimListRequestBuilder builder() {
@@ -23,6 +41,30 @@ public class MpimListRequest implements SlackApiRequest {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getCursor() {
+        return cursor;
+    }
+
+    public void setCursor(String cursor) {
+        this.cursor = cursor;
+    }
+
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public Boolean getGetLatest() {
+        return getLatest;
+    }
+
+    public void setGetLatest(Boolean getLatest) {
+        this.getLatest = getLatest;
     }
 
     public boolean equals(final Object o) {
@@ -54,6 +96,9 @@ public class MpimListRequest implements SlackApiRequest {
 
     public static class MpimListRequestBuilder {
         private String token;
+        private String cursor;
+        private Integer limit;
+        private Boolean getLatest;
 
         MpimListRequestBuilder() {
         }
@@ -63,8 +108,23 @@ public class MpimListRequest implements SlackApiRequest {
             return this;
         }
 
+        public MpimListRequest.MpimListRequestBuilder cursor(String cursor) {
+            this.cursor = cursor;
+            return this;
+        }
+
+        public MpimListRequest.MpimListRequestBuilder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        public MpimListRequest.MpimListRequestBuilder setGetLatest(Boolean getLatest) {
+            this.getLatest = getLatest;
+            return this;
+        }
+
         public MpimListRequest build() {
-            return new MpimListRequest(token);
+            return new MpimListRequest(token, cursor, limit, getLatest);
         }
 
         public String toString() {
