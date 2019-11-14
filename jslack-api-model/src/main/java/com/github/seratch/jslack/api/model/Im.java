@@ -17,6 +17,7 @@ public class Im {
     @SerializedName("is_user_deleted")
     private boolean user_deleted;
     private Double priority;
+    private String latest;
 
     public Im() {
     }
@@ -75,6 +76,14 @@ public class Im {
 
     public void setPriority(Double priority) {
         this.priority = priority;
+    }
+
+    public String getLatest() {
+        return latest;
+    }
+
+    public void setLatest(String latest) {
+        this.latest = latest;
     }
 
     public boolean equals(final Object o) {
