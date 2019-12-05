@@ -13,8 +13,6 @@ import com.github.seratch.jslack.api.methods.response.rtm.RTMStartResponse;
 import com.github.seratch.jslack.api.methods.response.users.UsersInfoResponse;
 import com.github.seratch.jslack.api.model.User;
 import com.github.seratch.jslack.api.rtm.RTMClient;
-import com.github.seratch.jslack.api.scim.SCIMClient;
-import com.github.seratch.jslack.api.scim.impl.SCIMClientImpl;
 import com.github.seratch.jslack.api.status.v1.LegacyStatusClient;
 import com.github.seratch.jslack.api.status.v1.impl.LegacyStatusClientImpl;
 import com.github.seratch.jslack.api.status.v2.StatusClient;
@@ -215,19 +213,6 @@ public class Slack {
     public StatusClient status() {
         StatusClientImpl client = new StatusClientImpl(httpClient);
         client.setEndpointUrlPrefix(config.getStatusEndpointUrlPrefix());
-        return client;
-    }
-
-    /**
-     * Creates a SCIM API client.
-     */
-    public SCIMClient scim() {
-        return scim(null);
-    }
-
-    public SCIMClient scim(String token) {
-        SCIMClientImpl client = new SCIMClientImpl(httpClient, token);
-        client.setEndpointUrlPrefix(config.getScimEndpointUrlPrefix());
         return client;
     }
 

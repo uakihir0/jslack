@@ -2,7 +2,6 @@ package com.github.seratch.jslack;
 
 import com.github.seratch.jslack.api.audit.AuditClient;
 import com.github.seratch.jslack.api.methods.MethodsClient;
-import com.github.seratch.jslack.api.scim.SCIMClient;
 import com.github.seratch.jslack.api.status.v1.LegacyStatusClient;
 import com.github.seratch.jslack.api.status.v2.StatusClient;
 import com.github.seratch.jslack.common.http.listener.DetailedLoggingListener;
@@ -51,12 +50,7 @@ public class SlackConfig {
         public void setMethodsEndpointUrlPrefix(String methodsEndpointUrlPrefix) {
             throwException();
         }
-
-        @Override
-        public void setScimEndpointUrlPrefix(String scimEndpointUrlPrefix) {
-            throwException();
-        }
-
+     
         @Override
         public void setStatusEndpointUrlPrefix(String statusEndpointUrlPrefix) {
             throwException();
@@ -90,8 +84,6 @@ public class SlackConfig {
     private String auditEndpointUrlPrefix = AuditClient.ENDPOINT_URL_PREFIX;
 
     private String methodsEndpointUrlPrefix = MethodsClient.ENDPOINT_URL_PREFIX;
-
-    private String scimEndpointUrlPrefix = SCIMClient.ENDPOINT_URL_PREFIX;
 
     private String statusEndpointUrlPrefix = StatusClient.ENDPOINT_URL_PREFIX;
 
