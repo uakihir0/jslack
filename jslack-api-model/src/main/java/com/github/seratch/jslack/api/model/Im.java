@@ -21,4 +21,5 @@ public class Im {
     @SerializedName("is_archived")
     private boolean archived;
     private Double priority;
+    private String latest;
 }

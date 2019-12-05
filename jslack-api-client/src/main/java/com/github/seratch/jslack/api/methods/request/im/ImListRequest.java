@@ -26,4 +26,5 @@ public class ImListRequest implements SlackApiRequest {
      */
     private Integer limit;
 
+    private Boolean getLatest;
 }
