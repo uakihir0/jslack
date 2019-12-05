@@ -4,21 +4,21 @@ import com.github.seratch.jslack.SlackConfig;
 import com.github.seratch.jslack.common.json.GsonFactory;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import okhttp3.Response;
+import net.socialhub.http.HttpResponse;
 
 @Data
 @Slf4j
 public class SlackApiException extends Exception {
 
-    private final Response response;
+    private final HttpResponse response;
     private final String responseBody;
     private final SlackApiErrorResponse error;
 
-    public SlackApiException(Response response, String responseBody) {
+    public SlackApiException(HttpResponse response, String responseBody) {
         this(SlackConfig.DEFAULT, response, responseBody);
     }
 
-    public SlackApiException(SlackConfig config, Response response, String responseBody) {
+    public SlackApiException(SlackConfig config, HttpResponse response, String responseBody) {
         this.response = response;
         this.responseBody = responseBody;
         SlackApiErrorResponse parsedErrorResponse = null;

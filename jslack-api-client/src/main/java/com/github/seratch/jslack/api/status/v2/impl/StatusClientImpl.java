@@ -7,7 +7,6 @@ import com.github.seratch.jslack.api.status.v2.model.SlackIssue;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
 import com.github.seratch.jslack.common.json.GsonFactory;
 import com.google.gson.reflect.TypeToken;
-import okhttp3.Response;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -35,28 +34,30 @@ public class StatusClientImpl implements StatusClient {
 
     @Override
     public CurrentStatus current() throws IOException, StatusApiException {
-        Response response = slackHttpClient.get(endpointUrlPrefix + "current", null, null);
-        String body = response.body().string();
-        slackHttpClient.runHttpResponseListeners(response, body);
-        if (response.isSuccessful()) {
-            return GsonFactory.createSnakeCase(slackHttpClient.getConfig()).fromJson(body, CurrentStatus.class);
-        } else {
-            throw new StatusApiException(response, body);
-        }
+//        Response response = slackHttpClient.get(endpointUrlPrefix + "current", null, null);
+//        String body = response.body().string();
+//        slackHttpClient.runHttpResponseListeners(response, body);
+//        if (response.isSuccessful()) {
+//            return GsonFactory.createSnakeCase(slackHttpClient.getConfig()).fromJson(body, CurrentStatus.class);
+//        } else {
+//            throw new StatusApiException(response, body);
+//        }
+        throw new IllegalStateException("Not supported.");
     }
 
     @Override
     public List<SlackIssue> history() throws IOException, StatusApiException {
-        Response response = slackHttpClient.get(endpointUrlPrefix + "history", null, null);
-        Type listType = new TypeToken<ArrayList<SlackIssue>>() {
-        }.getType();
-        String body = response.body().string();
-        slackHttpClient.runHttpResponseListeners(response, body);
-        if (response.isSuccessful()) {
-            return GsonFactory.createSnakeCase(slackHttpClient.getConfig()).fromJson(body, listType);
-        } else {
-            throw new StatusApiException(response, body);
-        }
+//        Response response = slackHttpClient.get(endpointUrlPrefix + "history", null, null);
+//        Type listType = new TypeToken<ArrayList<SlackIssue>>() {
+//        }.getType();
+//        String body = response.body().string();
+//        slackHttpClient.runHttpResponseListeners(response, body);
+//        if (response.isSuccessful()) {
+//            return GsonFactory.createSnakeCase(slackHttpClient.getConfig()).fromJson(body, listType);
+//        } else {
+//            throw new StatusApiException(response, body);
+//        }
+        throw new IllegalStateException("Not supported.");
     }
 
 }

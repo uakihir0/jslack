@@ -12,7 +12,7 @@ import com.github.seratch.jslack.api.audit.response.LogsResponse;
 import com.github.seratch.jslack.api.audit.response.SchemasResponse;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
 import com.github.seratch.jslack.common.json.GsonFactory;
-import okhttp3.Response;
+import net.socialhub.http.HttpResponse;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -112,18 +112,19 @@ public class AuditClientImpl implements AuditClient {
     }
 
     private <T> T doGet(String url, Map<String, String> query, String token, Class<T> clazz) throws IOException, AuditApiException {
-        Response response = slackHttpClient.get(url, query, token);
-        return parseJsonResponseAndRunListeners(response, clazz);
+//        Response response = slackHttpClient.get(url, query, token);
+//        return parseJsonResponseAndRunListeners(response, clazz);
+        throw new IllegalStateException("Not supported.");
     }
 
-    private <T> T parseJsonResponseAndRunListeners(Response response, Class<T> clazz) throws IOException, AuditApiException {
-        String body = response.body().string();
-        slackHttpClient.runHttpResponseListeners(response, body);
-        if (response.isSuccessful()) {
-            return GsonFactory.createSnakeCase(slackHttpClient.getConfig()).fromJson(body, clazz);
-        } else {
-            throw new AuditApiException(slackHttpClient.getConfig(), response, body);
-        }
+    private <T> T parseJsonResponseAndRunListeners(HttpResponse response, Class<T> clazz) throws IOException, AuditApiException {
+//        String body = response.body().string();
+//        slackHttpClient.runHttpResponseListeners(response, body);
+//        if (response.isSuccessful()) {
+//            return GsonFactory.createSnakeCase(slackHttpClient.getConfig()).fromJson(body, clazz);
+//        } else {
+//            throw new AuditApiException(slackHttpClient.getConfig(), response, body);
+//        }
+        throw new IllegalStateException("Not supported.");
     }
-
 }

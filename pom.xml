@@ -47,6 +47,13 @@
         <url>git@github.com:seratch/jslack.git</url>
     </scm>
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
     <developers>
         <developer>
             <id>seratch</id>

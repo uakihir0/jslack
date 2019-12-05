@@ -4,21 +4,21 @@ import com.github.seratch.jslack.SlackConfig;
 import com.github.seratch.jslack.common.json.GsonFactory;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import okhttp3.Response;
+import net.socialhub.http.HttpResponse;
 
 @Data
 @Slf4j
 public class AuditApiException extends Exception {
 
-    private final Response response;
+    private final HttpResponse response;
     private final String responseBody;
     private final AuditApiErrorResponse error;
 
-    public AuditApiException(Response response, String responseBody) {
+    public AuditApiException(HttpResponse response, String responseBody) {
         this(SlackConfig.DEFAULT, response, responseBody);
     }
 
-    public AuditApiException(SlackConfig config, Response response, String responseBody) {
+    public AuditApiException(SlackConfig config, HttpResponse response, String responseBody) {
         this.response = response;
         this.responseBody = responseBody;
         AuditApiErrorResponse parsedErrorResponse = null;

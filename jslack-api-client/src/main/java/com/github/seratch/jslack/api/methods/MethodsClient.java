@@ -135,9 +135,7 @@ import com.github.seratch.jslack.api.methods.response.views.ViewsOpenResponse;
 import com.github.seratch.jslack.api.methods.response.views.ViewsPublishResponse;
 import com.github.seratch.jslack.api.methods.response.views.ViewsPushResponse;
 import com.github.seratch.jslack.api.methods.response.views.ViewsUpdateResponse;
-import okhttp3.FormBody;
-import okhttp3.MultipartBody;
-import okhttp3.Response;
+import net.socialhub.http.HttpResponse;
 
 import java.io.IOException;
 
@@ -157,17 +155,17 @@ public interface MethodsClient {
     //  OkHttp layer methods
     // ----------------------------------------------
 
-    Response runPostForm(
+    HttpResponse runPostForm(
             FormBody.Builder form,
             String endpoint) throws IOException;
 
-    Response runPostFormWithToken(
+    HttpResponse runPostFormWithToken(
             FormBody.Builder form,
             String endpoint,
             String token) throws IOException;
 
-    Response runPostMultipart(
-            MultipartBody.Builder form,
+    HttpResponse runPostMultipart(
+            FormBody.Builder form,
             String endpoint,
             String token) throws IOException;
 
@@ -193,7 +191,7 @@ public interface MethodsClient {
             Class<T> clazz) throws IOException, SlackApiException;
 
     <T> T postMultipartAndParseResponse(
-            RequestConfigurator<MultipartBody.Builder> form,
+            RequestConfigurator<FormBody.Builder> form,
             String endpoint,
             String token,
             Class<T> clazz) throws IOException, SlackApiException;

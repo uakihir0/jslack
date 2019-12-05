@@ -23,7 +23,6 @@ import com.github.seratch.jslack.common.http.SlackHttpClient;
 import com.github.seratch.jslack.shortcut.Shortcut;
 import com.github.seratch.jslack.shortcut.impl.ShortcutImpl;
 import com.github.seratch.jslack.shortcut.model.ApiToken;
-import okhttp3.Response;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -74,32 +73,34 @@ public class Slack {
      * Send a data to Incoming Webhook endpoint.
      */
     public WebhookResponse send(String url, Payload payload) throws IOException {
-        SlackHttpClient httpClient = getHttpClient();
-        Response httpResponse = httpClient.postJsonBody(url, payload);
-        String body = httpResponse.body().string();
-        httpClient.runHttpResponseListeners(httpResponse, body);
-
-        return WebhookResponse.builder()
-                .code(httpResponse.code())
-                .message(httpResponse.message())
-                .body(body)
-                .build();
+//        SlackHttpClient httpClient = getHttpClient();
+//        HttpResponse httpResponse = httpClient.postJsonBody(url, payload);
+//        String body = httpResponse.body().string();
+//        httpClient.runHttpResponseListeners(httpResponse, body);
+//
+//        return WebhookResponse.builder()
+//                .code(httpResponse.code())
+//                .message(httpResponse.message())
+//                .body(body)
+//                .build();
+        throw new IllegalStateException("Not supported.");
     }
 
     /**
      * Send a raw JSON body to Incoming Webhook endpoint.
      */
     public WebhookResponse send(String url, String payload) throws IOException {
-        SlackHttpClient httpClient = getHttpClient();
-        Response httpResponse = httpClient.postJsonBody(url, payload);
-        String body = httpResponse.body().string();
-        httpClient.runHttpResponseListeners(httpResponse, body);
-
-        return WebhookResponse.builder()
-                .code(httpResponse.code())
-                .message(httpResponse.message())
-                .body(body)
-                .build();
+//        SlackHttpClient httpClient = getHttpClient();
+//        HttpResponse httpResponse = httpClient.postJsonBody(url, payload);
+//        String body = httpResponse.body().string();
+//        httpClient.runHttpResponseListeners(httpResponse, body);
+//
+//        return WebhookResponse.builder()
+//                .code(httpResponse.code())
+//                .message(httpResponse.message())
+//                .body(body)
+//                .build();
+        throw new IllegalStateException("Not supported.");
     }
 
     /**
@@ -147,7 +148,7 @@ public class Slack {
         } catch (SlackApiException e) {
             throw new IllegalStateException(
                     "Failed to connect to the RTM API endpoint. (" +
-                            "status: " + e.getResponse().code() + ", " +
+                            "status: " + e.getResponse().getStatusCode() + ", " +
                             "error: " + e.getError().getError() +
                             ")", e);
         } catch (URISyntaxException e) {
@@ -192,7 +193,7 @@ public class Slack {
         } catch (SlackApiException e) {
             throw new IllegalStateException(
                     "Failed to connect to the RTM API endpoint. (" +
-                            "status: " + e.getResponse().code() + ", " +
+                            "status: " + e.getResponse().getStatusCode() + ", " +
                             "error: " + e.getError().getError() +
                             ")", e);
         } catch (URISyntaxException e) {

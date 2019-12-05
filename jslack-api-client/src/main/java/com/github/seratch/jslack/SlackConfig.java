@@ -50,7 +50,7 @@ public class SlackConfig {
         public void setMethodsEndpointUrlPrefix(String methodsEndpointUrlPrefix) {
             throwException();
         }
-     
+
         @Override
         public void setStatusEndpointUrlPrefix(String statusEndpointUrlPrefix) {
             throwException();

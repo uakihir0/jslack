@@ -22,9 +22,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>${okhttp.version}</version>
+            <groupId>com.github.uakihir0</groupId>
+            <artifactId>JHttpClient</artifactId>
+            <version>1.1.5</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -48,25 +48,6 @@
             <artifactId>tyrus-standalone-client</artifactId>
             <version>1.15</version>
             <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-servlet</artifactId>
-            <version>${jetty.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-server</artifactId>
-            <version>${jetty.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-webapp</artifactId>
-            <version>${jetty.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

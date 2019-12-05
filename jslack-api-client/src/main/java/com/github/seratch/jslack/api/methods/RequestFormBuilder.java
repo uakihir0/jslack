@@ -70,10 +70,6 @@ import com.github.seratch.jslack.api.methods.response.admin.invite_requests.Admi
 import com.github.seratch.jslack.api.model.ConversationType;
 import com.github.seratch.jslack.common.json.GsonFactory;
 import lombok.extern.slf4j.Slf4j;
-import okhttp3.FormBody;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -852,21 +848,20 @@ public class RequestFormBuilder {
         return form;
     }
 
-    public static MultipartBody.Builder toMultipartBody(FilesUploadRequest req) {
-        MultipartBody.Builder form = new MultipartBody.Builder();
+    public static FormBody.Builder toMultipartBody(FilesUploadRequest req) {
+        FormBody.Builder form = new FormBody.Builder();
 
-        if (req.getFileData() != null) {
-            RequestBody file = RequestBody.create(MultipartBody.FORM, req.getFileData());
-            form.addFormDataPart("file", req.getFilename(), file);
-        } else if (req.getFile() != null) {
-            RequestBody file = RequestBody.create(MultipartBody.FORM, req.getFile());
-            form.addFormDataPart("file", req.getFilename(), file);
+        if (req.getFile() != null) {
+            form.addFile("file", req.getFile());
         }
-
+        if (req.getFilestream() != null) {
+            form.addFile("file", req.getFilestream(), req.getFilename());
+        }
         setIfNotNull("filetype", req.getFiletype(), form);
         setIfNotNull("filename", req.getFilename(), form);
         setIfNotNull("title", req.getTitle(), form);
         setIfNotNull("initial_comment", req.getInitialComment(), form);
+
         if (req.getChannels() != null) {
             setIfNotNull("channels", req.getChannels().stream().collect(joining(",")), form);
         }
@@ -896,22 +891,22 @@ public class RequestFormBuilder {
         return form;
     }
 
-    public static MultipartBody.Builder toMultipartBody(FilesRemoteAddRequest req) {
-        MultipartBody.Builder form = new MultipartBody.Builder();
-        setIfNotNull("external_id", req.getExternalId(), form);
-        setIfNotNull("external_url", req.getExternalUrl(), form);
-        setIfNotNull("title", req.getTitle(), form);
-        setIfNotNull("filetype", req.getFiletype(), form);
-        if (req.getIndexableFileContents() != null) {
-            RequestBody indexableFileContents = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getIndexableFileContents());
-            form.addFormDataPart("indexable_file_contents", req.getTitle(), indexableFileContents);
-        }
-        if (req.getPreviewImage() != null) {
-            RequestBody previewImage = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getPreviewImage());
-            form.addFormDataPart("preview_image", req.getTitle(), previewImage);
-        }
-        return form;
-    }
+//    public static MultipartBody.Builder toMultipartBody(FilesRemoteAddRequest req) {
+//        MultipartBody.Builder form = new MultipartBody.Builder();
+//        setIfNotNull("external_id", req.getExternalId(), form);
+//        setIfNotNull("external_url", req.getExternalUrl(), form);
+//        setIfNotNull("title", req.getTitle(), form);
+//        setIfNotNull("filetype", req.getFiletype(), form);
+//        if (req.getIndexableFileContents() != null) {
+//            RequestBody indexableFileContents = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getIndexableFileContents());
+//            form.addFormDataPart("indexable_file_contents", req.getTitle(), indexableFileContents);
+//        }
+//        if (req.getPreviewImage() != null) {
+//            RequestBody previewImage = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getPreviewImage());
+//            form.addFormDataPart("preview_image", req.getTitle(), previewImage);
+//        }
+//        return form;
+//    }
 
     public static FormBody.Builder toForm(FilesRemoteInfoRequest req) {
         FormBody.Builder form = new FormBody.Builder();
@@ -949,22 +944,22 @@ public class RequestFormBuilder {
         return form;
     }
 
-    public static MultipartBody.Builder toMultipartBody(FilesRemoteUpdateRequest req) {
-        MultipartBody.Builder form = new MultipartBody.Builder();
-        setIfNotNull("external_id", req.getExternalId(), form);
-        setIfNotNull("external_url", req.getExternalUrl(), form);
-        setIfNotNull("title", req.getTitle(), form);
-        setIfNotNull("filetype", req.getFiletype(), form);
-        if (req.getIndexableFileContents() != null) {
-            RequestBody indexableFileContents = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getIndexableFileContents());
-            form.addFormDataPart("indexable_file_contents", null, indexableFileContents);
-        }
-        if (req.getPreviewImage() != null) {
-            RequestBody previewImage = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getPreviewImage());
-            form.addFormDataPart("preview_image", null, previewImage);
-        }
-        return form;
-    }
+//    public static MultipartBody.Builder toMultipartBody(FilesRemoteUpdateRequest req) {
+//        MultipartBody.Builder form = new MultipartBody.Builder();
+//        setIfNotNull("external_id", req.getExternalId(), form);
+//        setIfNotNull("external_url", req.getExternalUrl(), form);
+//        setIfNotNull("title", req.getTitle(), form);
+//        setIfNotNull("filetype", req.getFiletype(), form);
+//        if (req.getIndexableFileContents() != null) {
+//            RequestBody indexableFileContents = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getIndexableFileContents());
+//            form.addFormDataPart("indexable_file_contents", null, indexableFileContents);
+//        }
+//        if (req.getPreviewImage() != null) {
+//            RequestBody previewImage = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getPreviewImage());
+//            form.addFormDataPart("preview_image", null, previewImage);
+//        }
+//        return form;
+//    }
 
     public static FormBody.Builder toForm(GroupsArchiveRequest req) {
         FormBody.Builder form = new FormBody.Builder();
@@ -1536,20 +1531,20 @@ public class RequestFormBuilder {
         return form;
     }
 
-    public static MultipartBody.Builder toMultipartBody(UsersSetPhotoRequest req) {
-        MultipartBody.Builder form = new MultipartBody.Builder();
-        if (req.getImageData() != null) {
-            RequestBody image = RequestBody.create(MediaType.parse("imageData/*"), req.getImageData());
-            form.addFormDataPart("image", "image", image);
-        } else if (req.getImage() != null) {
-            RequestBody image = RequestBody.create(MediaType.parse("imageData/*"), req.getImage());
-            form.addFormDataPart("image", "image", image);
-        }
-        setIfNotNull("crop_x", req.getCropX(), form);
-        setIfNotNull("crop_y", req.getCropY(), form);
-        setIfNotNull("crop_w", req.getCropW(), form);
-        return form;
-    }
+//    public static MultipartBody.Builder toMultipartBody(UsersSetPhotoRequest req) {
+//        MultipartBody.Builder form = new MultipartBody.Builder();
+//        if (req.getImageData() != null) {
+//            RequestBody image = RequestBody.create(MediaType.parse("imageData/*"), req.getImageData());
+//            form.addFormDataPart("image", "image", image);
+//        } else if (req.getImage() != null) {
+//            RequestBody image = RequestBody.create(MediaType.parse("imageData/*"), req.getImage());
+//            form.addFormDataPart("image", "image", image);
+//        }
+//        setIfNotNull("crop_x", req.getCropX(), form);
+//        setIfNotNull("crop_y", req.getCropY(), form);
+//        setIfNotNull("crop_w", req.getCropW(), form);
+//        return form;
+//    }
 
     public static FormBody.Builder toForm(UsersSetPresenceRequest req) {
         FormBody.Builder form = new FormBody.Builder();
@@ -1638,15 +1633,15 @@ public class RequestFormBuilder {
         }
     }
 
-    private static void setIfNotNull(String name, Object value, MultipartBody.Builder form) {
-        if (value != null) {
-            if (value instanceof Boolean) {
-                String numValue = ((Boolean) value) ? "1" : "0";
-                form.addFormDataPart(name, numValue);
-            } else {
-                form.addFormDataPart(name, String.valueOf(value));
-            }
-        }
-    }
+//    private static void setIfNotNull(String name, Object value, MultipartBody.Builder form) {
+//        if (value != null) {
+//            if (value instanceof Boolean) {
+//                String numValue = ((Boolean) value) ? "1" : "0";
+//                form.addFormDataPart(name, numValue);
+//            } else {
+//                form.addFormDataPart(name, String.valueOf(value));
+//            }
+//        }
+//    }
 
 }
