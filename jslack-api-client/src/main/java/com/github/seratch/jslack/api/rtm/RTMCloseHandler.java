@@ -1,10 +1,8 @@
 package com.github.seratch.jslack.api.rtm;
 
-import javax.websocket.CloseReason;
-
-@FunctionalInterface
+// @FunctionalInterface
 public interface RTMCloseHandler {
 
-    void handle(CloseReason reason);
+//    void handle(CloseReason reason);
 
 }

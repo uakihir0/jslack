@@ -7,7 +7,6 @@ import com.github.seratch.jslack.api.methods.response.rtm.RTMConnectResponse;
 import com.github.seratch.jslack.api.model.User;
 import net.socialhub.logger.Logger;
 
-import javax.websocket.*;
 import java.io.Closeable;
 import java.io.IOException;
 import java.net.URI;
@@ -20,7 +19,6 @@ import java.util.List;
  * <p>
  * https://api.slack.com/rtm
  */
-@ClientEndpoint
 public class RTMClient implements Closeable {
 
     private static final Logger log = Logger.getLogger(RTMClient.class);
@@ -48,7 +46,7 @@ public class RTMClient implements Closeable {
     /**
      * Current WebSocket session. This field is null when disconnected.
      */
-    private Session currentSession;
+    //private Session currentSession;
 
     // NOTE: Needless to say, manipulating these List objects is not thread-safe
     private final List<RTMMessageHandler> messageHandlers = new ArrayList<>();
@@ -77,10 +75,12 @@ public class RTMClient implements Closeable {
      * If you'd like to reconnect to the endpoint with this instance, call #reconnect() instead.
      * Calling this method won't work as you expect.
      */
-    public void connect() throws IOException, DeploymentException {
-        WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-        container.connectToServer(this, wssUri);
-        log.debug("client connected to the server: " + wssUri);
+    public void connect() throws IOException {
+        //, DeploymentException {
+        throw new IllegalStateException("unsupported.");
+//        WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+//        container.connectToServer(this, wssUri);
+//        log.debug("client connected to the server: " + wssUri);
     }
 
     /**
@@ -89,14 +89,15 @@ public class RTMClient implements Closeable {
      * You need to call #reconnect() or instantiate a new RTMClient instead.
      */
     public void disconnect() throws IOException {
-        if (currentSession != null && currentSession.isOpen()) {
-            synchronized (currentSession) {
-                this.currentSession.close(new CloseReason(
-                        CloseReason.CloseCodes.NORMAL_CLOSURE,
-                        RTMClient.class.getCanonicalName() + " did it"
-                ));
-            }
-        }
+        throw new IllegalStateException("unsupported.");
+//        if (currentSession != null && currentSession.isOpen()) {
+//            synchronized (currentSession) {
+//                this.currentSession.close(new CloseReason(
+//                        CloseReason.CloseCodes.NORMAL_CLOSURE,
+//                        RTMClient.class.getCanonicalName() + " did it"
+//                ));
+//            }
+//        }
     }
 
     /**
@@ -104,7 +105,9 @@ public class RTMClient implements Closeable {
      * This method calls rtm.connect API. Please be aware of the rate limit.
      * https://api.slack.com/docs/rate-limits#rtm
      */
-    public void reconnect() throws IOException, SlackApiException, URISyntaxException, DeploymentException {
+    public void reconnect() throws IOException, SlackApiException, URISyntaxException {
+        // ,DeploymentException {
+        
         // Call rtm.connect again to refresh wss URL
         RTMConnectResponse response = slack.methods().rtmConnect(RTMConnectRequest.builder().token(botApiToken).build());
         if (response.isOk()) {
@@ -122,38 +125,38 @@ public class RTMClient implements Closeable {
         disconnect();
     }
 
-    @OnOpen
-    public void onOpen(Session session) {
-        updateSession(session);
-        log.debug("session opened: " + session.getId());
-    }
-
-    @OnClose
-    public void onClose(Session session, CloseReason reason) {
-        updateSession(session);
-        log.debug("session closed: " + session.getId() + ", reason: " + reason.getReasonPhrase());
-
-        for (RTMCloseHandler closeHandler : closeHandlers) {
-            closeHandler.handle(reason);
-        }
-    }
-
-    @OnError
-    public void onError(Session session, Throwable reason) {
-        log.error("session error occurred, exception is below", reason);
-
-        for (RTMErrorHandler errorHandler : errorHandlers) {
-            errorHandler.handle(reason);
-        }
-    }
-
-    @OnMessage
-    public void onMessage(String message) {
-        log.debug("message: " + message);
-        for (RTMMessageHandler messageHandler : messageHandlers) {
-            messageHandler.handle(message);
-        }
-    }
+//    @OnOpen
+//    public void onOpen(Session session) {
+//        updateSession(session);
+//        log.debug("session opened: " + session.getId());
+//    }
+//
+//    @OnClose
+//    public void onClose(Session session, CloseReason reason) {
+//        updateSession(session);
+//        log.debug("session closed: " + session.getId() + ", reason: " + reason.getReasonPhrase());
+//
+//        for (RTMCloseHandler closeHandler : closeHandlers) {
+//            closeHandler.handle(reason);
+//        }
+//    }
+//
+//    @OnError
+//    public void onError(Session session, Throwable reason) {
+//        log.error("session error occurred, exception is below", reason);
+//
+//        for (RTMErrorHandler errorHandler : errorHandlers) {
+//            errorHandler.handle(reason);
+//        }
+//    }
+//
+//    @OnMessage
+//    public void onMessage(String message) {
+//        log.debug("message: " + message);
+//        for (RTMMessageHandler messageHandler : messageHandlers) {
+//            messageHandler.handle(message);
+//        }
+//    }
 
     public void addMessageHandler(RTMMessageHandler messageHandler) {
         messageHandlers.add(messageHandler);
@@ -180,7 +183,7 @@ public class RTMClient implements Closeable {
     }
 
     public void sendMessage(String message) {
-        this.currentSession.getAsyncRemote().sendText(message);
+        //this.currentSession.getAsyncRemote().sendText(message);
     }
 
     public URI getWssUri() {
@@ -196,13 +199,13 @@ public class RTMClient implements Closeable {
      *
      * @param newSession new session
      */
-    private void updateSession(Session newSession) {
-        if (this.currentSession == null) {
-            this.currentSession = newSession;
-        } else {
-            synchronized (this.currentSession) {
-                this.currentSession = newSession;
-            }
-        }
-    }
+//    private void updateSession(Session newSession) {
+//        if (this.currentSession == null) {
+//            this.currentSession = newSession;
+//        } else {
+//            synchronized (this.currentSession) {
+//                this.currentSession = newSession;
+//            }
+//        }
+//    }
 }
