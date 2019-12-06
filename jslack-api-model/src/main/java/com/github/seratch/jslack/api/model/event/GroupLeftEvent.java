@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The group_left event is sent to all connections for a user when that user leaves a private channel.
  * Clients should respond to this message by closing the private channel
@@ -14,8 +11,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/group_left
  */
-@Getter
-@Setter
 public class GroupLeftEvent implements Event {
 
     public static final String TYPE_NAME = "group_left";
@@ -23,4 +18,15 @@ public class GroupLeftEvent implements Event {
     private final String type = TYPE_NAME;
     private String channel;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
 }

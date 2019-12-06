@@ -1,16 +1,10 @@
 package com.github.seratch.jslack.api.methods.request.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Delete the user profile photo
  */
-@Getter
-@Setter
-@Builder
 public class UsersDeletePhotoRequest implements SlackApiRequest {
 
     /**
@@ -18,4 +12,39 @@ public class UsersDeletePhotoRequest implements SlackApiRequest {
      */
     private String token;
 
+    UsersDeletePhotoRequest(String token) {
+        this.token = token;
+    }
+
+    public static UsersDeletePhotoRequestBuilder builder() {
+        return new UsersDeletePhotoRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public static class UsersDeletePhotoRequestBuilder {
+        private String token;
+
+        UsersDeletePhotoRequestBuilder() {
+        }
+
+        public UsersDeletePhotoRequest.UsersDeletePhotoRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public UsersDeletePhotoRequest build() {
+            return new UsersDeletePhotoRequest(token);
+        }
+
+        public String toString() {
+            return "UsersDeletePhotoRequest.UsersDeletePhotoRequestBuilder(token=" + this.token + ")";
+        }
+    }
 }

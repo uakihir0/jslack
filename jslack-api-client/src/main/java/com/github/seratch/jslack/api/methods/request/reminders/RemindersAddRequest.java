@@ -1,13 +1,7 @@
 package com.github.seratch.jslack.api.methods.request.reminders;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class RemindersAddRequest implements SlackApiRequest {
 
     /**
@@ -32,4 +26,84 @@ public class RemindersAddRequest implements SlackApiRequest {
      */
     private String user;
 
+    RemindersAddRequest(String token, String text, String time, String user) {
+        this.token = token;
+        this.text = text;
+        this.time = time;
+        this.user = user;
+    }
+
+    public static RemindersAddRequestBuilder builder() {
+        return new RemindersAddRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getText() {
+        return this.text;
+    }
+
+    public String getTime() {
+        return this.time;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public static class RemindersAddRequestBuilder {
+        private String token;
+        private String text;
+        private String time;
+        private String user;
+
+        RemindersAddRequestBuilder() {
+        }
+
+        public RemindersAddRequest.RemindersAddRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public RemindersAddRequest.RemindersAddRequestBuilder text(String text) {
+            this.text = text;
+            return this;
+        }
+
+        public RemindersAddRequest.RemindersAddRequestBuilder time(String time) {
+            this.time = time;
+            return this;
+        }
+
+        public RemindersAddRequest.RemindersAddRequestBuilder user(String user) {
+            this.user = user;
+            return this;
+        }
+
+        public RemindersAddRequest build() {
+            return new RemindersAddRequest(token, text, time, user);
+        }
+
+        public String toString() {
+            return "RemindersAddRequest.RemindersAddRequestBuilder(token=" + this.token + ", text=" + this.text + ", time=" + this.time + ", user=" + this.user + ")";
+        }
+    }
 }

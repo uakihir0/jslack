@@ -1,18 +1,12 @@
 package com.github.seratch.jslack.api.methods.request.oauth;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Exchanges a temporary OAuth verifier code for a workspace token.
  * <p>
  * https://api.slack.com/docs/oauth
  */
-@Getter
-@Setter
-@Builder
 public class OAuthTokenRequest implements SlackApiRequest {
 
     /**
@@ -40,8 +34,104 @@ public class OAuthTokenRequest implements SlackApiRequest {
      */
     private boolean singleChannel;
 
+    OAuthTokenRequest(String clientId, String clientSecret, String code, String redirectUri, boolean singleChannel) {
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
+        this.code = code;
+        this.redirectUri = redirectUri;
+        this.singleChannel = singleChannel;
+    }
+
+    public static OAuthTokenRequestBuilder builder() {
+        return new OAuthTokenRequestBuilder();
+    }
+
     @Override
     public String getToken() {
         return null;
+    }
+
+    public String getClientId() {
+        return this.clientId;
+    }
+
+    public String getClientSecret() {
+        return this.clientSecret;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public String getRedirectUri() {
+        return this.redirectUri;
+    }
+
+    public boolean isSingleChannel() {
+        return this.singleChannel;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    public void setClientSecret(String clientSecret) {
+        this.clientSecret = clientSecret;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setRedirectUri(String redirectUri) {
+        this.redirectUri = redirectUri;
+    }
+
+    public void setSingleChannel(boolean singleChannel) {
+        this.singleChannel = singleChannel;
+    }
+
+    public static class OAuthTokenRequestBuilder {
+        private String clientId;
+        private String clientSecret;
+        private String code;
+        private String redirectUri;
+        private boolean singleChannel;
+
+        OAuthTokenRequestBuilder() {
+        }
+
+        public OAuthTokenRequest.OAuthTokenRequestBuilder clientId(String clientId) {
+            this.clientId = clientId;
+            return this;
+        }
+
+        public OAuthTokenRequest.OAuthTokenRequestBuilder clientSecret(String clientSecret) {
+            this.clientSecret = clientSecret;
+            return this;
+        }
+
+        public OAuthTokenRequest.OAuthTokenRequestBuilder code(String code) {
+            this.code = code;
+            return this;
+        }
+
+        public OAuthTokenRequest.OAuthTokenRequestBuilder redirectUri(String redirectUri) {
+            this.redirectUri = redirectUri;
+            return this;
+        }
+
+        public OAuthTokenRequest.OAuthTokenRequestBuilder singleChannel(boolean singleChannel) {
+            this.singleChannel = singleChannel;
+            return this;
+        }
+
+        public OAuthTokenRequest build() {
+            return new OAuthTokenRequest(clientId, clientSecret, code, redirectUri, singleChannel);
+        }
+
+        public String toString() {
+            return "OAuthTokenRequest.OAuthTokenRequestBuilder(clientId=" + this.clientId + ", clientSecret=" + this.clientSecret + ", code=" + this.code + ", redirectUri=" + this.redirectUri + ", singleChannel=" + this.singleChannel + ")";
+        }
     }
 }

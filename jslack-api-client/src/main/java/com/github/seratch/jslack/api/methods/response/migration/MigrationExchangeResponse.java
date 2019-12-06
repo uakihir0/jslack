@@ -1,14 +1,10 @@
 package com.github.seratch.jslack.api.methods.response.migration;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 import java.util.Map;
 
-@Getter
-@Setter
 public class MigrationExchangeResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -37,4 +33,75 @@ public class MigrationExchangeResponse implements SlackApiResponse {
      */
     private Map<String, String> userIdMap;
 
+    public boolean isOk() {
+        return this.ok;
+    }
+
+    public String getWarning() {
+        return this.warning;
+    }
+
+    public String getError() {
+        return this.error;
+    }
+
+    public String getNeeded() {
+        return this.needed;
+    }
+
+    public String getProvided() {
+        return this.provided;
+    }
+
+    public String getTeamId() {
+        return this.teamId;
+    }
+
+    public String getEnterpriseId() {
+        return this.enterpriseId;
+    }
+
+    public List<String> getInvalidUserIds() {
+        return this.invalidUserIds;
+    }
+
+    public Map<String, String> getUserIdMap() {
+        return this.userIdMap;
+    }
+
+    public void setOk(boolean ok) {
+        this.ok = ok;
+    }
+
+    public void setWarning(String warning) {
+        this.warning = warning;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public void setNeeded(String needed) {
+        this.needed = needed;
+    }
+
+    public void setProvided(String provided) {
+        this.provided = provided;
+    }
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
+    }
+
+    public void setEnterpriseId(String enterpriseId) {
+        this.enterpriseId = enterpriseId;
+    }
+
+    public void setInvalidUserIds(List<String> invalidUserIds) {
+        this.invalidUserIds = invalidUserIds;
+    }
+
+    public void setUserIdMap(Map<String, String> userIdMap) {
+        this.userIdMap = userIdMap;
+    }
 }

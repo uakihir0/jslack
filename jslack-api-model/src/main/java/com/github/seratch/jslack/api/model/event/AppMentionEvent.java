@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * This app event allows your app to subscribe to message events that directly mention your bot user.
  * <p>
@@ -21,8 +18,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/app_mention
  */
-@Getter
-@Setter
 public class AppMentionEvent implements Event {
 
     public static final String TYPE_NAME = "app_mention";
@@ -37,4 +32,63 @@ public class AppMentionEvent implements Event {
 
     private String threadTs;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getSubtype() {
+        return this.subtype;
+    }
+
+    public String getText() {
+        return this.text;
+    }
+
+    public String getTs() {
+        return this.ts;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getEventTs() {
+        return this.eventTs;
+    }
+
+    public String getThreadTs() {
+        return this.threadTs;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setSubtype(String subtype) {
+        this.subtype = subtype;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setTs(String ts) {
+        this.ts = ts;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setEventTs(String eventTs) {
+        this.eventTs = eventTs;
+    }
+
+    public void setThreadTs(String threadTs) {
+        this.threadTs = threadTs;
+    }
 }

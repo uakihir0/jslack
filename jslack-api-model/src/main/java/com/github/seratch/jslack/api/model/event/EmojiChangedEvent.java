@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 /**
@@ -12,8 +9,6 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/emoji_changed
  */
-@Getter
-@Setter
 public class EmojiChangedEvent implements Event {
 
     public static final String TYPE_NAME = "emoji_changed";
@@ -32,4 +27,48 @@ public class EmojiChangedEvent implements Event {
     private String value; // only for subtype:add
 
     private String eventTs;
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String getSubtype() {
+        return this.subtype;
+    }
+
+    public List<String> getNames() {
+        return this.names;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public String getEventTs() {
+        return this.eventTs;
+    }
+
+    public void setSubtype(String subtype) {
+        this.subtype = subtype;
+    }
+
+    public void setNames(List<String> names) {
+        this.names = names;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public void setEventTs(String eventTs) {
+        this.eventTs = eventTs;
+    }
 }

@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The file_comment_deleted event is sent when a file comment is deleted.
  * It is sent to all connected clients for users who can see the file.
@@ -17,8 +14,6 @@ import lombok.Setter;
  * https://api.slack.com/events/file_comment_deleted
  */
 @Deprecated // https://api.slack.com/changelog/2018-05-file-threads-soon-tread
-@Getter
-@Setter
 public class FileCommentDeletedEvent implements Event {
 
     public static final String TYPE_NAME = "file_comment_deleted";
@@ -28,9 +23,43 @@ public class FileCommentDeletedEvent implements Event {
     private String fileId;
     private File file;
 
-    @Getter
-@Setter
+    public String getType() {
+        return this.type;
+    }
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    public String getFileId() {
+        return this.fileId;
+    }
+
+    public File getFile() {
+        return this.file;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setFileId(String fileId) {
+        this.fileId = fileId;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
     public static class File {
         private String id;
+
+        public String getId() {
+            return this.id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
     }
 }

@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The file_public event is sent when a file is made public.
  * It is sent to all connected clients for all users that have permission to see the file.
@@ -11,8 +8,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/file_public
  */
-@Getter
-@Setter
 public class FilePublicEvent implements Event {
 
     public static final String TYPE_NAME = "file_public";
@@ -21,9 +16,35 @@ public class FilePublicEvent implements Event {
     private String fileId;
     private File file;
 
-    @Getter
-@Setter
+    public String getType() {
+        return this.type;
+    }
+
+    public String getFileId() {
+        return this.fileId;
+    }
+
+    public File getFile() {
+        return this.file;
+    }
+
+    public void setFileId(String fileId) {
+        this.fileId = fileId;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
     public static class File {
         private String id;
+
+        public String getId() {
+            return this.id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
     }
 }

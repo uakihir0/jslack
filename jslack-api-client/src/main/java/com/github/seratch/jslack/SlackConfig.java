@@ -7,14 +7,10 @@ import com.github.seratch.jslack.api.status.v2.StatusClient;
 import com.github.seratch.jslack.common.http.listener.DetailedLoggingListener;
 import com.github.seratch.jslack.common.http.listener.HttpResponseListener;
 import com.github.seratch.jslack.common.http.listener.ResponsePrettyPrintingListener;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
 public class SlackConfig {
 
     public static final SlackConfig DEFAULT = new SlackConfig() {
@@ -91,4 +87,67 @@ public class SlackConfig {
 
     private String legacyStatusEndpointUrlPrefix = LegacyStatusClient.ENDPOINT_URL_PREFIX;
 
+    public boolean isPrettyResponseLoggingEnabled() {
+        return this.prettyResponseLoggingEnabled;
+    }
+
+    public boolean isLibraryMaintainerMode() {
+        return this.libraryMaintainerMode;
+    }
+
+    public boolean isTokenExistenceVerificationEnabled() {
+        return this.tokenExistenceVerificationEnabled;
+    }
+
+    public List<HttpResponseListener> getHttpClientResponseHandlers() {
+        return this.httpClientResponseHandlers;
+    }
+
+    public String getAuditEndpointUrlPrefix() {
+        return this.auditEndpointUrlPrefix;
+    }
+
+    public String getMethodsEndpointUrlPrefix() {
+        return this.methodsEndpointUrlPrefix;
+    }
+
+    public String getStatusEndpointUrlPrefix() {
+        return this.statusEndpointUrlPrefix;
+    }
+
+    public String getLegacyStatusEndpointUrlPrefix() {
+        return this.legacyStatusEndpointUrlPrefix;
+    }
+
+    public void setPrettyResponseLoggingEnabled(boolean prettyResponseLoggingEnabled) {
+        this.prettyResponseLoggingEnabled = prettyResponseLoggingEnabled;
+    }
+
+    public void setLibraryMaintainerMode(boolean libraryMaintainerMode) {
+        this.libraryMaintainerMode = libraryMaintainerMode;
+    }
+
+    public void setTokenExistenceVerificationEnabled(boolean tokenExistenceVerificationEnabled) {
+        this.tokenExistenceVerificationEnabled = tokenExistenceVerificationEnabled;
+    }
+
+    public void setHttpClientResponseHandlers(List<HttpResponseListener> httpClientResponseHandlers) {
+        this.httpClientResponseHandlers = httpClientResponseHandlers;
+    }
+
+    public void setAuditEndpointUrlPrefix(String auditEndpointUrlPrefix) {
+        this.auditEndpointUrlPrefix = auditEndpointUrlPrefix;
+    }
+
+    public void setMethodsEndpointUrlPrefix(String methodsEndpointUrlPrefix) {
+        this.methodsEndpointUrlPrefix = methodsEndpointUrlPrefix;
+    }
+
+    public void setStatusEndpointUrlPrefix(String statusEndpointUrlPrefix) {
+        this.statusEndpointUrlPrefix = statusEndpointUrlPrefix;
+    }
+
+    public void setLegacyStatusEndpointUrlPrefix(String legacyStatusEndpointUrlPrefix) {
+        this.legacyStatusEndpointUrlPrefix = legacyStatusEndpointUrlPrefix;
+    }
 }

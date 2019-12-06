@@ -1,13 +1,7 @@
 package com.github.seratch.jslack.api.methods.request.groups;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class GroupsCreateRequest implements SlackApiRequest {
 
     /**
@@ -25,4 +19,69 @@ public class GroupsCreateRequest implements SlackApiRequest {
      */
     private boolean validate;
 
+    GroupsCreateRequest(String token, String name, boolean validate) {
+        this.token = token;
+        this.name = name;
+        this.validate = validate;
+    }
+
+    public static GroupsCreateRequestBuilder builder() {
+        return new GroupsCreateRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public boolean isValidate() {
+        return this.validate;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setValidate(boolean validate) {
+        this.validate = validate;
+    }
+
+    public static class GroupsCreateRequestBuilder {
+        private String token;
+        private String name;
+        private boolean validate;
+
+        GroupsCreateRequestBuilder() {
+        }
+
+        public GroupsCreateRequest.GroupsCreateRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public GroupsCreateRequest.GroupsCreateRequestBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public GroupsCreateRequest.GroupsCreateRequestBuilder validate(boolean validate) {
+            this.validate = validate;
+            return this;
+        }
+
+        public GroupsCreateRequest build() {
+            return new GroupsCreateRequest(token, name, validate);
+        }
+
+        public String toString() {
+            return "GroupsCreateRequest.GroupsCreateRequestBuilder(token=" + this.token + ", name=" + this.name + ", validate=" + this.validate + ")";
+        }
+    }
 }

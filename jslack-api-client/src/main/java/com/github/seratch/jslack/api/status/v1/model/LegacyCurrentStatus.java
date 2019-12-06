@@ -1,12 +1,7 @@
 package com.github.seratch.jslack.api.status.v1.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
-@Getter
-@Setter
 public class LegacyCurrentStatus {
     private Integer id;
     private String dateCreated;
@@ -18,10 +13,96 @@ public class LegacyCurrentStatus {
     private List<String> services;
     private List<LegacySlackIssue.Note> notes;
 
-    @Getter
-@Setter
+    public Integer getId() {
+        return this.id;
+    }
+
+    public String getDateCreated() {
+        return this.dateCreated;
+    }
+
+    public String getDateUpdated() {
+        return this.dateUpdated;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    public List<String> getServices() {
+        return this.services;
+    }
+
+    public List<LegacySlackIssue.Note> getNotes() {
+        return this.notes;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setDateCreated(String dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public void setDateUpdated(String dateUpdated) {
+        this.dateUpdated = dateUpdated;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setServices(List<String> services) {
+        this.services = services;
+    }
+
+    public void setNotes(List<LegacySlackIssue.Note> notes) {
+        this.notes = notes;
+    }
+
     public static class Note {
         private String dateCreated;
         private String body;
+
+        public String getDateCreated() {
+            return this.dateCreated;
+        }
+
+        public String getBody() {
+            return this.body;
+        }
+
+        public void setDateCreated(String dateCreated) {
+            this.dateCreated = dateCreated;
+        }
+
+        public void setBody(String body) {
+            this.body = body;
+        }
     }
 }

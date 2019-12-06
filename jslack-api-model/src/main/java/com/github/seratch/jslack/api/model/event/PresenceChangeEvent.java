@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 /**
@@ -30,8 +27,6 @@ import java.util.List;
  * As of January 2018, presence_change events are not dispatched without presence subscriptions established with presence_sub.
  * Relatedly, current user presence status is no longer communicated in rtm.start. Learn more.
  */
-@Getter
-@Setter
 public class PresenceChangeEvent implements Event {
 
     public static final String TYPE_NAME = "presence_change";
@@ -41,4 +36,31 @@ public class PresenceChangeEvent implements Event {
     private List<String> users; // Multiple-user batch presence change event:
     private String presence;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public List<String> getUsers() {
+        return this.users;
+    }
+
+    public String getPresence() {
+        return this.presence;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setUsers(List<String> users) {
+        this.users = users;
+    }
+
+    public void setPresence(String presence) {
+        this.presence = presence;
+    }
 }

@@ -1,13 +1,7 @@
 package com.github.seratch.jslack.api.methods.request.conversations;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class ConversationsCreateRequest implements SlackApiRequest {
 
     /**
@@ -25,4 +19,69 @@ public class ConversationsCreateRequest implements SlackApiRequest {
      */
     private boolean isPrivate;
 
+    ConversationsCreateRequest(String token, String name, boolean isPrivate) {
+        this.token = token;
+        this.name = name;
+        this.isPrivate = isPrivate;
+    }
+
+    public static ConversationsCreateRequestBuilder builder() {
+        return new ConversationsCreateRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public boolean isPrivate() {
+        return this.isPrivate;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrivate(boolean isPrivate) {
+        this.isPrivate = isPrivate;
+    }
+
+    public static class ConversationsCreateRequestBuilder {
+        private String token;
+        private String name;
+        private boolean isPrivate;
+
+        ConversationsCreateRequestBuilder() {
+        }
+
+        public ConversationsCreateRequest.ConversationsCreateRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public ConversationsCreateRequest.ConversationsCreateRequestBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public ConversationsCreateRequest.ConversationsCreateRequestBuilder isPrivate(boolean isPrivate) {
+            this.isPrivate = isPrivate;
+            return this;
+        }
+
+        public ConversationsCreateRequest build() {
+            return new ConversationsCreateRequest(token, name, isPrivate);
+        }
+
+        public String toString() {
+            return "ConversationsCreateRequest.ConversationsCreateRequestBuilder(token=" + this.token + ", name=" + this.name + ", isPrivate=" + this.isPrivate + ")";
+        }
+    }
 }

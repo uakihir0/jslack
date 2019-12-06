@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The member_left_channel event is sent to all websocket connections and event subscriptions
  * when users leave public or private channels.
@@ -25,8 +22,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/member_left_channel
  */
-@Getter
-@Setter
 public class MemberLeftChannelEvent implements Event {
 
     public static final String TYPE_NAME = "member_left_channel";
@@ -37,4 +32,39 @@ public class MemberLeftChannelEvent implements Event {
     private String channelType;
     private String team;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getChannelType() {
+        return this.channelType;
+    }
+
+    public String getTeam() {
+        return this.team;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
 }

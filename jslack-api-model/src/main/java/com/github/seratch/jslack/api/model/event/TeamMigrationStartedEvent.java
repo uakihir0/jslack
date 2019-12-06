@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The team_migration_started event is sent when a Slack workspace is about to be migrated between servers.
  * The websocket connection will close immediately after it is sent.
@@ -19,12 +16,13 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/team_migration_started
  */
-@Getter
-@Setter
 public class TeamMigrationStartedEvent implements Event {
 
     public static final String TYPE_NAME = "team_migration_started";
 
     private final String type = TYPE_NAME;
 
+    public String getType() {
+        return this.type;
+    }
 }

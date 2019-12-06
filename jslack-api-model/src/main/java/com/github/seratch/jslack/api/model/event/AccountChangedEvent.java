@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The list of accounts a user is signed into has changed
  * <p>
@@ -12,11 +9,13 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/accounts_changed
  */
-@Getter
-@Setter
 public class AccountChangedEvent implements Event {
 
     public static final String TYPE_NAME = "accounts_changed";
 
     private final String type = TYPE_NAME;
+
+    public String getType() {
+        return this.type;
+    }
 }

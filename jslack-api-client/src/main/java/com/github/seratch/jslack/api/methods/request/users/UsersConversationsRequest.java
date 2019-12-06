@@ -2,18 +2,12 @@ package com.github.seratch.jslack.api.methods.request.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import com.github.seratch.jslack.api.model.ConversationType;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
 /**
  * List conversations the calling user may access.
  */
-@Getter
-@Setter
-@Builder
 public class UsersConversationsRequest implements SlackApiRequest {
 
     /**
@@ -51,4 +45,114 @@ public class UsersConversationsRequest implements SlackApiRequest {
      */
     private List<ConversationType> types;
 
+    UsersConversationsRequest(String token, String user, String cursor, boolean excludeArchived, Integer limit, List<ConversationType> types) {
+        this.token = token;
+        this.user = user;
+        this.cursor = cursor;
+        this.excludeArchived = excludeArchived;
+        this.limit = limit;
+        this.types = types;
+    }
+
+    public static UsersConversationsRequestBuilder builder() {
+        return new UsersConversationsRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getCursor() {
+        return this.cursor;
+    }
+
+    public boolean isExcludeArchived() {
+        return this.excludeArchived;
+    }
+
+    public Integer getLimit() {
+        return this.limit;
+    }
+
+    public List<ConversationType> getTypes() {
+        return this.types;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setCursor(String cursor) {
+        this.cursor = cursor;
+    }
+
+    public void setExcludeArchived(boolean excludeArchived) {
+        this.excludeArchived = excludeArchived;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public void setTypes(List<ConversationType> types) {
+        this.types = types;
+    }
+
+    public static class UsersConversationsRequestBuilder {
+        private String token;
+        private String user;
+        private String cursor;
+        private boolean excludeArchived;
+        private Integer limit;
+        private List<ConversationType> types;
+
+        UsersConversationsRequestBuilder() {
+        }
+
+        public UsersConversationsRequest.UsersConversationsRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public UsersConversationsRequest.UsersConversationsRequestBuilder user(String user) {
+            this.user = user;
+            return this;
+        }
+
+        public UsersConversationsRequest.UsersConversationsRequestBuilder cursor(String cursor) {
+            this.cursor = cursor;
+            return this;
+        }
+
+        public UsersConversationsRequest.UsersConversationsRequestBuilder excludeArchived(boolean excludeArchived) {
+            this.excludeArchived = excludeArchived;
+            return this;
+        }
+
+        public UsersConversationsRequest.UsersConversationsRequestBuilder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        public UsersConversationsRequest.UsersConversationsRequestBuilder types(List<ConversationType> types) {
+            this.types = types;
+            return this;
+        }
+
+        public UsersConversationsRequest build() {
+            return new UsersConversationsRequest(token, user, cursor, excludeArchived, limit, types);
+        }
+
+        public String toString() {
+            return "UsersConversationsRequest.UsersConversationsRequestBuilder(token=" + this.token + ", user=" + this.user + ", cursor=" + this.cursor + ", excludeArchived=" + this.excludeArchived + ", limit=" + this.limit + ", types=" + this.types + ")";
+        }
+    }
 }

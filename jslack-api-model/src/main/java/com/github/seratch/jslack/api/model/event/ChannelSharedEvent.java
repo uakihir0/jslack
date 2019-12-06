@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The channel_shared event is sent to all event subscriptions
  * when a new shared channel is created or a channel is converted into a shared channel.
@@ -10,8 +7,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/channel_shared
  */
-@Getter
-@Setter
 public class ChannelSharedEvent implements Event {
 
     public static final String TYPE_NAME = "channel_shared";
@@ -28,4 +23,31 @@ public class ChannelSharedEvent implements Event {
 
     private String eventTs;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getConnectedTeamId() {
+        return this.connectedTeamId;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getEventTs() {
+        return this.eventTs;
+    }
+
+    public void setConnectedTeamId(String connectedTeamId) {
+        this.connectedTeamId = connectedTeamId;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setEventTs(String eventTs) {
+        this.eventTs = eventTs;
+    }
 }

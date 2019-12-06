@@ -1,13 +1,8 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * https://api.slack.com/events/app_rate_limited
  */
-@Getter
-@Setter
 public class AppRateLimitedEvent implements Event {
 
     public static final String TYPE_NAME = "app_rate_limited";
@@ -37,4 +32,39 @@ public class AppRateLimitedEvent implements Event {
      */
     private String apiAppId;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getTeamId() {
+        return this.teamId;
+    }
+
+    public Integer getMinuteRateLimited() {
+        return this.minuteRateLimited;
+    }
+
+    public String getApiAppId() {
+        return this.apiAppId;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
+    }
+
+    public void setMinuteRateLimited(Integer minuteRateLimited) {
+        this.minuteRateLimited = minuteRateLimited;
+    }
+
+    public void setApiAppId(String apiAppId) {
+        this.apiAppId = apiAppId;
+    }
 }

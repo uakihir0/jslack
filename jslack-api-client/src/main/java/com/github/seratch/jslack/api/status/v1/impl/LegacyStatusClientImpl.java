@@ -5,12 +5,8 @@ import com.github.seratch.jslack.api.status.v1.LegacyStatusClient;
 import com.github.seratch.jslack.api.status.v1.model.LegacyCurrentStatus;
 import com.github.seratch.jslack.api.status.v1.model.LegacySlackIssue;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
-import com.github.seratch.jslack.common.json.GsonFactory;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 public class LegacyStatusClientImpl implements LegacyStatusClient {

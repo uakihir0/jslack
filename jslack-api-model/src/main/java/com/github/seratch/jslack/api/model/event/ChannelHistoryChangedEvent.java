@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * A channel_history_changed event is sent to all clients in a channel when bulk changes have occurred to that channel's history.
  * When clients receive this message they should reload chat history for the channel if they have any cached messages before latest.
@@ -11,8 +8,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/channel_history_changed
  */
-@Getter
-@Setter
 public class ChannelHistoryChangedEvent implements Event {
 
     public static final String TYPE_NAME = "channel_history_changed";
@@ -21,4 +16,32 @@ public class ChannelHistoryChangedEvent implements Event {
     private String latest;
     private String ts;
     private String eventTs;
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String getLatest() {
+        return this.latest;
+    }
+
+    public String getTs() {
+        return this.ts;
+    }
+
+    public String getEventTs() {
+        return this.eventTs;
+    }
+
+    public void setLatest(String latest) {
+        this.latest = latest;
+    }
+
+    public void setTs(String ts) {
+        this.ts = ts;
+    }
+
+    public void setEventTs(String eventTs) {
+        this.eventTs = eventTs;
+    }
 }

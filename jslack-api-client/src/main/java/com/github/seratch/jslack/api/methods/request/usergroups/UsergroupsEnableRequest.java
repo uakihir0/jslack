@@ -1,13 +1,7 @@
 package com.github.seratch.jslack.api.methods.request.usergroups;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class UsergroupsEnableRequest implements SlackApiRequest {
 
     /**
@@ -24,4 +18,70 @@ public class UsergroupsEnableRequest implements SlackApiRequest {
      * Include the number of users in the User Group.
      */
     private boolean includeCount;
+
+    UsergroupsEnableRequest(String token, String usergroup, boolean includeCount) {
+        this.token = token;
+        this.usergroup = usergroup;
+        this.includeCount = includeCount;
+    }
+
+    public static UsergroupsEnableRequestBuilder builder() {
+        return new UsergroupsEnableRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getUsergroup() {
+        return this.usergroup;
+    }
+
+    public boolean isIncludeCount() {
+        return this.includeCount;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setUsergroup(String usergroup) {
+        this.usergroup = usergroup;
+    }
+
+    public void setIncludeCount(boolean includeCount) {
+        this.includeCount = includeCount;
+    }
+
+    public static class UsergroupsEnableRequestBuilder {
+        private String token;
+        private String usergroup;
+        private boolean includeCount;
+
+        UsergroupsEnableRequestBuilder() {
+        }
+
+        public UsergroupsEnableRequest.UsergroupsEnableRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public UsergroupsEnableRequest.UsergroupsEnableRequestBuilder usergroup(String usergroup) {
+            this.usergroup = usergroup;
+            return this;
+        }
+
+        public UsergroupsEnableRequest.UsergroupsEnableRequestBuilder includeCount(boolean includeCount) {
+            this.includeCount = includeCount;
+            return this;
+        }
+
+        public UsergroupsEnableRequest build() {
+            return new UsergroupsEnableRequest(token, usergroup, includeCount);
+        }
+
+        public String toString() {
+            return "UsergroupsEnableRequest.UsergroupsEnableRequestBuilder(token=" + this.token + ", usergroup=" + this.usergroup + ", includeCount=" + this.includeCount + ")";
+        }
+    }
 }

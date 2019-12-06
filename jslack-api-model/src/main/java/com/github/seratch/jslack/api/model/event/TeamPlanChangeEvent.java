@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 /**
@@ -11,8 +8,6 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/team_plan_change
  */
-@Getter
-@Setter
 public class TeamPlanChangeEvent implements Event {
 
     public static final String TYPE_NAME = "team_plan_change";
@@ -22,4 +17,31 @@ public class TeamPlanChangeEvent implements Event {
     private boolean canAddUra;
     private List<String> paidFeatures;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getPlan() {
+        return this.plan;
+    }
+
+    public boolean isCanAddUra() {
+        return this.canAddUra;
+    }
+
+    public List<String> getPaidFeatures() {
+        return this.paidFeatures;
+    }
+
+    public void setPlan(String plan) {
+        this.plan = plan;
+    }
+
+    public void setCanAddUra(boolean canAddUra) {
+        this.canAddUra = canAddUra;
+    }
+
+    public void setPaidFeatures(List<String> paidFeatures) {
+        this.paidFeatures = paidFeatures;
+    }
 }

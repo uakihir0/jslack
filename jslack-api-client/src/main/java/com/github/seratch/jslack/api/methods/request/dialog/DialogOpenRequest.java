@@ -2,13 +2,7 @@ package com.github.seratch.jslack.api.methods.request.dialog;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import com.github.seratch.jslack.api.model.dialog.Dialog;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class DialogOpenRequest implements SlackApiRequest {
 
     /**
@@ -35,4 +29,85 @@ public class DialogOpenRequest implements SlackApiRequest {
      * @see <a href="https://api.slack.com/dialogs#implementation">Implementing dialogs</a>
      */
     private String triggerId;
+
+    DialogOpenRequest(String token, Dialog dialog, String dialogAsString, String triggerId) {
+        this.token = token;
+        this.dialog = dialog;
+        this.dialogAsString = dialogAsString;
+        this.triggerId = triggerId;
+    }
+
+    public static DialogOpenRequestBuilder builder() {
+        return new DialogOpenRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public Dialog getDialog() {
+        return this.dialog;
+    }
+
+    public String getDialogAsString() {
+        return this.dialogAsString;
+    }
+
+    public String getTriggerId() {
+        return this.triggerId;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setDialog(Dialog dialog) {
+        this.dialog = dialog;
+    }
+
+    public void setDialogAsString(String dialogAsString) {
+        this.dialogAsString = dialogAsString;
+    }
+
+    public void setTriggerId(String triggerId) {
+        this.triggerId = triggerId;
+    }
+
+    public static class DialogOpenRequestBuilder {
+        private String token;
+        private Dialog dialog;
+        private String dialogAsString;
+        private String triggerId;
+
+        DialogOpenRequestBuilder() {
+        }
+
+        public DialogOpenRequest.DialogOpenRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public DialogOpenRequest.DialogOpenRequestBuilder dialog(Dialog dialog) {
+            this.dialog = dialog;
+            return this;
+        }
+
+        public DialogOpenRequest.DialogOpenRequestBuilder dialogAsString(String dialogAsString) {
+            this.dialogAsString = dialogAsString;
+            return this;
+        }
+
+        public DialogOpenRequest.DialogOpenRequestBuilder triggerId(String triggerId) {
+            this.triggerId = triggerId;
+            return this;
+        }
+
+        public DialogOpenRequest build() {
+            return new DialogOpenRequest(token, dialog, dialogAsString, triggerId);
+        }
+
+        public String toString() {
+            return "DialogOpenRequest.DialogOpenRequestBuilder(token=" + this.token + ", dialog=" + this.dialog + ", dialogAsString=" + this.dialogAsString + ", triggerId=" + this.triggerId + ")";
+        }
+    }
 }

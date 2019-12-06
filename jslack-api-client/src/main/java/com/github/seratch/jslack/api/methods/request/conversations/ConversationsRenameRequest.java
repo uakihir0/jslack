@@ -1,13 +1,7 @@
 package com.github.seratch.jslack.api.methods.request.conversations;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class ConversationsRenameRequest implements SlackApiRequest {
 
     /**
@@ -30,4 +24,69 @@ public class ConversationsRenameRequest implements SlackApiRequest {
      */
     private String name;
 
+    ConversationsRenameRequest(String token, String channel, String name) {
+        this.token = token;
+        this.channel = channel;
+        this.name = name;
+    }
+
+    public static ConversationsRenameRequestBuilder builder() {
+        return new ConversationsRenameRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static class ConversationsRenameRequestBuilder {
+        private String token;
+        private String channel;
+        private String name;
+
+        ConversationsRenameRequestBuilder() {
+        }
+
+        public ConversationsRenameRequest.ConversationsRenameRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public ConversationsRenameRequest.ConversationsRenameRequestBuilder channel(String channel) {
+            this.channel = channel;
+            return this;
+        }
+
+        public ConversationsRenameRequest.ConversationsRenameRequestBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public ConversationsRenameRequest build() {
+            return new ConversationsRenameRequest(token, channel, name);
+        }
+
+        public String toString() {
+            return "ConversationsRenameRequest.ConversationsRenameRequestBuilder(token=" + this.token + ", channel=" + this.channel + ", name=" + this.name + ")";
+        }
+    }
 }

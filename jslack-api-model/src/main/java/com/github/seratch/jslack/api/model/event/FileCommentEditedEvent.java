@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The file_comment_edited event is sent when a file comment is edited.
  * It is sent to all connected clients for users who can see the file.
@@ -14,8 +11,6 @@ import lombok.Setter;
  * https://api.slack.com/events/file_comment_edited
  */
 @Deprecated // https://api.slack.com/changelog/2018-05-file-threads-soon-tread
-@Getter
-@Setter
 public class FileCommentEditedEvent implements Event {
 
     public static final String TYPE_NAME = "file_comment_edited";
@@ -25,14 +20,46 @@ public class FileCommentEditedEvent implements Event {
     private String fileId;
     private File file;
 
-    @Getter
-@Setter
+    public String getType() {
+        return this.type;
+    }
+
+    public FileComment getComment() {
+        return this.comment;
+    }
+
+    public String getFileId() {
+        return this.fileId;
+    }
+
+    public File getFile() {
+        return this.file;
+    }
+
+    public void setComment(FileComment comment) {
+        this.comment = comment;
+    }
+
+    public void setFileId(String fileId) {
+        this.fileId = fileId;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
     public static class FileComment {
     }
 
-    @Getter
-@Setter
     public static class File {
         private String id;
+
+        public String getId() {
+            return this.id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
     }
 }

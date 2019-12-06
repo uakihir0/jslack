@@ -1,16 +1,10 @@
 package com.github.seratch.jslack.api.methods.request.admin.apps;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * https://api.slack.com/methods/admin.apps.requests.list
  */
-@Getter
-@Setter
-@Builder
 public class AdminAppsRequestsListRequest implements SlackApiRequest {
 
     /**
@@ -33,4 +27,84 @@ public class AdminAppsRequestsListRequest implements SlackApiRequest {
      */
     private String teamId;
 
+    AdminAppsRequestsListRequest(String token, String cursor, Integer limit, String teamId) {
+        this.token = token;
+        this.cursor = cursor;
+        this.limit = limit;
+        this.teamId = teamId;
+    }
+
+    public static AdminAppsRequestsListRequestBuilder builder() {
+        return new AdminAppsRequestsListRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getCursor() {
+        return this.cursor;
+    }
+
+    public Integer getLimit() {
+        return this.limit;
+    }
+
+    public String getTeamId() {
+        return this.teamId;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setCursor(String cursor) {
+        this.cursor = cursor;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
+    }
+
+    public static class AdminAppsRequestsListRequestBuilder {
+        private String token;
+        private String cursor;
+        private Integer limit;
+        private String teamId;
+
+        AdminAppsRequestsListRequestBuilder() {
+        }
+
+        public AdminAppsRequestsListRequest.AdminAppsRequestsListRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public AdminAppsRequestsListRequest.AdminAppsRequestsListRequestBuilder cursor(String cursor) {
+            this.cursor = cursor;
+            return this;
+        }
+
+        public AdminAppsRequestsListRequest.AdminAppsRequestsListRequestBuilder limit(Integer limit) {
+            this.limit = limit;
+            return this;
+        }
+
+        public AdminAppsRequestsListRequest.AdminAppsRequestsListRequestBuilder teamId(String teamId) {
+            this.teamId = teamId;
+            return this;
+        }
+
+        public AdminAppsRequestsListRequest build() {
+            return new AdminAppsRequestsListRequest(token, cursor, limit, teamId);
+        }
+
+        public String toString() {
+            return "AdminAppsRequestsListRequest.AdminAppsRequestsListRequestBuilder(token=" + this.token + ", cursor=" + this.cursor + ", limit=" + this.limit + ", teamId=" + this.teamId + ")";
+        }
+    }
 }

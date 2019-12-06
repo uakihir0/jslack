@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 /**
@@ -13,8 +10,6 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/team_profile_change
  */
-@Getter
-@Setter
 public class TeamProfileChangeEvent implements Event {
 
     public static final String TYPE_NAME = "team_profile_change";
@@ -22,16 +17,40 @@ public class TeamProfileChangeEvent implements Event {
     private final String type = TYPE_NAME;
     private Profile profile;
 
-    @Getter
-@Setter
-    public static class Profile {
-        private List<Field> fields;
+    public String getType() {
+        return this.type;
     }
 
-    @Getter
-@Setter
+    public Profile getProfile() {
+        return this.profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
+    public static class Profile {
+        private List<Field> fields;
+
+        public List<Field> getFields() {
+            return this.fields;
+        }
+
+        public void setFields(List<Field> fields) {
+            this.fields = fields;
+        }
+    }
+
     public static class Field {
         private String id;
+
+        public String getId() {
+            return this.id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
         // TODO: other attributes
     }
 

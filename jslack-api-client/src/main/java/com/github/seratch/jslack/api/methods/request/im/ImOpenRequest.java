@@ -1,13 +1,7 @@
 package com.github.seratch.jslack.api.methods.request.im;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class ImOpenRequest implements SlackApiRequest {
 
     /**
@@ -30,4 +24,84 @@ public class ImOpenRequest implements SlackApiRequest {
      */
     private boolean includeLocale;
 
+    ImOpenRequest(String token, String user, boolean returnIm, boolean includeLocale) {
+        this.token = token;
+        this.user = user;
+        this.returnIm = returnIm;
+        this.includeLocale = includeLocale;
+    }
+
+    public static ImOpenRequestBuilder builder() {
+        return new ImOpenRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public boolean isReturnIm() {
+        return this.returnIm;
+    }
+
+    public boolean isIncludeLocale() {
+        return this.includeLocale;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setReturnIm(boolean returnIm) {
+        this.returnIm = returnIm;
+    }
+
+    public void setIncludeLocale(boolean includeLocale) {
+        this.includeLocale = includeLocale;
+    }
+
+    public static class ImOpenRequestBuilder {
+        private String token;
+        private String user;
+        private boolean returnIm;
+        private boolean includeLocale;
+
+        ImOpenRequestBuilder() {
+        }
+
+        public ImOpenRequest.ImOpenRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public ImOpenRequest.ImOpenRequestBuilder user(String user) {
+            this.user = user;
+            return this;
+        }
+
+        public ImOpenRequest.ImOpenRequestBuilder returnIm(boolean returnIm) {
+            this.returnIm = returnIm;
+            return this;
+        }
+
+        public ImOpenRequest.ImOpenRequestBuilder includeLocale(boolean includeLocale) {
+            this.includeLocale = includeLocale;
+            return this;
+        }
+
+        public ImOpenRequest build() {
+            return new ImOpenRequest(token, user, returnIm, includeLocale);
+        }
+
+        public String toString() {
+            return "ImOpenRequest.ImOpenRequestBuilder(token=" + this.token + ", user=" + this.user + ", returnIm=" + this.returnIm + ", includeLocale=" + this.includeLocale + ")";
+        }
+    }
 }

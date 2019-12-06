@@ -1,16 +1,11 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The channel_unshared event is sent to all event subscriptions
  * when an external workspace has been removed from an existing shared channel.
  * <p>
  * https://api.slack.com/events/channel_unshared
  */
-@Getter
-@Setter
 public class ChannelUnsharedEvent implements Event {
 
     public static final String TYPE_NAME = "channel_unshared";
@@ -31,4 +26,39 @@ public class ChannelUnsharedEvent implements Event {
 
     private String eventTs;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getPreviouslyConnectedTeamId() {
+        return this.previouslyConnectedTeamId;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public boolean isExtShared() {
+        return this.isExtShared;
+    }
+
+    public String getEventTs() {
+        return this.eventTs;
+    }
+
+    public void setPreviouslyConnectedTeamId(String previouslyConnectedTeamId) {
+        this.previouslyConnectedTeamId = previouslyConnectedTeamId;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setExtShared(boolean isExtShared) {
+        this.isExtShared = isExtShared;
+    }
+
+    public void setEventTs(String eventTs) {
+        this.eventTs = eventTs;
+    }
 }

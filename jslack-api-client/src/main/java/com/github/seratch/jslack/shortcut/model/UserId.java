@@ -1,12 +1,5 @@
 package com.github.seratch.jslack.shortcut.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString(includeFieldNames = false)
 public class UserId {
 
     private final String value;
@@ -17,5 +10,13 @@ public class UserId {
 
     public static UserId of(String value) {
         return new UserId(value);
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public String toString() {
+        return "UserId(" + this.getValue() + ")";
     }
 }

@@ -11,7 +11,6 @@ import com.github.seratch.jslack.api.audit.response.ActionsResponse;
 import com.github.seratch.jslack.api.audit.response.LogsResponse;
 import com.github.seratch.jslack.api.audit.response.SchemasResponse;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
-import com.github.seratch.jslack.common.json.GsonFactory;
 import net.socialhub.http.HttpResponse;
 
 import java.io.IOException;

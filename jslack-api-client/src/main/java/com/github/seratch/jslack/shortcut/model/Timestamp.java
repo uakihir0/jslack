@@ -1,12 +1,5 @@
 package com.github.seratch.jslack.shortcut.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString(includeFieldNames = false)
 public class Timestamp {
 
     private final String value;
@@ -17,5 +10,13 @@ public class Timestamp {
 
     public static Timestamp of(String value) {
         return new Timestamp(value);
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public String toString() {
+        return "Timestamp(" + this.getValue() + ")";
     }
 }

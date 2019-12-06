@@ -1,15 +1,9 @@
 package com.github.seratch.jslack.api.methods.request.conversations;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
-@Getter
-@Setter
-@Builder
 public class ConversationsOpenRequest implements SlackApiRequest {
 
     /**
@@ -34,4 +28,84 @@ public class ConversationsOpenRequest implements SlackApiRequest {
      */
     private List<String> users;
 
+    ConversationsOpenRequest(String token, String channel, boolean returnIm, List<String> users) {
+        this.token = token;
+        this.channel = channel;
+        this.returnIm = returnIm;
+        this.users = users;
+    }
+
+    public static ConversationsOpenRequestBuilder builder() {
+        return new ConversationsOpenRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public boolean isReturnIm() {
+        return this.returnIm;
+    }
+
+    public List<String> getUsers() {
+        return this.users;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setReturnIm(boolean returnIm) {
+        this.returnIm = returnIm;
+    }
+
+    public void setUsers(List<String> users) {
+        this.users = users;
+    }
+
+    public static class ConversationsOpenRequestBuilder {
+        private String token;
+        private String channel;
+        private boolean returnIm;
+        private List<String> users;
+
+        ConversationsOpenRequestBuilder() {
+        }
+
+        public ConversationsOpenRequest.ConversationsOpenRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public ConversationsOpenRequest.ConversationsOpenRequestBuilder channel(String channel) {
+            this.channel = channel;
+            return this;
+        }
+
+        public ConversationsOpenRequest.ConversationsOpenRequestBuilder returnIm(boolean returnIm) {
+            this.returnIm = returnIm;
+            return this;
+        }
+
+        public ConversationsOpenRequest.ConversationsOpenRequestBuilder users(List<String> users) {
+            this.users = users;
+            return this;
+        }
+
+        public ConversationsOpenRequest build() {
+            return new ConversationsOpenRequest(token, channel, returnIm, users);
+        }
+
+        public String toString() {
+            return "ConversationsOpenRequest.ConversationsOpenRequestBuilder(token=" + this.token + ", channel=" + this.channel + ", returnIm=" + this.returnIm + ", users=" + this.users + ")";
+        }
+    }
 }

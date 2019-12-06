@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * A im_history_changed event is sent to all clients in a DM channel When bulk changes have occurred to that DM channel's history.
  * When clients receive this message they should reload chat history for the channel if they have any cached messages before latest.
@@ -11,8 +8,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/im_history_changed
  */
-@Getter
-@Setter
 public class ImHistoryChangedEvent implements Event {
 
     public static final String TYPE_NAME = "im_history_changed";
@@ -22,4 +17,31 @@ public class ImHistoryChangedEvent implements Event {
     private String ts;
     private String eventTs;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getLatest() {
+        return this.latest;
+    }
+
+    public String getTs() {
+        return this.ts;
+    }
+
+    public String getEventTs() {
+        return this.eventTs;
+    }
+
+    public void setLatest(String latest) {
+        this.latest = latest;
+    }
+
+    public void setTs(String ts) {
+        this.ts = ts;
+    }
+
+    public void setEventTs(String eventTs) {
+        this.eventTs = eventTs;
+    }
 }

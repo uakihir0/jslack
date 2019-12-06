@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The member_joined_channel event is sent to all WebSocket connections
  * and event subscriptions when users join public or private channels.
@@ -43,8 +40,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/member_joined_channel
  */
-@Getter
-@Setter
 public class MemberJoinedChannelEvent implements Event {
 
     public static final String TYPE_NAME = "member_joined_channel";
@@ -56,4 +51,47 @@ public class MemberJoinedChannelEvent implements Event {
     private String team;
     private String inviter;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getChannelType() {
+        return this.channelType;
+    }
+
+    public String getTeam() {
+        return this.team;
+    }
+
+    public String getInviter() {
+        return this.inviter;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setChannelType(String channelType) {
+        this.channelType = channelType;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
+    public void setInviter(String inviter) {
+        this.inviter = inviter;
+    }
 }

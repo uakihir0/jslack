@@ -1,15 +1,10 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 /**
  *
  */
-@Getter
-@Setter
 public class ScopeGrantedEvent implements Event {
 
     public static final String TYPE_NAME = "scope_granted";
@@ -18,4 +13,23 @@ public class ScopeGrantedEvent implements Event {
     private List<String> scopes;
     private String triggerId;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public List<String> getScopes() {
+        return this.scopes;
+    }
+
+    public String getTriggerId() {
+        return this.triggerId;
+    }
+
+    public void setScopes(List<String> scopes) {
+        this.scopes = scopes;
+    }
+
+    public void setTriggerId(String triggerId) {
+        this.triggerId = triggerId;
+    }
 }

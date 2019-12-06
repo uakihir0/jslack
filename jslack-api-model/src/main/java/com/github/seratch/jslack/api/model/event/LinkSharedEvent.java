@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 /**
@@ -10,8 +7,6 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/link_shared
  */
-@Getter
-@Setter
 public class LinkSharedEvent implements Event {
 
     public static final String TYPE_NAME = "link_shared";
@@ -23,10 +18,68 @@ public class LinkSharedEvent implements Event {
     private String threadTs;
     private List<Link> links;
 
-    @Getter
-@Setter
+    public String getType() {
+        return this.type;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getMessageTs() {
+        return this.messageTs;
+    }
+
+    public String getThreadTs() {
+        return this.threadTs;
+    }
+
+    public List<Link> getLinks() {
+        return this.links;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setMessageTs(String messageTs) {
+        this.messageTs = messageTs;
+    }
+
+    public void setThreadTs(String threadTs) {
+        this.threadTs = threadTs;
+    }
+
+    public void setLinks(List<Link> links) {
+        this.links = links;
+    }
+
     public static class Link {
         private String domain;
         private String url;
+
+        public String getDomain() {
+            return this.domain;
+        }
+
+        public String getUrl() {
+            return this.url;
+        }
+
+        public void setDomain(String domain) {
+            this.domain = domain;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
     }
 }

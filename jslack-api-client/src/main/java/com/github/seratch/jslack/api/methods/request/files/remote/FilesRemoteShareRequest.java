@@ -1,15 +1,9 @@
 package com.github.seratch.jslack.api.methods.request.files.remote;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
-@Getter
-@Setter
-@Builder
 public class FilesRemoteShareRequest implements SlackApiRequest {
 
     /**
@@ -32,4 +26,84 @@ public class FilesRemoteShareRequest implements SlackApiRequest {
      */
     private List<String> channels;
 
+    FilesRemoteShareRequest(String token, String externalId, String file, List<String> channels) {
+        this.token = token;
+        this.externalId = externalId;
+        this.file = file;
+        this.channels = channels;
+    }
+
+    public static FilesRemoteShareRequestBuilder builder() {
+        return new FilesRemoteShareRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    public String getFile() {
+        return this.file;
+    }
+
+    public List<String> getChannels() {
+        return this.channels;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
+    public void setChannels(List<String> channels) {
+        this.channels = channels;
+    }
+
+    public static class FilesRemoteShareRequestBuilder {
+        private String token;
+        private String externalId;
+        private String file;
+        private List<String> channels;
+
+        FilesRemoteShareRequestBuilder() {
+        }
+
+        public FilesRemoteShareRequest.FilesRemoteShareRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public FilesRemoteShareRequest.FilesRemoteShareRequestBuilder externalId(String externalId) {
+            this.externalId = externalId;
+            return this;
+        }
+
+        public FilesRemoteShareRequest.FilesRemoteShareRequestBuilder file(String file) {
+            this.file = file;
+            return this;
+        }
+
+        public FilesRemoteShareRequest.FilesRemoteShareRequestBuilder channels(List<String> channels) {
+            this.channels = channels;
+            return this;
+        }
+
+        public FilesRemoteShareRequest build() {
+            return new FilesRemoteShareRequest(token, externalId, file, channels);
+        }
+
+        public String toString() {
+            return "FilesRemoteShareRequest.FilesRemoteShareRequestBuilder(token=" + this.token + ", externalId=" + this.externalId + ", file=" + this.file + ", channels=" + this.channels + ")";
+        }
+    }
 }

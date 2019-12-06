@@ -1,15 +1,10 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The im_open event is sent to all connections for a user when a direct message channel is opened by that user.
  * <p>
  * https://api.slack.com/events/im_open
  */
-@Getter
-@Setter
 public class ImOpenEvent implements Event {
 
     public static final String TYPE_NAME = "im_open";
@@ -18,4 +13,23 @@ public class ImOpenEvent implements Event {
     private String channel;
     private String user;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 }

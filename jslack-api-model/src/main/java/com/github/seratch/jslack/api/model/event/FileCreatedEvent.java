@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The file_created event is sent to all connected clients for a user when that user uploads a file to Slack.
  * The file property includes the file ID, as well as a top-level file_id.
@@ -13,8 +10,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/file_created
  */
-@Getter
-@Setter
 public class FileCreatedEvent implements Event {
 
     public static final String TYPE_NAME = "file_created";
@@ -23,9 +18,35 @@ public class FileCreatedEvent implements Event {
     private String fileId;
     private File file;
 
-    @Getter
-@Setter
+    public String getType() {
+        return this.type;
+    }
+
+    public String getFileId() {
+        return this.fileId;
+    }
+
+    public File getFile() {
+        return this.file;
+    }
+
+    public void setFileId(String fileId) {
+        this.fileId = fileId;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
     public static class File {
         private String id;
+
+        public String getId() {
+            return this.id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
     }
 }

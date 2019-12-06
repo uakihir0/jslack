@@ -1,13 +1,7 @@
 package com.github.seratch.jslack.api.methods.request.groups;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class GroupsRepliesRequest implements SlackApiRequest {
 
     /**
@@ -25,4 +19,69 @@ public class GroupsRepliesRequest implements SlackApiRequest {
      */
     private String threadTs;
 
+    GroupsRepliesRequest(String token, String channel, String threadTs) {
+        this.token = token;
+        this.channel = channel;
+        this.threadTs = threadTs;
+    }
+
+    public static GroupsRepliesRequestBuilder builder() {
+        return new GroupsRepliesRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public String getThreadTs() {
+        return this.threadTs;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
+    public void setThreadTs(String threadTs) {
+        this.threadTs = threadTs;
+    }
+
+    public static class GroupsRepliesRequestBuilder {
+        private String token;
+        private String channel;
+        private String threadTs;
+
+        GroupsRepliesRequestBuilder() {
+        }
+
+        public GroupsRepliesRequest.GroupsRepliesRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public GroupsRepliesRequest.GroupsRepliesRequestBuilder channel(String channel) {
+            this.channel = channel;
+            return this;
+        }
+
+        public GroupsRepliesRequest.GroupsRepliesRequestBuilder threadTs(String threadTs) {
+            this.threadTs = threadTs;
+            return this;
+        }
+
+        public GroupsRepliesRequest build() {
+            return new GroupsRepliesRequest(token, channel, threadTs);
+        }
+
+        public String toString() {
+            return "GroupsRepliesRequest.GroupsRepliesRequestBuilder(token=" + this.token + ", channel=" + this.channel + ", threadTs=" + this.threadTs + ")";
+        }
+    }
 }

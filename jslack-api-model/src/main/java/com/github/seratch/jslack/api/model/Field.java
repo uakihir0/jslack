@@ -1,20 +1,10 @@
 package com.github.seratch.jslack.api.model;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
 
 /**
  * https://api.slack.com/docs/message-attachments
  */
-@Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class Field {
 
     /**
@@ -34,4 +24,72 @@ public class Field {
     @SerializedName("short")
     private boolean valueShortEnough;
 
+    public Field(String title, String value, boolean valueShortEnough) {
+        this.title = title;
+        this.value = value;
+        this.valueShortEnough = valueShortEnough;
+    }
+
+    public Field() {
+    }
+
+    public static FieldBuilder builder() {
+        return new FieldBuilder();
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public boolean isValueShortEnough() {
+        return this.valueShortEnough;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public void setValueShortEnough(boolean valueShortEnough) {
+        this.valueShortEnough = valueShortEnough;
+    }
+
+    public static class FieldBuilder {
+        private String title;
+        private String value;
+        private boolean valueShortEnough;
+
+        FieldBuilder() {
+        }
+
+        public Field.FieldBuilder title(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Field.FieldBuilder value(String value) {
+            this.value = value;
+            return this;
+        }
+
+        public Field.FieldBuilder valueShortEnough(boolean valueShortEnough) {
+            this.valueShortEnough = valueShortEnough;
+            return this;
+        }
+
+        public Field build() {
+            return new Field(title, value, valueShortEnough);
+        }
+
+        public String toString() {
+            return "Field.FieldBuilder(title=" + this.title + ", value=" + this.value + ", valueShortEnough=" + this.valueShortEnough + ")";
+        }
+    }
 }

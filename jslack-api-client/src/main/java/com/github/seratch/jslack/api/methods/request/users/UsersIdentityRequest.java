@@ -1,13 +1,7 @@
 package com.github.seratch.jslack.api.methods.request.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Builder
 public class UsersIdentityRequest implements SlackApiRequest {
 
     /**
@@ -15,4 +9,39 @@ public class UsersIdentityRequest implements SlackApiRequest {
      */
     private String token;
 
+    UsersIdentityRequest(String token) {
+        this.token = token;
+    }
+
+    public static UsersIdentityRequestBuilder builder() {
+        return new UsersIdentityRequestBuilder();
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public static class UsersIdentityRequestBuilder {
+        private String token;
+
+        UsersIdentityRequestBuilder() {
+        }
+
+        public UsersIdentityRequest.UsersIdentityRequestBuilder token(String token) {
+            this.token = token;
+            return this;
+        }
+
+        public UsersIdentityRequest build() {
+            return new UsersIdentityRequest(token);
+        }
+
+        public String toString() {
+            return "UsersIdentityRequest.UsersIdentityRequestBuilder(token=" + this.token + ")";
+        }
+    }
 }

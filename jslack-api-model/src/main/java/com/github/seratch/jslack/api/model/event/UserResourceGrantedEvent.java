@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 /**
@@ -12,8 +9,6 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/user_resource_granted
  */
-@Getter
-@Setter
 public class UserResourceGrantedEvent implements Event {
 
     public static final String TYPE_NAME = "user_resource_granted";
@@ -23,4 +18,31 @@ public class UserResourceGrantedEvent implements Event {
     private List<String> scopes;
     private String triggerId;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public List<String> getScopes() {
+        return this.scopes;
+    }
+
+    public String getTriggerId() {
+        return this.triggerId;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setScopes(List<String> scopes) {
+        this.scopes = scopes;
+    }
+
+    public void setTriggerId(String triggerId) {
+        this.triggerId = triggerId;
+    }
 }

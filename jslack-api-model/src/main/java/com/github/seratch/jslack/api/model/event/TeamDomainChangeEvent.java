@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The team_domain_change event is sent to all connections for a workspace when the workspace domain changes.
  * <p>
@@ -12,8 +9,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/team_domain_change
  */
-@Getter
-@Setter
 public class TeamDomainChangeEvent implements Event {
 
     public static final String TYPE_NAME = "team_domain_change";
@@ -22,4 +17,23 @@ public class TeamDomainChangeEvent implements Event {
     private String url;
     private String domain;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
 }

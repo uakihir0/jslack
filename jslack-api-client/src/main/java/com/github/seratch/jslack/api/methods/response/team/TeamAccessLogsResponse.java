@@ -3,13 +3,9 @@ package com.github.seratch.jslack.api.methods.response.team;
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Login;
 import com.github.seratch.jslack.api.model.Paging;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
-@Getter
-@Setter
 public class TeamAccessLogsResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -20,4 +16,60 @@ public class TeamAccessLogsResponse implements SlackApiResponse {
 
     private List<Login> logins;
     private Paging paging;
+
+    public boolean isOk() {
+        return this.ok;
+    }
+
+    public String getWarning() {
+        return this.warning;
+    }
+
+    public String getError() {
+        return this.error;
+    }
+
+    public String getNeeded() {
+        return this.needed;
+    }
+
+    public String getProvided() {
+        return this.provided;
+    }
+
+    public List<Login> getLogins() {
+        return this.logins;
+    }
+
+    public Paging getPaging() {
+        return this.paging;
+    }
+
+    public void setOk(boolean ok) {
+        this.ok = ok;
+    }
+
+    public void setWarning(String warning) {
+        this.warning = warning;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public void setNeeded(String needed) {
+        this.needed = needed;
+    }
+
+    public void setProvided(String provided) {
+        this.provided = provided;
+    }
+
+    public void setLogins(List<Login> logins) {
+        this.logins = logins;
+    }
+
+    public void setPaging(Paging paging) {
+        this.paging = paging;
+    }
 }

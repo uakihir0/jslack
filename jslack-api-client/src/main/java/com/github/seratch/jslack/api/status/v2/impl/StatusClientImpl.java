@@ -5,12 +5,8 @@ import com.github.seratch.jslack.api.status.v2.StatusClient;
 import com.github.seratch.jslack.api.status.v2.model.CurrentStatus;
 import com.github.seratch.jslack.api.status.v2.model.SlackIssue;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
-import com.github.seratch.jslack.common.json.GsonFactory;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StatusClientImpl implements StatusClient {

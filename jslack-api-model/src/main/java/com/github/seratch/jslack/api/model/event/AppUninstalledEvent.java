@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * This Events API-only event is sent via subscription whenever a Slack app is completely uninstalled.
  * <p>
@@ -14,12 +11,13 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/app_uninstalled
  */
-@Getter
-@Setter
 public class AppUninstalledEvent implements Event {
 
     public static final String TYPE_NAME = "app_uninstalled";
 
     private final String type = TYPE_NAME;
 
+    public String getType() {
+        return this.type;
+    }
 }

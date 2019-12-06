@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The file_unshared event is sent when a file is unshared.
  * It is sent to all connected clients for all users that had permission to see the file.
@@ -11,12 +8,13 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/goodbye
  */
-@Getter
-@Setter
 public class GoodbyeEvent implements Event {
 
     public static final String TYPE_NAME = "goodbye";
 
     private final String type = TYPE_NAME;
 
+    public String getType() {
+        return this.type;
+    }
 }

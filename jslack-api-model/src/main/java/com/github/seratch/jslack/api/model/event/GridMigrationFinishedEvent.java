@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * This Events API-only event is sent via subscription whenever your app is installed by completes migration to Enterprise Grid.
  * <p>
@@ -16,8 +13,6 @@ import lombok.Setter;
  * <p>
  * https://api.slack.com/events/grid_migration_finished
  */
-@Getter
-@Setter
 public class GridMigrationFinishedEvent implements Event {
 
     public static final String TYPE_NAME = "grid_migration_finished";
@@ -25,4 +20,15 @@ public class GridMigrationFinishedEvent implements Event {
     private final String type = TYPE_NAME;
     private String enterpriseId;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getEnterpriseId() {
+        return this.enterpriseId;
+    }
+
+    public void setEnterpriseId(String enterpriseId) {
+        this.enterpriseId = enterpriseId;
+    }
 }

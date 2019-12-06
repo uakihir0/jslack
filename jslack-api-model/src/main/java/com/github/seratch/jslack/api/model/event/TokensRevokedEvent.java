@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
 /**
@@ -21,8 +18,6 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/tokens_revoked
  */
-@Getter
-@Setter
 public class TokensRevokedEvent implements Event {
 
     public static final String TYPE_NAME = "tokens_revoked";
@@ -30,10 +25,36 @@ public class TokensRevokedEvent implements Event {
     private final String type = TYPE_NAME;
     private Tokens tokens;
 
-    @Getter
-@Setter
+    public String getType() {
+        return this.type;
+    }
+
+    public Tokens getTokens() {
+        return this.tokens;
+    }
+
+    public void setTokens(Tokens tokens) {
+        this.tokens = tokens;
+    }
+
     public static class Tokens {
         private List<String> oauth;
         private List<String> bot;
+
+        public List<String> getOauth() {
+            return this.oauth;
+        }
+
+        public List<String> getBot() {
+            return this.bot;
+        }
+
+        public void setOauth(List<String> oauth) {
+            this.oauth = oauth;
+        }
+
+        public void setBot(List<String> bot) {
+            this.bot = bot;
+        }
     }
 }

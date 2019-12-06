@@ -1,15 +1,10 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * The im_close event is sent to all connections for a user when a direct message channel is closed by that user.
  * <p>
  * https://api.slack.com/events/im_close
  */
-@Getter
-@Setter
 public class ImCloseEvent implements Event {
 
     public static final String TYPE_NAME = "im_close";
@@ -18,4 +13,23 @@ public class ImCloseEvent implements Event {
     private String user;
     private String channel;
 
+    public String getType() {
+        return this.type;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public String getChannel() {
+        return this.channel;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
 }
