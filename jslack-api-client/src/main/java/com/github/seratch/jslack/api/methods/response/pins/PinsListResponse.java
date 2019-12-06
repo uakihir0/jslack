@@ -4,11 +4,13 @@ import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.File;
 import com.github.seratch.jslack.api.model.FileComment;
 import com.github.seratch.jslack.api.model.Message;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class PinsListResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -19,7 +21,8 @@ public class PinsListResponse implements SlackApiResponse {
 
     private List<MessageItem> items;
 
-    @Data
+    @Getter
+@Setter
     public static class MessageItem {
 
         private String type;

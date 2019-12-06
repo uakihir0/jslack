@@ -10,7 +10,8 @@ import java.util.List;
 /**
  * https://api.slack.com/docs/message-attachments
  */
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -276,7 +277,8 @@ public class Attachment {
     private String url;
     private AttachmentMetadata metadata;
 
-    @Data
+    @Getter
+@Setter
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor

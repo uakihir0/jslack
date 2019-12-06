@@ -1,8 +1,10 @@
 package com.github.seratch.jslack.app_backend.ssl_check.payload;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class SSLCheckPayload {
     private String sslCheck;
     private String token;

@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.methods.response.admin.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class AdminUsersSetAdminResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -16,7 +18,8 @@ public class AdminUsersSetAdminResponse implements SlackApiResponse {
 
     private ResponseMetadata responseMetadata;
 
-    @Data
+    @Getter
+@Setter
     public static class ResponseMetadata {
         private List<String> messages;
     }

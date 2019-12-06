@@ -1,7 +1,8 @@
 package com.github.seratch.jslack.api.model.event;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -11,7 +12,8 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/subteam_created
  */
-@Data
+@Getter
+@Setter
 public class SubteamCreatedEvent implements Event {
 
     public static final String TYPE_NAME = "subteam_created";
@@ -19,7 +21,8 @@ public class SubteamCreatedEvent implements Event {
     private final String type = TYPE_NAME;
     private Subteam subteam;
 
-    @Data
+    @Getter
+@Setter
     public static class Subteam {
         private String id;
         private String teamId;
@@ -41,7 +44,8 @@ public class SubteamCreatedEvent implements Event {
         private String userCount;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Prefs {
         private List<String> channels;
         private List<String> groups;

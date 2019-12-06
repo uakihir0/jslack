@@ -8,7 +8,8 @@ import com.github.seratch.jslack.api.model.view.View;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -16,7 +17,8 @@ import java.util.List;
 /**
  * https://api.slack.com/messaging/interactivity/enabling
  */
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -40,7 +42,8 @@ public class BlockActionPayload {
     // TODO: app_unfurl
     // https://github.com/slackapi/bolt/blob/8f9245f9b9dce0771bb615b42192e7adb6228444/src/types/actions/block-action.ts#L154-L155
 
-    @Data
+    @Getter
+@Setter
     public static class Team {
         private String id;
         private String domain;
@@ -48,7 +51,8 @@ public class BlockActionPayload {
         private String enterpriseName;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String username;
@@ -56,7 +60,8 @@ public class BlockActionPayload {
         private String teamId;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Container {
         private String type;
         private String messageTs;
@@ -69,13 +74,15 @@ public class BlockActionPayload {
         private boolean app_unfurl;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Action {
         private String actionId;
         private String blockId;
@@ -116,14 +123,16 @@ public class BlockActionPayload {
         private String selectedDate;
         private String initialDate;
 
-        @Data
+        @Getter
+@Setter
         public static class Text {
             private String type;
             private String text;
             private boolean emoji;
         }
 
-        @Data
+        @Getter
+@Setter
         public static class SelectedOption {
             private PlainTextObject text;
             private String value;

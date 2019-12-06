@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.methods.response.search;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.SearchResult;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class SearchAllResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -20,7 +22,8 @@ public class SearchAllResponse implements SlackApiResponse {
     private SearchResult files;
     private Posts posts;
 
-    @Data
+    @Getter
+@Setter
     public static class Posts {
         private Integer total;
         private List<String> matches;

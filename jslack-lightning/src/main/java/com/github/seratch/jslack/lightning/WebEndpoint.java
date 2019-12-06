@@ -2,9 +2,11 @@ package com.github.seratch.jslack.lightning;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 public class WebEndpoint {

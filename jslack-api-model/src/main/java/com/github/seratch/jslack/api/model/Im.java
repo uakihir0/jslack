@@ -1,12 +1,14 @@
 package com.github.seratch.jslack.api.model;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * https://api.slack.com/types/im
  */
-@Data
+@Getter
+@Setter
 public class Im {
 
     private String id;

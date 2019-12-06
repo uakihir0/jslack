@@ -3,13 +3,15 @@ package com.github.seratch.jslack.app_backend.interactive_messages.payload;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 /**
  * https://api.slack.com/reference/block-kit/block-elements#external_multi_select
  */
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,7 +30,8 @@ public class BlockSuggestionPayload {
     private String value;
     private Channel channel;
 
-    @Data
+    @Getter
+@Setter
     public static class Team {
         private String id;
         private String domain;
@@ -36,7 +39,8 @@ public class BlockSuggestionPayload {
         private String enterpriseName;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String username;
@@ -44,7 +48,8 @@ public class BlockSuggestionPayload {
         private String teamId;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Container {
         private String type;
         private String messageTs;
@@ -55,7 +60,8 @@ public class BlockSuggestionPayload {
         private boolean ephemeral;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;

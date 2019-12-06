@@ -1,10 +1,12 @@
 package com.github.seratch.jslack.api.status.v2.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class SlackIssue {
     private Integer id;
     private String dateCreated;
@@ -16,7 +18,8 @@ public class SlackIssue {
     private List<String> services;
     private List<Note> notes;
 
-    @Data
+    @Getter
+@Setter
     public static class Note {
         private String dateCreated;
         private String body;

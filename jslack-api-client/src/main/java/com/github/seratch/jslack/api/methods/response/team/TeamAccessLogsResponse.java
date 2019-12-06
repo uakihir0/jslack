@@ -3,11 +3,13 @@ package com.github.seratch.jslack.api.methods.response.team;
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Login;
 import com.github.seratch.jslack.api.model.Paging;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class TeamAccessLogsResponse implements SlackApiResponse {
 
     private boolean ok;

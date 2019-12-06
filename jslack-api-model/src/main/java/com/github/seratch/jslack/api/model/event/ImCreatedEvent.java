@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The im_created event is sent to all connections for a user when a new direct message channel is created that they are a member of.
@@ -11,7 +12,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/im_created
  */
-@Data
+@Getter
+@Setter
 public class ImCreatedEvent implements Event {
 
     public static final String TYPE_NAME = "im_created";
@@ -20,7 +22,8 @@ public class ImCreatedEvent implements Event {
     private String user;
     private Channel channel;
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         // TODO
     }

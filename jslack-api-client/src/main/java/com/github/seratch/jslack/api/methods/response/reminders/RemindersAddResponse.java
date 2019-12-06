@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.methods.response.reminders;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Reminder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class RemindersAddResponse implements SlackApiResponse {
 
     private boolean ok;

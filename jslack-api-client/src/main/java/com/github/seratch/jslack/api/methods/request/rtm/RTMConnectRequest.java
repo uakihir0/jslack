@@ -2,12 +2,14 @@ package com.github.seratch.jslack.api.methods.request.rtm;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @see <a href="https://api.slack.com/methods/rtm.connect">rtm.connect</a>
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class RTMConnectRequest implements SlackApiRequest {
 

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The subteam_self_removed event is sent to you when you have been removed to an existing User Group.
@@ -10,7 +11,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/subteam_self_removed
  */
-@Data
+@Getter
+@Setter
 public class SubteamSelfRemovedEvent implements Event {
 
     public static final String TYPE_NAME = "subteam_self_removed";

@@ -1,9 +1,11 @@
 package com.github.seratch.jslack.api.status.v2;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import net.socialhub.http.HttpResponse;
 
-@Data
+@Getter
+@Setter
 public class StatusApiException extends Exception {
 
     private final HttpResponse response;

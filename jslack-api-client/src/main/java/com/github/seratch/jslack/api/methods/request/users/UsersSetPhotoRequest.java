@@ -2,14 +2,16 @@ package com.github.seratch.jslack.api.methods.request.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
 
 /**
  * Set the user profile photo
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class UsersSetPhotoRequest implements SlackApiRequest {
 

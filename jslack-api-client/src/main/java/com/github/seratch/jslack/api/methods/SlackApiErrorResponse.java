@@ -1,8 +1,10 @@
 package com.github.seratch.jslack.api.methods;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class SlackApiErrorResponse implements SlackApiResponse {
 
     private boolean ok;

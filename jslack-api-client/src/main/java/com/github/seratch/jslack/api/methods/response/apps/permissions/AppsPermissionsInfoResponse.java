@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.methods.response.apps.permissions;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class AppsPermissionsInfoResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -16,7 +18,8 @@ public class AppsPermissionsInfoResponse implements SlackApiResponse {
 
     private Info info;
 
-    @Data
+    @Getter
+@Setter
     public static class Info {
         private Permissions team;
         private Permissions channel;
@@ -25,12 +28,14 @@ public class AppsPermissionsInfoResponse implements SlackApiResponse {
         private Permissions im;
         private Permissions appHome;
 
-        @Data
+        @Getter
+@Setter
         public static class Permissions {
             private List<String> scopes;
             private Resources resources;
 
-            @Data
+            @Getter
+@Setter
             public static class Resources {
                 private List<String> ids;
                 private boolean wildcard;

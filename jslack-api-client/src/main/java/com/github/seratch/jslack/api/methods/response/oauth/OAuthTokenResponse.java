@@ -1,9 +1,11 @@
 package com.github.seratch.jslack.api.methods.response.oauth;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class OAuthTokenResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -20,7 +22,8 @@ public class OAuthTokenResponse implements SlackApiResponse {
     private IncomingWebhook incomingWebhook;
     private Bot bot;
 
-    @Data
+    @Getter
+@Setter
     public static class IncomingWebhook {
         private String url;
         private String channel;
@@ -28,7 +31,8 @@ public class OAuthTokenResponse implements SlackApiResponse {
         private String configurationUrl;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Bot {
         private String botUserId;
         private String botAccessToken;

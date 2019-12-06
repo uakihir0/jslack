@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -13,7 +14,8 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/subteam_members_changed
  */
-@Data
+@Getter
+@Setter
 public class SubteamMembersChangedEvent implements Event {
 
     public static final String TYPE_NAME = "subteam_members_changed";

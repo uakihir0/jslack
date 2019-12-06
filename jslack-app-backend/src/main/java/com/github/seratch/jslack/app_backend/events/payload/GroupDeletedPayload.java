@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.app_backend.events.payload;
 
 import com.github.seratch.jslack.api.model.event.GroupDeletedEvent;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class GroupDeletedPayload implements EventsApiPayload<GroupDeletedEvent> {
 
     private String token;

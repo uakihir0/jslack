@@ -9,7 +9,8 @@ import java.util.List;
 /**
  * https://api.slack.com/reference/messaging/block-elements#overflow
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @NoArgsConstructor

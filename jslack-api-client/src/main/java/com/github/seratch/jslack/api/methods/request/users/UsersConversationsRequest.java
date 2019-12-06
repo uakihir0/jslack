@@ -3,14 +3,16 @@ package com.github.seratch.jslack.api.methods.request.users;
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import com.github.seratch.jslack.api.model.ConversationType;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 /**
  * List conversations the calling user may access.
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class UsersConversationsRequest implements SlackApiRequest {
 

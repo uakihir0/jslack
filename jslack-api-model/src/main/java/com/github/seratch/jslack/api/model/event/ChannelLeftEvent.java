@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The channel_left event is sometimes sent to all connections for a user when that user leaves a channel.
@@ -13,7 +14,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/channel_left
  */
-@Data
+@Getter
+@Setter
 public class ChannelLeftEvent implements Event {
 
     public static final String TYPE_NAME = "channel_left";

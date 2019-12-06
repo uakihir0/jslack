@@ -2,13 +2,15 @@ package com.github.seratch.jslack.api.methods.request.apps;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * This method uninstalls an app. Unlike auth.revoke, which revokes a single token,
  * this method revokes all tokens associated with a single installation of an app.
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class AppsUninstallRequest implements SlackApiRequest {
 

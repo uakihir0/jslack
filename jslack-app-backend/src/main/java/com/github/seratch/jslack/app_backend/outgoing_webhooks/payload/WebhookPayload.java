@@ -1,8 +1,10 @@
 package com.github.seratch.jslack.app_backend.outgoing_webhooks.payload;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class WebhookPayload {
     private String token;
     private String teamId;

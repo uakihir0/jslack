@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -11,7 +12,8 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/team_profile_delete
  */
-@Data
+@Getter
+@Setter
 public class TeamProfileDeleteEvent implements Event {
 
     public static final String TYPE_NAME = "team_profile_delete";
@@ -19,12 +21,14 @@ public class TeamProfileDeleteEvent implements Event {
     private final String type = TYPE_NAME;
     private Profile profile;
 
-    @Data
+    @Getter
+@Setter
     public static class Profile {
         private List<Field> fields;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Field {
         private String id;
         // TODO: other attributes

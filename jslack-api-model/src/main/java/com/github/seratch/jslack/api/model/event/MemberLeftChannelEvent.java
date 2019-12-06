@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The member_left_channel event is sent to all websocket connections and event subscriptions
@@ -24,7 +25,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/member_left_channel
  */
-@Data
+@Getter
+@Setter
 public class MemberLeftChannelEvent implements Event {
 
     public static final String TYPE_NAME = "member_left_channel";

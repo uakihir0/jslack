@@ -3,13 +3,15 @@ package com.github.seratch.jslack.api.model;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -59,7 +61,8 @@ public class Action {
     private List<OptionGroup> optionGroups;
     private String url;
 
-    @Data
+    @Getter
+@Setter
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
@@ -68,7 +71,8 @@ public class Action {
         private List<Option> options;
     }
 
-    @Data
+    @Getter
+@Setter
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor

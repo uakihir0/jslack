@@ -2,13 +2,15 @@ package com.github.seratch.jslack.api.methods.request.files;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
 import java.io.InputStream;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class FilesUploadRequest implements SlackApiRequest {
 

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * A im_history_changed event is sent to all clients in a DM channel When bulk changes have occurred to that DM channel's history.
@@ -10,7 +11,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/im_history_changed
  */
-@Data
+@Getter
+@Setter
 public class ImHistoryChangedEvent implements Event {
 
     public static final String TYPE_NAME = "im_history_changed";

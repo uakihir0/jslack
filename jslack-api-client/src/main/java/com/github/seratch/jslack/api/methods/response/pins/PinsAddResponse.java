@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.methods.response.pins;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class PinsAddResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -16,7 +18,8 @@ public class PinsAddResponse implements SlackApiResponse {
 
     private ResponseMetadata responseMetadata;
 
-    @Data
+    @Getter
+@Setter
     public static class ResponseMetadata {
         private List<String> messages;
     }

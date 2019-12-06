@@ -7,7 +7,8 @@ import lombok.*;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class ChatScheduleMessageRequest implements SlackApiRequest {
 

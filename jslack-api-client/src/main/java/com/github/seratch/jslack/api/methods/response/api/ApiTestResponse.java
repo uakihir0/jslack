@@ -1,11 +1,14 @@
 package com.github.seratch.jslack.api.methods.response.api;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class ApiTestResponse implements SlackApiResponse {
-    @Data
+    @Getter
+@Setter
     public static class Args {
         private String foo;
         private String error;

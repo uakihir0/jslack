@@ -3,12 +3,14 @@ package com.github.seratch.jslack.api.methods.response.rtm;
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Team;
 import com.github.seratch.jslack.api.model.User;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @see <a href="https://api.slack.com/methods/rtm.connect">rtm.connect</a>
  */
-@Data
+@Getter
+@Setter
 public class RTMConnectResponse implements SlackApiResponse {
 
     private boolean ok;

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The file_change event is sent when any property of a file is changed.
@@ -11,7 +12,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/file_change
  */
-@Data
+@Getter
+@Setter
 public class FileChangeEvent implements Event {
 
     public static final String TYPE_NAME = "file_change";
@@ -20,7 +22,8 @@ public class FileChangeEvent implements Event {
     private String fileId;
     private File file;
 
-    @Data
+    @Getter
+@Setter
     public static class File {
         private String id;
     }

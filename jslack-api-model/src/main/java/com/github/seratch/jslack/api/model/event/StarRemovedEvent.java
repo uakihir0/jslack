@@ -4,14 +4,16 @@ import com.github.seratch.jslack.api.model.Attachment;
 import com.github.seratch.jslack.api.model.File;
 import com.github.seratch.jslack.api.model.FileComment;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 /**
  *
  */
-@Data
+@Getter
+@Setter
 public class StarRemovedEvent implements Event {
 
     public static final String TYPE_NAME = "star_removed";
@@ -21,7 +23,8 @@ public class StarRemovedEvent implements Event {
     private Item item;
     private String eventTs;
 
-    @Data
+    @Getter
+@Setter
     public static class Item {
         private String type;
         private String channel;
@@ -33,7 +36,8 @@ public class StarRemovedEvent implements Event {
         private FileComment comment; // TODO: correct definition
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Message {
         private String clientMsgId;
         private String type;

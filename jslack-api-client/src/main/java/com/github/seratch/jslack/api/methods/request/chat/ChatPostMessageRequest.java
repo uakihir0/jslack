@@ -10,7 +10,8 @@ import java.util.List;
 /**
  * https://api.slack.com/methods/chat.postMessage
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class ChatPostMessageRequest implements SlackApiRequest {
 

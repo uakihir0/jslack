@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.methods.response.reactions;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Reaction;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class ReactionsGetResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -19,7 +21,8 @@ public class ReactionsGetResponse implements SlackApiResponse {
     private String channel;
     private Message message;
 
-    @Data
+    @Getter
+@Setter
     public static class Message {
         private String type;
         private String subtype;

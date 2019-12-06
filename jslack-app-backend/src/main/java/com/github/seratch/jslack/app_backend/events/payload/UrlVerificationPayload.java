@@ -1,8 +1,10 @@
 package com.github.seratch.jslack.app_backend.events.payload;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class UrlVerificationPayload {
     public static final String TYPE = "url_verification";
     private final String type = TYPE;

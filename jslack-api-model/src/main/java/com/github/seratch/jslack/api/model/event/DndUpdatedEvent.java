@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The dnd_updated event is sent to the current user when their Do Not Disturb settings have changed.
@@ -9,7 +10,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/dnd_updated
  */
-@Data
+@Getter
+@Setter
 public class DndUpdatedEvent implements Event {
 
     public static final String TYPE_NAME = "dnd_updated";
@@ -18,7 +20,8 @@ public class DndUpdatedEvent implements Event {
     private String user;
     private DndStatus dndStatus;
 
-    @Data
+    @Getter
+@Setter
     public static class DndStatus {
         private boolean dndEnabled;
         private Integer nextDndStartTs;

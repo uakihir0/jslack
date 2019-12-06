@@ -1,7 +1,8 @@
 package com.github.seratch.jslack.api.model;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Map;
@@ -10,7 +11,8 @@ import java.util.Map;
  * - https://api.slack.com/types/user
  * - https://api.slack.com/changelog/2017-09-the-one-about-usernames
  */
-@Data
+@Getter
+@Setter
 public class User {
 
     private String id;
@@ -59,7 +61,8 @@ public class User {
     private boolean workflowBot;
 
 
-    @Data
+    @Getter
+@Setter
     public static class Profile {
 
         private String guestChannels;
@@ -107,7 +110,8 @@ public class User {
 
         private Map<String, Field> fields;
 
-        @Data
+        @Getter
+@Setter
         public static class Field {
             private String value;
             private String alt;
@@ -120,7 +124,8 @@ public class User {
         private String lastName;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class EnterpriseUser {
         private String id;
         private String enterpriseId;

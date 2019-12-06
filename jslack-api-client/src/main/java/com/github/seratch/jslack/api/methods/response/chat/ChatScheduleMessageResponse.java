@@ -4,11 +4,13 @@ import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Attachment;
 import com.github.seratch.jslack.api.model.BotProfile;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class ChatScheduleMessageResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -22,7 +24,8 @@ public class ChatScheduleMessageResponse implements SlackApiResponse {
     private Integer postAt;
     private ScheduledMessage message;
 
-    @Data
+    @Getter
+@Setter
     public static class ScheduledMessage {
         private String botId;
         private BotProfile botProfile;

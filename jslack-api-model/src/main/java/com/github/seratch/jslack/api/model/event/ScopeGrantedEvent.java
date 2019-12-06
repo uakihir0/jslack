@@ -1,13 +1,15 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 /**
  *
  */
-@Data
+@Getter
+@Setter
 public class ScopeGrantedEvent implements Event {
 
     public static final String TYPE_NAME = "scope_granted";

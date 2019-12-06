@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.methods.response.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.User;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class UsersInfoResponse implements SlackApiResponse {
 
     private boolean ok;

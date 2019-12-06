@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.app_backend.events.payload;
 
 import com.github.seratch.jslack.api.model.event.TeamJoinEvent;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class TeamJoinPayload implements EventsApiPayload<TeamJoinEvent> {
 
     private String token;

@@ -2,14 +2,16 @@ package com.github.seratch.jslack.app_backend.dialogs.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 /**
  * <p>
  * see https://api.slack.com/dialogs
  */
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,7 +29,8 @@ public class DialogCancellationPayload {
     private String responseUrl;
     private String state;
 
-    @Data
+    @Getter
+@Setter
     public static class Team {
         private String id;
         private String domain;
@@ -35,13 +38,15 @@ public class DialogCancellationPayload {
         private String enterpriseName;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String name;

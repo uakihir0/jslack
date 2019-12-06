@@ -7,12 +7,14 @@ import com.github.seratch.jslack.api.status.v2.StatusClient;
 import com.github.seratch.jslack.common.http.listener.DetailedLoggingListener;
 import com.github.seratch.jslack.common.http.listener.HttpResponseListener;
 import com.github.seratch.jslack.common.http.listener.ResponsePrettyPrintingListener;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class SlackConfig {
 
     public static final SlackConfig DEFAULT = new SlackConfig() {

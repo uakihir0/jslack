@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.app_backend.events.payload;
 
 import com.github.seratch.jslack.api.model.event.PinAddedEvent;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class PinAddedPayload implements EventsApiPayload<PinAddedEvent> {
 
     private String token;

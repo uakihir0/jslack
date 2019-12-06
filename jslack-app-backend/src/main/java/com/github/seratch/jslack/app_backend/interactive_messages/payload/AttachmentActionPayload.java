@@ -3,7 +3,8 @@ package com.github.seratch.jslack.app_backend.interactive_messages.payload;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -15,7 +16,8 @@ import java.util.List;
  * <p>
  * see https://api.slack.com/interactive-messages
  */
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,20 +41,23 @@ public class AttachmentActionPayload {
     private String responseUrl;
     private String triggerId;
 
-    @Data
+    @Getter
+@Setter
     public static class Action {
         private String name;
         private String type;
         private String value;
         private List<SelectedOption> selectedOptions;
 
-        @Data
+        @Getter
+@Setter
         public static class SelectedOption {
             private String value;
         }
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Team {
         private String id;
         private String domain;
@@ -60,20 +65,23 @@ public class AttachmentActionPayload {
         private String enterpriseName;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String name;
         private String teamId; // https://github.com/slackapi/bolt/blob/dae21827c1c11720e5d6c8f23abcddb2d983b1f2/src/types/actions/interactive-message.ts#L45
     }
 
-    @Data
+    @Getter
+@Setter
     public static class OriginalMessage {
         private String botId;
         private String type; // "message"
@@ -87,7 +95,8 @@ public class AttachmentActionPayload {
         private String parentUserId;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Attachment {
         private Integer id;
         private String callbackId;
@@ -103,7 +112,8 @@ public class AttachmentActionPayload {
         private String imageUrl;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class AttachmentField {
         private String title;
         private String value;
@@ -111,7 +121,8 @@ public class AttachmentActionPayload {
         private boolean shortField;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class AttachmentAction {
         private String name;
         private String text;

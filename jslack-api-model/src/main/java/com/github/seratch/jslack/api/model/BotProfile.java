@@ -1,9 +1,11 @@
 package com.github.seratch.jslack.api.model;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class BotProfile {
 
     private String id; // B00000000
@@ -14,7 +16,8 @@ public class BotProfile {
     private Icons icons;
     private String teamId;
 
-    @Data
+    @Getter
+@Setter
     public static class Icons {
         @SerializedName("image_36")
         private String image36;

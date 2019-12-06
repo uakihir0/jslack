@@ -1,8 +1,10 @@
 package com.github.seratch.jslack.api.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class BillableInfo {
 
     private boolean billingActive;

@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.audit.response;
 
 import com.github.seratch.jslack.api.audit.AuditApiResponse;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class SchemasResponse implements AuditApiResponse {
     private boolean ok;
     private String warning;
@@ -15,7 +17,8 @@ public class SchemasResponse implements AuditApiResponse {
 
     private List<Schema> schemas;
 
-    @Data
+    @Getter
+@Setter
     public static class Schema {
         private String type;
         private Workspace workspace;
@@ -27,21 +30,24 @@ public class SchemasResponse implements AuditApiResponse {
         private Message message;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Workspace {
         private String id;
         private String name;
         private String domain;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Enterprise {
         private String id;
         private String name;
         private String domain;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String name;
@@ -49,7 +55,8 @@ public class SchemasResponse implements AuditApiResponse {
         private String team;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class File {
         private String id;
         private String name;
@@ -57,7 +64,8 @@ public class SchemasResponse implements AuditApiResponse {
         private String title;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;
@@ -67,7 +75,8 @@ public class SchemasResponse implements AuditApiResponse {
         private String teamsSharedWith;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class App {
         private String id;
         private String name;
@@ -77,7 +86,8 @@ public class SchemasResponse implements AuditApiResponse {
         private String scopes;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Message {
         private String team;
         private String channel;

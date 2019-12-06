@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * When a private channel is renamed, the group_rename event is sent to all connections for members of a private channel.
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/group_rename
  */
-@Data
+@Getter
+@Setter
 public class GroupRenameEvent implements Event {
 
     public static final String TYPE_NAME = "group_rename";
@@ -16,7 +18,8 @@ public class GroupRenameEvent implements Event {
     private final String type = TYPE_NAME;
     private Channel channel;
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;

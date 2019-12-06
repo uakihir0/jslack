@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.app_backend.interactive_messages.payload;
 
 import com.github.seratch.jslack.common.json.GsonFactory;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 public class PayloadTypeDetector {
 
-    @Data
+    @Getter
+@Setter
     public static class Payload {
         private String type;
     }

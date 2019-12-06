@@ -2,12 +2,14 @@ package com.github.seratch.jslack.api.methods.request.admin.teams;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * https://api.slack.com/methods/admin.teams.owners.list
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class AdminTeamsOwnersListRequest implements SlackApiRequest {
 

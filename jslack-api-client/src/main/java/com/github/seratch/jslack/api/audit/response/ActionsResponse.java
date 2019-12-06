@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.audit.response;
 
 import com.github.seratch.jslack.api.audit.AuditApiResponse;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class ActionsResponse implements AuditApiResponse {
     private boolean ok;
     private String warning;
@@ -15,7 +17,8 @@ public class ActionsResponse implements AuditApiResponse {
 
     private Actions actions;
 
-    @Data
+    @Getter
+@Setter
     public static class Actions {
         private List<String> workspaceOrOrg;
         private List<String> user;

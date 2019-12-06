@@ -3,7 +3,8 @@ package com.github.seratch.jslack.api.webhook;
 import com.github.seratch.jslack.api.model.Attachment;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -12,7 +13,8 @@ import java.util.List;
  * <p>
  * Implementation of <a href="https://api.slack.com/reference/messaging/payload">RTMMessage Payloads</a>
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class Payload {
 

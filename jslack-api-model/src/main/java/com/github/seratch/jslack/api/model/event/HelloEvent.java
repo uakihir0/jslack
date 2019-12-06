@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The hello event is sent when a connection is opened to the message server.
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/hello
  */
-@Data
+@Getter
+@Setter
 public class HelloEvent implements Event {
 
     public static final String TYPE_NAME = "hello";

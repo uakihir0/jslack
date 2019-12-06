@@ -27,7 +27,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -708,7 +709,8 @@ public class App {
         return payload;
     }
 
-    @Data
+    @Getter
+@Setter
     static class LightningEventPayload implements EventsApiPayload<Event> {
         private String token;
         private String enterpriseId;

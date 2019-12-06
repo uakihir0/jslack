@@ -2,14 +2,16 @@ package com.github.seratch.jslack.api.methods.request.migration;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 /**
  * For Enterprise Grid workspaces, map local user IDs to global user IDs
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class MigrationExchangeRequest implements SlackApiRequest {
 

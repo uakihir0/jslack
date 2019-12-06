@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The file_deleted event is sent to all connected clients for a workspace when a file is deleted. Unlike most file events,
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/file_deleted
  */
-@Data
+@Getter
+@Setter
 public class FileDeletedEvent implements Event {
 
     public static final String TYPE_NAME = "file_deleted";

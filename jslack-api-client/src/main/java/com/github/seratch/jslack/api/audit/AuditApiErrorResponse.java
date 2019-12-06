@@ -1,8 +1,10 @@
 package com.github.seratch.jslack.api.audit;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class AuditApiErrorResponse implements AuditApiResponse {
 
     private boolean ok;

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -10,7 +11,8 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/scope_denied
  */
-@Data
+@Getter
+@Setter
 public class ScopeDeniedEvent implements Event {
 
     public static final String TYPE_NAME = "scope_denied";

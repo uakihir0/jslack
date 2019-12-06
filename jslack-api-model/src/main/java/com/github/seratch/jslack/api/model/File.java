@@ -10,7 +10,8 @@ import java.util.Map;
 /**
  * https://api.slack.com/types/file
  */
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -205,7 +206,8 @@ public class File {
 
     private Shares shares;
 
-    @Data
+    @Getter
+@Setter
     public static class Shares {
 
         /**
@@ -222,7 +224,8 @@ public class File {
 
     }
 
-    @Data
+    @Getter
+@Setter
     public static class ShareDetail {
         private List<String> replyUsers;
         private Integer replyUsersCount;
@@ -238,7 +241,8 @@ public class File {
     private List<Address> from;
     private List<Address> cc;
 
-    @Data
+    @Getter
+@Setter
     public static class Address {
         private String address;
         private String name;
@@ -247,7 +251,8 @@ public class File {
 
     private Map<String, PinnedInfo> pinnedInfo; // C00000000 -> {}
 
-    @Data
+    @Getter
+@Setter
     public static class PinnedInfo {
         private String pinnedBy; // U00000000
         private Integer pinnedTs;

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -9,7 +10,8 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/link_shared
  */
-@Data
+@Getter
+@Setter
 public class LinkSharedEvent implements Event {
 
     public static final String TYPE_NAME = "link_shared";
@@ -21,7 +23,8 @@ public class LinkSharedEvent implements Event {
     private String threadTs;
     private List<Link> links;
 
-    @Data
+    @Getter
+@Setter
     public static class Link {
         private String domain;
         private String url;

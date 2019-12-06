@@ -3,7 +3,8 @@ package com.github.seratch.jslack.api.model;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -14,7 +15,8 @@ import java.util.List;
  *
  * @see "https://api.slack.com/docs/conversations-api"
  */
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

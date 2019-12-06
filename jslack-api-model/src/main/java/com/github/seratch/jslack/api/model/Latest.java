@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.model;
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class Latest {
 
     private String clientMsgId;

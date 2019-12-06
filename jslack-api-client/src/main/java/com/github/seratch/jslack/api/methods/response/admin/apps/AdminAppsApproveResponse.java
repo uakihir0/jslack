@@ -1,9 +1,11 @@
 package com.github.seratch.jslack.api.methods.response.admin.apps;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class AdminAppsApproveResponse implements SlackApiResponse {
 
     private boolean ok;

@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.app_backend.events.payload;
 
 import com.github.seratch.jslack.api.model.event.TeamDomainChangeEvent;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class TeamDomainChangePayload implements EventsApiPayload<TeamDomainChangeEvent> {
 
     private String token;

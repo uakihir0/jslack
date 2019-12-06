@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The channel_joined event is sent to all connections for a user when that user joins a channel.
@@ -11,7 +12,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/channel_joined
  */
-@Data
+@Getter
+@Setter
 public class ChannelJoinedEvent implements Event {
 
     public static final String TYPE_NAME = "channel_joined";
@@ -20,7 +22,8 @@ public class ChannelJoinedEvent implements Event {
     private Channel channel;
 
     // TODO: the existence of these attributes has not been verified yet
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;

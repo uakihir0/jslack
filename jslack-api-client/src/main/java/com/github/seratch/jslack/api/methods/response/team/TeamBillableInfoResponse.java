@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.methods.response.team;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.BillableInfo;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Map;
 
-@Data
+@Getter
+@Setter
 public class TeamBillableInfoResponse implements SlackApiResponse {
 
     private boolean ok;

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The file_unshared event is sent when a file is unshared.
@@ -10,7 +11,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/file_unshared
  */
-@Data
+@Getter
+@Setter
 public class FileUnsharedEvent implements Event {
 
     public static final String TYPE_NAME = "file_unshared";
@@ -19,7 +21,8 @@ public class FileUnsharedEvent implements Event {
     private String fileId;
     private File file;
 
-    @Data
+    @Getter
+@Setter
     public static class File {
         private String id;
     }

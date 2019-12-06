@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * https://api.slack.com/events/message/me_message
  */
-@Data
+@Getter
+@Setter
 public class MessageMeEvent implements Event {
 
     public static final String TYPE_NAME = "message";

@@ -3,13 +3,15 @@ package com.github.seratch.jslack.api.model;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
 import com.google.gson.annotations.SerializedName;
 import lombok.AccessLevel;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class MatchedItem {
 
     private String iid;
@@ -210,7 +212,8 @@ public class MatchedItem {
     private String channelActionsTs;
     private Integer channelActionsCount;
 
-    @Data
+    @Getter
+@Setter
     public static class OtherItem {
         private String iid;
         private String type;
@@ -227,7 +230,8 @@ public class MatchedItem {
     private List<Address> from;
     private List<Address> cc;
 
-    @Data
+    @Getter
+@Setter
     public static class Address {
         private String address;
         private String name;

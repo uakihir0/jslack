@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -29,7 +30,8 @@ import java.util.List;
  * As of January 2018, presence_change events are not dispatched without presence subscriptions established with presence_sub.
  * Relatedly, current user presence status is no longer communicated in rtm.start. Learn more.
  */
-@Data
+@Getter
+@Setter
 public class PresenceChangeEvent implements Event {
 
     public static final String TYPE_NAME = "presence_change";

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The group_deleted event is sent to all members of a private channel when it is deleted.
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/group_deleted
  */
-@Data
+@Getter
+@Setter
 public class GroupDeletedEvent implements Event {
 
     public static final String TYPE_NAME = "group_deleted";

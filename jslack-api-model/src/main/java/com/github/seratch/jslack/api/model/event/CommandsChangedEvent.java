@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The commands_changed event is sent to all connections for a workspace when a slash command for that workspace is added, removed or changed.
@@ -11,7 +12,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/commands_changed
  */
-@Data
+@Getter
+@Setter
 public class CommandsChangedEvent implements Event {
 
     public static final String TYPE_NAME = "commands_changed";

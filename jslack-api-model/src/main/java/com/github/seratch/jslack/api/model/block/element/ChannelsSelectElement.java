@@ -7,7 +7,8 @@ import lombok.*;
 /**
  * https://api.slack.com/reference/messaging/block-elements#channels-select
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @NoArgsConstructor

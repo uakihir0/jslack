@@ -1,9 +1,11 @@
 package com.github.seratch.jslack.shortcut.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
-@Data
+@Getter
+@Setter
 @ToString(includeFieldNames = false)
 public class EmojiName {
 

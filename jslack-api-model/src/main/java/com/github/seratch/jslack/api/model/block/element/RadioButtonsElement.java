@@ -11,7 +11,8 @@ import java.util.List;
 /**
  * https://api.slack.com/reference/block-kit/block-elements#radio
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @NoArgsConstructor

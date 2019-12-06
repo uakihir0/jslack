@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The group_archive event is sent to all connections for members of a private channel when that private channel is archived.
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/group_archive
  */
-@Data
+@Getter
+@Setter
 public class GroupArchiveEvent implements Event {
 
     public static final String TYPE_NAME = "group_archive";

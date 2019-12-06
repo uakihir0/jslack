@@ -4,14 +4,16 @@ import com.github.seratch.jslack.api.model.Attachment;
 import com.github.seratch.jslack.api.model.Reaction;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 /**
  * https://api.slack.com/events/message/message_changed
  */
-@Data
+@Getter
+@Setter
 public class MessageChangedEvent implements Event {
 
     public static final String TYPE_NAME = "message";
@@ -30,7 +32,8 @@ public class MessageChangedEvent implements Event {
     private String ts;
     private String channelType; // app_home, channel, group, im, mpim
 
-    @Data
+    @Getter
+@Setter
     public static class Message {
         private String clientMsgId;
 
@@ -56,7 +59,8 @@ public class MessageChangedEvent implements Event {
         private List<Reaction> reactions;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Edited {
         private String user;
         private String ts;

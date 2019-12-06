@@ -6,7 +6,8 @@ import lombok.*;
 /**
  * https://api.slack.com/reference/block-kit/block-elements#input
  */
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = true)
 @Builder
 @NoArgsConstructor

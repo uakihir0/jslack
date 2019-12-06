@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The group_marked event is sent to all open connections for a user
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/group_marked
  */
-@Data
+@Getter
+@Setter
 public class GroupMarkedEvent implements Event {
 
     public static final String TYPE_NAME = "group_marked";

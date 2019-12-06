@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.methods.response.apps.permissions.resource
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.ResponseMetadata;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class AppsPermissionsResourcesListResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -18,7 +20,8 @@ public class AppsPermissionsResourcesListResponse implements SlackApiResponse {
     private List<Resource> resources;
     private ResponseMetadata responseMetadata;
 
-    @Data
+    @Getter
+@Setter
     public static class Resource {
         private String id;
         private String type;

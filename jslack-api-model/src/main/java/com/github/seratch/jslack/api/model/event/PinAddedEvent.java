@@ -4,7 +4,8 @@ import com.github.seratch.jslack.api.model.Attachment;
 import com.github.seratch.jslack.api.model.File;
 import com.github.seratch.jslack.api.model.FileComment;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -13,7 +14,8 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/pin_added
  */
-@Data
+@Getter
+@Setter
 public class PinAddedEvent implements Event {
 
     public static final String TYPE_NAME = "pin_added";
@@ -24,7 +26,8 @@ public class PinAddedEvent implements Event {
     private Item item;
     private String eventTs;
 
-    @Data
+    @Getter
+@Setter
     public static class Item {
         private String type;
         private String channel;
@@ -36,7 +39,8 @@ public class PinAddedEvent implements Event {
         private FileComment comment; // TODO: correct definition
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Message {
         private String clientMsgId;
         private String type;

@@ -1,9 +1,11 @@
 package com.github.seratch.jslack.lightning.model.builtin;
 
 import com.github.seratch.jslack.lightning.model.Bot;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class DefaultBot implements Bot {
 
     private String enterpriseId;

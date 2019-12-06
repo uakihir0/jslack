@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * If there was a problem connecting an error will be returned,
@@ -18,7 +19,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/rtm
  */
-@Data
+@Getter
+@Setter
 public class ErrorEvent implements Event {
 
     public static final String TYPE_NAME = "error";
@@ -26,7 +28,8 @@ public class ErrorEvent implements Event {
     private final String type = TYPE_NAME;
     private Error error;
 
-    @Data
+    @Getter
+@Setter
     public static class Error {
         private Integer code;
         private String msg;

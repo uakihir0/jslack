@@ -3,11 +3,13 @@ package com.github.seratch.jslack.api.audit.response;
 import com.github.seratch.jslack.api.audit.AuditApiResponse;
 import com.github.seratch.jslack.api.model.ResponseMetadata;
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class LogsResponse implements AuditApiResponse {
     private boolean ok;
     private String warning;
@@ -19,7 +21,8 @@ public class LogsResponse implements AuditApiResponse {
 
     private List<Entry> entries;
 
-    @Data
+    @Getter
+@Setter
     public static class Entry {
         private String id;
         private Integer dateCreate;
@@ -30,13 +33,15 @@ public class LogsResponse implements AuditApiResponse {
         private Details details;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Actor {
         private String type;
         private User user;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String name;
@@ -44,7 +49,8 @@ public class LogsResponse implements AuditApiResponse {
         private String team;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Entity {
         private String type;
         private App app;
@@ -56,7 +62,8 @@ public class LogsResponse implements AuditApiResponse {
         private Channel channel;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class App {
         private String id;
         private String name;
@@ -67,27 +74,31 @@ public class LogsResponse implements AuditApiResponse {
         private List<String> scopes;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Usergroup {
         private String id;
         private String name;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Workspace {
         private String id;
         private String name;
         private String domain;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Enterprise {
         private String id;
         private String name;
         private String domain;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class File {
         private String id;
         private String name;
@@ -95,7 +106,8 @@ public class LogsResponse implements AuditApiResponse {
         private String title;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;
@@ -107,14 +119,16 @@ public class LogsResponse implements AuditApiResponse {
         private List<String> teamsSharedWith;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Context {
         private Location location;
         private String ua;
         private String ipAddress;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Location {
         private String type;
         private String id;
@@ -122,7 +136,8 @@ public class LogsResponse implements AuditApiResponse {
         private String domain;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Details {
         @SerializedName("is_internal_integration")
         private Boolean internalIntegration;
@@ -142,7 +157,8 @@ public class LogsResponse implements AuditApiResponse {
         private List<Permission> permissions;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Inviter {
         private String type;
         private User user;
@@ -151,33 +167,38 @@ public class LogsResponse implements AuditApiResponse {
         private String email;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Kicker {
         private String id;
         private String name;
         private String email;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Permission {
         private Resource resource;
         private List<String> scopes;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Resource {
         private String type;
         private Grant grant;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Grant {
         private String type;
         private String resourceId;
         private WildCard wildcard;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class WildCard {
         private String type;
     }

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -12,7 +13,8 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/resources_removed
  */
-@Data
+@Getter
+@Setter
 public class ResourcesRemovedEvent implements Event {
 
     public static final String TYPE_NAME = "resources_removed";
@@ -20,19 +22,22 @@ public class ResourcesRemovedEvent implements Event {
     private final String type = TYPE_NAME;
     private List<ResourceItem> resources;
 
-    @Data
+    @Getter
+@Setter
     public static class ResourceItem {
         private Resource resource;
         private List<String> scopes;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Resource {
         private String type;
         private Grant grant;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Grant {
         private String type;
         private String resourceId;

@@ -3,7 +3,8 @@ package test_locally.util;
 import com.github.seratch.jslack.lightning.util.JsonOps;
 import com.google.gson.JsonElement;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -12,7 +13,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class JsonOpsTest {
 
-    @Data
+    @Getter
+@Setter
     @AllArgsConstructor
     public static class Name {
         private String first;

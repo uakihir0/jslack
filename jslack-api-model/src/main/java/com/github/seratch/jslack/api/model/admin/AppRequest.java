@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.model.admin;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class AppRequest {
     private String id;
     private App app;
@@ -16,7 +18,8 @@ public class AppRequest {
     private String message;
     private Integer dateCreated;
 
-    @Data
+    @Getter
+@Setter
     public static class App {
         private String id;
         private String name;
@@ -33,21 +36,24 @@ public class AppRequest {
         private Icons icons;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String name;
         private String email;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Team {
         private String id;
         private String name;
         private String domain;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Scope {
         private String name;
         private String description;
@@ -56,13 +62,15 @@ public class AppRequest {
         private String tokenType;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class PreviousResolution {
         private String status;
         private List<Scope> scopes;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Icons {
         @SerializedName("image_32")
         private String image32;

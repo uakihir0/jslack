@@ -5,7 +5,8 @@ import lombok.*;
 /**
  * https://api.slack.com/reference/messaging/composition-objects#text
  */
-@Data
+@Getter
+@Setter
 @Builder
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor

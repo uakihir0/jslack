@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.methods.response.mpim;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Group;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class MpimListResponse implements SlackApiResponse {
 
     private boolean ok;

@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.methods.request.usergroups.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class UsergroupUsersUpdateRequest implements SlackApiRequest {
 

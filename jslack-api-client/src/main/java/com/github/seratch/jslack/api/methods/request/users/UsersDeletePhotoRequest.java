@@ -2,12 +2,14 @@ package com.github.seratch.jslack.api.methods.request.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Delete the user profile photo
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class UsersDeletePhotoRequest implements SlackApiRequest {
 

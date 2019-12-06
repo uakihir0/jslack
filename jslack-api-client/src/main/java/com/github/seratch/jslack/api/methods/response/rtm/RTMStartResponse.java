@@ -2,14 +2,16 @@ package com.github.seratch.jslack.api.methods.response.rtm;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 /**
  * @see <a href="https://api.slack.com/methods/rtm.start">rtm.start</a>
  */
-@Data
+@Getter
+@Setter
 public class RTMStartResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -27,7 +29,8 @@ public class RTMStartResponse implements SlackApiResponse {
     private List<Group> groups;
     private List<Im> ims;
 
-    @Data
+    @Getter
+@Setter
     public static class Prefs {
         // TODO
     }

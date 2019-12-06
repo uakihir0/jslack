@@ -3,7 +3,8 @@ package com.github.seratch.jslack.api.methods.request.chat;
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.*;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class ChatDeleteScheduledMessageRequest implements SlackApiRequest {
 

@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.methods.request.apps.permissions.scopes;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class AppsPermissionsScopesListRequest implements SlackApiRequest {
 

@@ -7,11 +7,13 @@ import com.github.seratch.jslack.api.model.Paging;
 import com.github.seratch.jslack.api.model.Reaction;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class ReactionsListResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -23,13 +25,15 @@ public class ReactionsListResponse implements SlackApiResponse {
     private List<Item> items;
     private Paging paging;
 
-    @Data
+    @Getter
+@Setter
     public static class Item {
         private String type;
         private String channel;
         private Message message;
 
-        @Data
+        @Getter
+@Setter
         public static class Message {
             private String type;
             private String subtype;
@@ -61,7 +65,8 @@ public class ReactionsListResponse implements SlackApiResponse {
             /**
              * A reply message information in a MessageRoot.
              */
-            @Data
+            @Getter
+@Setter
             public static class MessageRootReply {
                 private String user;
                 private String ts;
@@ -77,7 +82,8 @@ public class ReactionsListResponse implements SlackApiResponse {
             private UserProfile userProfile;
             private BotProfile botProfile;
 
-            @Data
+            @Getter
+@Setter
             public static class Icons {
                 @SerializedName("image_36")
                 private String image36;
@@ -89,7 +95,8 @@ public class ReactionsListResponse implements SlackApiResponse {
                 private String image72;
             }
 
-            @Data
+            @Getter
+@Setter
             public static class UserProfile {
                 private String avatarHash;
                 @SerializedName("image_72")

@@ -2,12 +2,14 @@ package com.github.seratch.jslack.api.methods.request.admin.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * https://api.slack.com/methods/admin.users.assign
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class AdminUsersAssignRequest implements SlackApiRequest {
 

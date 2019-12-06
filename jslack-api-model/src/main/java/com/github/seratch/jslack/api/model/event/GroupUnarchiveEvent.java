@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The group_unarchive event is sent to all connections for members of a private channel when that private channel is unarchived.
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/group_unarchive
  */
-@Data
+@Getter
+@Setter
 public class GroupUnarchiveEvent implements Event {
 
     public static final String TYPE_NAME = "group_unarchive";

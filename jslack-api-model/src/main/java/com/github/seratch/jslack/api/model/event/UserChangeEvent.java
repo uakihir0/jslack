@@ -1,7 +1,8 @@
 package com.github.seratch.jslack.api.model.event;
 
 import com.github.seratch.jslack.api.model.User;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The user_change event is sent to all connections for a workspace when a member updates their profile or data.
@@ -11,7 +12,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/user_change
  */
-@Data
+@Getter
+@Setter
 public class UserChangeEvent implements Event {
 
     public static final String TYPE_NAME = "user_change";

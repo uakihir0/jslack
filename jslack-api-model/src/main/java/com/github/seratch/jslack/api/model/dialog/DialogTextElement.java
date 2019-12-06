@@ -2,7 +2,8 @@ package com.github.seratch.jslack.api.model.dialog;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 /**
@@ -11,7 +12,8 @@ import lombok.NoArgsConstructor;
  * <p>
  * {@code Text} elements are single-line plain text fields.
  */
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

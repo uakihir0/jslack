@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The email_domain_changed event is sent to all connections for a workspace
@@ -9,7 +10,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/email_domain_changed
  */
-@Data
+@Getter
+@Setter
 public class EmailDomainChangedEvent implements Event {
 
     public static final String TYPE_NAME = "email_domain_changed";

@@ -4,11 +4,13 @@ import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.File;
 import com.github.seratch.jslack.api.model.FileComment;
 import com.github.seratch.jslack.api.model.Paging;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class FilesSharedPublicURLResponse implements SlackApiResponse {
 
     private boolean ok;

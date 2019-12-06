@@ -1,8 +1,10 @@
 package com.github.seratch.jslack.app_backend.vendor.aws.lambda.request;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class RequestContext {
     private String accountId;
     private String resourceId;

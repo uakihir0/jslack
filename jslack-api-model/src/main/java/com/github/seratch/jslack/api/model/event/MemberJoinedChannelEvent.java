@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The member_joined_channel event is sent to all WebSocket connections
@@ -42,7 +43,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/member_joined_channel
  */
-@Data
+@Getter
+@Setter
 public class MemberJoinedChannelEvent implements Event {
 
     public static final String TYPE_NAME = "member_joined_channel";

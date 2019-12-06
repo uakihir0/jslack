@@ -3,11 +3,13 @@ package com.github.seratch.jslack.api.methods.request.conversations;
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import com.github.seratch.jslack.api.model.ConversationType;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class ConversationsListRequest implements SlackApiRequest {
 

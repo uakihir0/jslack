@@ -3,9 +3,11 @@ package com.github.seratch.jslack.api.methods.request.views;
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import com.github.seratch.jslack.api.model.view.View;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class ViewsOpenRequest implements SlackApiRequest {
     private String token;

@@ -1,12 +1,14 @@
 package com.github.seratch.jslack.api.model.event;
 
 import com.github.seratch.jslack.api.model.admin.AppRequest;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * https://api.slack.com/events/app_requested
  */
-@Data
+@Getter
+@Setter
 public class AppRequestedEvent implements Event {
 
     public static final String TYPE_NAME = "app_requested";

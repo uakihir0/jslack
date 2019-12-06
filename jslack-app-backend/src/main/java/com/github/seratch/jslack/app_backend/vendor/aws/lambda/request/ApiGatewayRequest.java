@@ -1,10 +1,12 @@
 package com.github.seratch.jslack.app_backend.vendor.aws.lambda.request;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Map;
 
-@Data
+@Getter
+@Setter
 public class ApiGatewayRequest {
 
     private String resource;

@@ -3,7 +3,8 @@ package com.github.seratch.jslack.api.model.view;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -13,7 +14,8 @@ import java.util.List;
  *
  * @see <a href="https://api.slack.com/block-kit/surfaces/modals">Modals</a>
  */
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

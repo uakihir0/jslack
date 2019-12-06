@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * https://api.slack.com/events/app_rate_limited
  */
-@Data
+@Getter
+@Setter
 public class AppRateLimitedEvent implements Event {
 
     public static final String TYPE_NAME = "app_rate_limited";

@@ -3,11 +3,13 @@ package com.github.seratch.jslack.api.methods.response.groups;
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Message;
 import com.github.seratch.jslack.api.model.ThreadInfo;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class GroupsRepliesResponse implements SlackApiResponse {
 
     private boolean ok;

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The channel_deleted event is sent to all connections for a workspace when a channel is deleted.
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/channel_deleted
  */
-@Data
+@Getter
+@Setter
 public class ChannelDeletedEvent implements Event {
 
     public static final String TYPE_NAME = "channel_deleted";

@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.audit;
 
 import com.github.seratch.jslack.SlackConfig;
 import com.github.seratch.jslack.common.json.GsonFactory;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import net.socialhub.http.HttpResponse;
 import net.socialhub.logger.Logger;
 
-@Data
+@Getter
+@Setter
 public class AuditApiException extends Exception {
 
     private static final Logger log = Logger.getLogger(AuditApiException.class);

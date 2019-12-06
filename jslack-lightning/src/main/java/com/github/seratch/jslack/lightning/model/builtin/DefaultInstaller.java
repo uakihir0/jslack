@@ -4,10 +4,12 @@ import com.github.seratch.jslack.lightning.model.Bot;
 import com.github.seratch.jslack.lightning.model.Installer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

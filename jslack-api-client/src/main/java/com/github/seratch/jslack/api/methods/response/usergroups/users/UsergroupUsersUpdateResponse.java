@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.methods.response.usergroups.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Usergroup;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class UsergroupUsersUpdateResponse implements SlackApiResponse {
 
     private boolean ok;

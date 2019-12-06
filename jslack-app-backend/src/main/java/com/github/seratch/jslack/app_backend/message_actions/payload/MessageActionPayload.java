@@ -3,14 +3,16 @@ package com.github.seratch.jslack.app_backend.message_actions.payload;
 import com.github.seratch.jslack.api.model.Message;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 /**
  * see https://api.slack.com/actions
  * see https://github.com/slackapi/bolt/blob/dae21827c1c11720e5d6c8f23abcddb2d983b1f2/src/types/actions/message-action.ts
  */
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +32,8 @@ public class MessageActionPayload {
     private String token;
     private String actionTs;
 
-    @Data
+    @Getter
+@Setter
     public static class Team {
         private String id;
         private String domain;
@@ -38,13 +41,15 @@ public class MessageActionPayload {
         private String enterpriseName;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Channel {
         private String id;
         private String name;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String name;

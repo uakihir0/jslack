@@ -2,13 +2,15 @@ package com.github.seratch.jslack.api.methods.request.oauth;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * https://api.slack.com/authentication/basics
  * https://api.slack.com/methods/oauth.v2.access
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class OAuthV2AccessRequest implements SlackApiRequest {
 

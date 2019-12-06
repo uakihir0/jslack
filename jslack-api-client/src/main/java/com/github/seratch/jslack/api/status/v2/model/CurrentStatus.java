@@ -1,10 +1,12 @@
 package com.github.seratch.jslack.api.status.v2.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class CurrentStatus {
     private String status;
     private String dateCreated;

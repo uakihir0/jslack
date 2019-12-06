@@ -1,13 +1,15 @@
 package com.github.seratch.jslack.app_backend.oauth.payload;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Map;
 
 /**
  * https://api.slack.com/docs/oauth
  */
-@Data
+@Getter
+@Setter
 public class VerificationCodePayload {
 
     private String code;

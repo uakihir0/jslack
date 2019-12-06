@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.methods.response.groups;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.Channel;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class GroupsRenameResponse implements SlackApiResponse {
 
     private boolean ok;

@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.methods.request.auth;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class AuthTestRequest implements SlackApiRequest {
 

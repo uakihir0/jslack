@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The channel_unshared event is sent to all event subscriptions
@@ -8,7 +9,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/channel_unshared
  */
-@Data
+@Getter
+@Setter
 public class ChannelUnsharedEvent implements Event {
 
     public static final String TYPE_NAME = "channel_unshared";

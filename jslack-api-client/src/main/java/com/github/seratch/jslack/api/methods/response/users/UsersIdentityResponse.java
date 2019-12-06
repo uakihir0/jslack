@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.methods.response.users;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class UsersIdentityResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -16,7 +18,8 @@ public class UsersIdentityResponse implements SlackApiResponse {
     private User user;
     private Team team;
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String name;
         private String id;
@@ -35,7 +38,8 @@ public class UsersIdentityResponse implements SlackApiResponse {
         private String image512;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class Team {
         private String name;
         private String id;

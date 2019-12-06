@@ -1,11 +1,13 @@
 package com.github.seratch.jslack.api.model;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class Team {
 
     private String id;
@@ -17,7 +19,8 @@ public class Team {
     private String enterpriseId;
     private String enterpriseName;
 
-    @Data
+    @Getter
+@Setter
     public static class Profile {
         private String id;
         private String fieldName;
@@ -31,7 +34,8 @@ public class Team {
         private boolean hidden;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class ProfileOptions {
         @SerializedName("is_protected")
         private boolean _protected;

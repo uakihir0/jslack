@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * When a reaction is removed from an item the reaction_removed event is sent to all connected clients
@@ -17,7 +18,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/reaction_removed
  */
-@Data
+@Getter
+@Setter
 public class ReactionRemovedEvent implements Event {
 
     public static final String TYPE_NAME = "reaction_removed";
@@ -29,7 +31,8 @@ public class ReactionRemovedEvent implements Event {
     private Item item;
     private String eventTs;
 
-    @Data
+    @Getter
+@Setter
     public static class Item {
         private String type;
         private String channel;

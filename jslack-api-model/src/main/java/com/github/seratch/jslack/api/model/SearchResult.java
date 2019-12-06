@@ -1,10 +1,12 @@
 package com.github.seratch.jslack.api.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class SearchResult {
     private Integer total;
     private Pagination pagination;
@@ -12,7 +14,8 @@ public class SearchResult {
     private List<MatchedItem> matches;
     private List<String> refinements; // not sure the type yet
 
-    @Data
+    @Getter
+@Setter
     public static class Pagination {
         private Integer totalCount;
         private Integer page;

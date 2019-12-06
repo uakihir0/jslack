@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.methods.response.files.remote;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.File;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class FilesRemoteInfoResponse implements SlackApiResponse {
 
     private boolean ok;

@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.methods.response.chat.scheduled_messages;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.ResponseMetadata;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class ChatScheduleMessagesListResponse implements SlackApiResponse {
 
     private boolean ok;
@@ -18,7 +20,8 @@ public class ChatScheduleMessagesListResponse implements SlackApiResponse {
     private List<ScheduledMessage> scheduledMessages;
     private ResponseMetadata responseMetadata;
 
-    @Data
+    @Getter
+@Setter
     public static class ScheduledMessage {
         private String id;
         private String channelId;

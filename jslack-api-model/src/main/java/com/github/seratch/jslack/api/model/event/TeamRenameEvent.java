@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The team_rename event is sent to all connections for a workspace when an admin changes the workspace name.
@@ -10,7 +11,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/team_rename
  */
-@Data
+@Getter
+@Setter
 public class TeamRenameEvent implements Event {
 
     public static final String TYPE_NAME = "team_rename";

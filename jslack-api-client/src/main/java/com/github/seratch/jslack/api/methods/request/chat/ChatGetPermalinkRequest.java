@@ -2,14 +2,16 @@ package com.github.seratch.jslack.api.methods.request.chat;
 
 import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * A request to retrieve a permalink URL for a specific extant message
  *
  * @see <a href="https://api.slack.com/methods/chat.getPermalink">Slack chat.getPermalink API</a>
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class ChatGetPermalinkRequest implements SlackApiRequest {
 

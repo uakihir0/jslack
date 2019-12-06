@@ -3,13 +3,15 @@ package com.github.seratch.jslack.api.model.view;
 import com.github.seratch.jslack.api.model.block.composition.PlainTextObject;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,7 +23,8 @@ public class ViewState {
      * This class may miss some attributes.
      * If you find missing ones, let us know at https://github.com/seratch/jslack/issues
      */
-    @Data
+    @Getter
+@Setter
     public static class Value {
         private String type;
         private String value;
@@ -33,7 +36,8 @@ public class ViewState {
         private List<String> selectedUsers;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class SelectedOption {
         private PlainTextObject text;
         private String value;

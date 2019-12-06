@@ -1,7 +1,8 @@
 package com.github.seratch.jslack.api.model.event;
 
 import com.github.seratch.jslack.api.model.view.View;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * This app event notifies your app when a user has entered into the App Home space—that's the place
@@ -21,7 +22,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/app_home_opened
  */
-@Data
+@Getter
+@Setter
 public class AppHomeOpenedEvent implements Event {
 
     public static final String TYPE_NAME = "app_home_opened";

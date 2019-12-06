@@ -2,12 +2,15 @@ package com.github.seratch.jslack.api.methods.response.bots;
 
 import com.github.seratch.jslack.api.methods.SlackApiResponse;
 import com.github.seratch.jslack.api.model.BotIcons;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class BotsInfoResponse implements SlackApiResponse {
 
-    @Data
+    @Getter
+@Setter
     public static class Bot {
         private String id;
         private String appId;

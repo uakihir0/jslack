@@ -2,14 +2,16 @@ package com.github.seratch.jslack.api.model.event;
 
 import com.github.seratch.jslack.api.model.Attachment;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 /**
  * https://api.slack.com/events/message/ekm_access_denied
  */
-@Data
+@Getter
+@Setter
 public class MessageEkmAccessDeniedEvent implements Event {
 
     public static final String TYPE_NAME = "message";

@@ -1,6 +1,7 @@
 package com.github.seratch.jslack.api.model.event;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * When a reaction is added to an item the reaction_added event is sent to all connected clients
@@ -16,7 +17,8 @@ import lombok.Data;
  * <p>
  * https://api.slack.com/events/reaction_added
  */
-@Data
+@Getter
+@Setter
 public class ReactionAddedEvent implements Event {
 
     public static final String TYPE_NAME = "reaction_added";
@@ -28,7 +30,8 @@ public class ReactionAddedEvent implements Event {
     private Item item;
     private String eventTs;
 
-    @Data
+    @Getter
+@Setter
     public static class Item {
         private String type;
         private String channel;

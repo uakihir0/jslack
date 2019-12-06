@@ -3,7 +3,8 @@ package com.github.seratch.jslack.api.model;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -11,7 +12,8 @@ import java.util.List;
 /**
  * https://api.slack.com/types/usergroup
  */
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -41,7 +43,8 @@ public class Usergroup {
     private List<String> users;
     private Integer userCount;
 
-    @Data
+    @Getter
+@Setter
     public static class Prefs {
         private List<String> channels;
         private List<String> groups;

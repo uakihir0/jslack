@@ -5,7 +5,8 @@ import com.github.seratch.jslack.api.model.Message;
 import com.github.seratch.jslack.api.model.Reaction;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -19,7 +20,8 @@ import java.util.List;
  * <p>
  * https://api.slack.com/events/message
  */
-@Data
+@Getter
+@Setter
 public class MessageEvent implements Event {
 
     public static final String TYPE_NAME = "message";
@@ -44,7 +46,8 @@ public class MessageEvent implements Event {
 
     private Edited edited;
 
-    @Data
+    @Getter
+@Setter
     public static class Edited {
         private String user;
         private String ts;

@@ -3,14 +3,16 @@ package com.github.seratch.jslack.app_backend.views.payload;
 import com.github.seratch.jslack.api.model.view.View;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 /**
  * <p>
  * see https://api.slack.com/block-kit/surfaces/modals
  */
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,7 +26,8 @@ public class ViewClosedPayload {
     private View view;
     private boolean isCleared;
 
-    @Data
+    @Getter
+@Setter
     public static class Team {
         private String id;
         private String domain;
@@ -32,7 +35,8 @@ public class ViewClosedPayload {
         private String enterpriseName;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class User {
         private String id;
         private String username;

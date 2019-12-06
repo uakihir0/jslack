@@ -2,11 +2,13 @@ package com.github.seratch.jslack.api.model;
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
 import com.google.gson.annotations.SerializedName;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class Message {
 
     private String type;
@@ -90,7 +92,8 @@ public class Message {
     private String itemType;
     private MessageItem item;
 
-    @Data
+    @Getter
+@Setter
     public static class Edited {
         private String user;
         private String ts;
@@ -99,7 +102,8 @@ public class Message {
     /**
      * The root message information of a "thread_broadcast" message.
      */
-    @Data
+    @Getter
+@Setter
     public static class MessageRoot {
         private String text;
         private String username;
@@ -131,7 +135,8 @@ public class Message {
     /**
      * A reply message information in a MessageRoot.
      */
-    @Data
+    @Getter
+@Setter
     public static class MessageRootReply {
         private String user;
         private String ts;
@@ -139,7 +144,8 @@ public class Message {
 
     // https://raw.githubusercontent.com/slackapi/slack-api-specs/master/web-api/slack_web_openapi_v2.json
     // TODO: confirm the actual behavior
-    @Data
+    @Getter
+@Setter
     public static class Icons {
         private String emoji;
 
@@ -153,7 +159,8 @@ public class Message {
         private String image72;
     }
 
-    @Data
+    @Getter
+@Setter
     public static class MessageItem {
         private String id;
         private String name;

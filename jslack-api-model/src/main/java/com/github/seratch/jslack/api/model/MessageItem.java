@@ -1,9 +1,11 @@
 package com.github.seratch.jslack.api.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Deprecated
-@Data
+@Getter
+@Setter
 public class MessageItem {
 
     private String type;

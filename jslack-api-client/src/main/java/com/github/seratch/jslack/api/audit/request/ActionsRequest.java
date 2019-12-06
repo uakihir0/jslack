@@ -2,9 +2,11 @@ package com.github.seratch.jslack.api.audit.request;
 
 import com.github.seratch.jslack.api.audit.AuditApiRequest;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
 public class ActionsRequest implements AuditApiRequest {
     private String token;

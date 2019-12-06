@@ -25,13 +25,15 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
-@Data
+@Getter
+@Setter
 @Slf4j
 public class SlackRequestParser {
 
@@ -43,7 +45,8 @@ public class SlackRequestParser {
 
     private final AppConfig appConfig;
 
-    @Data
+    @Getter
+@Setter
     @Builder
     public static class HttpRequest {
         private String requestUri;

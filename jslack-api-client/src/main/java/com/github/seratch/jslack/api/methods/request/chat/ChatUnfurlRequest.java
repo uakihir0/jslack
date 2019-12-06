@@ -4,7 +4,8 @@ import com.github.seratch.jslack.api.methods.SlackApiRequest;
 import com.github.seratch.jslack.api.model.Action;
 import com.github.seratch.jslack.api.model.block.LayoutBlock;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +13,8 @@ import java.util.Map;
 /**
  * Provide custom unfurl behavior for user-posted URLs
  */
-@Data
+@Getter
+@Setter
 @Builder
 public class ChatUnfurlRequest implements SlackApiRequest {
 
@@ -57,7 +59,8 @@ public class ChatUnfurlRequest implements SlackApiRequest {
 
 
     // https://api.slack.com/docs/message-link-unfurling#unfurls_parameter
-    @Data
+    @Getter
+@Setter
     public static class UnfurlDetail {
         private String title;
         private String text;
