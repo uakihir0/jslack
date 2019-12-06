@@ -28,7 +28,10 @@ import com.github.seratch.jslack.api.methods.request.files.*;
 import com.github.seratch.jslack.api.methods.request.files.comments.FilesCommentsAddRequest;
 import com.github.seratch.jslack.api.methods.request.files.comments.FilesCommentsDeleteRequest;
 import com.github.seratch.jslack.api.methods.request.files.comments.FilesCommentsEditRequest;
-import com.github.seratch.jslack.api.methods.request.files.remote.*;
+import com.github.seratch.jslack.api.methods.request.files.remote.FilesRemoteInfoRequest;
+import com.github.seratch.jslack.api.methods.request.files.remote.FilesRemoteListRequest;
+import com.github.seratch.jslack.api.methods.request.files.remote.FilesRemoteRemoveRequest;
+import com.github.seratch.jslack.api.methods.request.files.remote.FilesRemoteShareRequest;
 import com.github.seratch.jslack.api.methods.request.groups.*;
 import com.github.seratch.jslack.api.methods.request.im.*;
 import com.github.seratch.jslack.api.methods.request.migration.MigrationExchangeRequest;
@@ -66,18 +69,18 @@ import com.github.seratch.jslack.api.methods.request.views.ViewsOpenRequest;
 import com.github.seratch.jslack.api.methods.request.views.ViewsPublishRequest;
 import com.github.seratch.jslack.api.methods.request.views.ViewsPushRequest;
 import com.github.seratch.jslack.api.methods.request.views.ViewsUpdateRequest;
-import com.github.seratch.jslack.api.methods.response.admin.invite_requests.AdminInviteRequestsDenyResponse;
 import com.github.seratch.jslack.api.model.ConversationType;
 import com.github.seratch.jslack.common.json.GsonFactory;
-import lombok.extern.slf4j.Slf4j;
+import net.socialhub.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.stream.Collectors.joining;
 
-@Slf4j
 public class RequestFormBuilder {
+
+    private static final Logger log = Logger.getLogger(SlackApiException.class);
 
     private RequestFormBuilder() {
     }

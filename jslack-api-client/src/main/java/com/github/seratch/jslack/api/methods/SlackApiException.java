@@ -3,12 +3,13 @@ package com.github.seratch.jslack.api.methods;
 import com.github.seratch.jslack.SlackConfig;
 import com.github.seratch.jslack.common.json.GsonFactory;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import net.socialhub.http.HttpResponse;
+import net.socialhub.logger.Logger;
 
 @Data
-@Slf4j
 public class SlackApiException extends Exception {
+
+    private static final Logger log = Logger.getLogger(SlackApiException.class);
 
     private final HttpResponse response;
     private final String responseBody;
@@ -27,7 +28,7 @@ public class SlackApiException extends Exception {
         } catch (Exception e) {
             if (log.isDebugEnabled()) {
                 String responseToPrint = responseBody.length() > 1000 ? responseBody.subSequence(0, 1000) + " ..." : responseBody;
-                log.debug("Failed to parse the error response body: {}", responseToPrint);
+                log.debug("Failed to parse the error response body: " + responseToPrint);
             }
         }
         this.error = parsedErrorResponse;

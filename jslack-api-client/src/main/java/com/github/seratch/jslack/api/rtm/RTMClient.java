@@ -5,7 +5,7 @@ import com.github.seratch.jslack.api.methods.SlackApiException;
 import com.github.seratch.jslack.api.methods.request.rtm.RTMConnectRequest;
 import com.github.seratch.jslack.api.methods.response.rtm.RTMConnectResponse;
 import com.github.seratch.jslack.api.model.User;
-import lombok.extern.slf4j.Slf4j;
+import net.socialhub.logger.Logger;
 
 import javax.websocket.*;
 import java.io.Closeable;
@@ -21,8 +21,9 @@ import java.util.List;
  * https://api.slack.com/rtm
  */
 @ClientEndpoint
-@Slf4j
 public class RTMClient implements Closeable {
+
+    private static final Logger log = Logger.getLogger(RTMClient.class);
 
     /**
      * Slack instance used for building this RTMClient. Used when calling #reconnect()
@@ -79,7 +80,7 @@ public class RTMClient implements Closeable {
     public void connect() throws IOException, DeploymentException {
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
         container.connectToServer(this, wssUri);
-        log.debug("client connected to the server: {}", wssUri);
+        log.debug("client connected to the server: " + wssUri);
     }
 
     /**
@@ -124,13 +125,13 @@ public class RTMClient implements Closeable {
     @OnOpen
     public void onOpen(Session session) {
         updateSession(session);
-        log.debug("session opened: {}", session.getId());
+        log.debug("session opened: " + session.getId());
     }
 
     @OnClose
     public void onClose(Session session, CloseReason reason) {
         updateSession(session);
-        log.debug("session closed: {}, reason: {}", session.getId(), reason.getReasonPhrase());
+        log.debug("session closed: " + session.getId() + ", reason: " + reason.getReasonPhrase());
 
         for (RTMCloseHandler closeHandler : closeHandlers) {
             closeHandler.handle(reason);
@@ -148,7 +149,7 @@ public class RTMClient implements Closeable {
 
     @OnMessage
     public void onMessage(String message) {
-        log.debug("message: {}", message);
+        log.debug("message: " + message);
         for (RTMMessageHandler messageHandler : messageHandlers) {
             messageHandler.handle(message);
         }

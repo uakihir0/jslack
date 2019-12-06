@@ -138,7 +138,6 @@ import com.github.seratch.jslack.api.methods.response.views.ViewsPushResponse;
 import com.github.seratch.jslack.api.methods.response.views.ViewsUpdateResponse;
 import com.github.seratch.jslack.common.http.SlackHttpClient;
 import com.github.seratch.jslack.common.json.GsonFactory;
-import lombok.extern.slf4j.Slf4j;
 import net.socialhub.http.HttpException;
 import net.socialhub.http.HttpResponse;
 
@@ -148,7 +147,6 @@ import java.util.Optional;
 import static com.github.seratch.jslack.api.methods.RequestFormBuilder.toForm;
 import static com.github.seratch.jslack.api.methods.RequestFormBuilder.toMultipartBody;
 
-@Slf4j
 public class MethodsClientImpl implements MethodsClient {
 
     private String endpointUrlPrefix = MethodsClient.ENDPOINT_URL_PREFIX;
@@ -1963,7 +1961,7 @@ public class MethodsClientImpl implements MethodsClient {
     public HttpResponse runPostMultipart(FormBody.Builder form, String endpoint, String token) throws IOException {
         return slackHttpClient.postMultipart(endpointUrlPrefix + endpoint, token, form.build());
     }
-    
+
     // ----------------------------------------------
     //  Methods to send requests and parse responses
     // ----------------------------------------------

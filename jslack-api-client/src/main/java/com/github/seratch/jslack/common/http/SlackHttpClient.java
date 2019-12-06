@@ -5,7 +5,6 @@ import com.github.seratch.jslack.api.methods.FormBody;
 import com.github.seratch.jslack.common.http.listener.HttpResponseListener;
 import com.github.seratch.jslack.common.json.GsonFactory;
 import com.google.gson.Gson;
-import lombok.extern.slf4j.Slf4j;
 import net.socialhub.http.HttpClientWrapper;
 import net.socialhub.http.HttpException;
 import net.socialhub.http.HttpResponse;
@@ -14,7 +13,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@Slf4j
 public class SlackHttpClient {
 
     private final HttpClientWrapper httpClient;

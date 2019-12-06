@@ -1,8 +1,5 @@
 package com.github.seratch.jslack.common.http.listener;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 public class DetailedLoggingListener extends HttpResponseListener {
 
     @Override

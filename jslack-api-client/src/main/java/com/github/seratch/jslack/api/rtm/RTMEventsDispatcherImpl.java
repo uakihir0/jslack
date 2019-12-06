@@ -2,15 +2,16 @@ package com.github.seratch.jslack.api.rtm;
 
 import com.github.seratch.jslack.api.model.event.Event;
 import com.github.seratch.jslack.common.json.GsonFactory;
-import lombok.extern.slf4j.Slf4j;
+import net.socialhub.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-@Slf4j
 public class RTMEventsDispatcherImpl implements RTMEventsDispatcher {
+
+    private static final Logger log = Logger.getLogger(RTMEventsDispatcherImpl.class);
 
     private final ConcurrentMap<String, List<RTMEventHandler<?>>> eventTypeAndHandlers = new ConcurrentHashMap<>();
 
@@ -41,13 +42,13 @@ public class RTMEventsDispatcherImpl implements RTMEventsDispatcher {
     public void dispatch(String json) {
         String eventType = detectEventType(json);
         if (eventType == null) {
-            log.debug("Failed to detect event type from the given JSON data: {}", json);
+            log.debug("Failed to detect event type from the given JSON data: " + json);
             return;
         }
 
         List<RTMEventHandler<?>> RTMEventHandlers = eventTypeAndHandlers.get(eventType);
         if (RTMEventHandlers == null || RTMEventHandlers.size() == 0) {
-            log.debug("No event handler registered for type: {}", eventType);
+            log.debug("No event handler registered for type: " + eventType);
         } else {
             Class<?> clazz = RTMEventHandlers.get(0).getEventClass();
             Event event = (Event) GsonFactory.createSnakeCase().fromJson(json, clazz);
