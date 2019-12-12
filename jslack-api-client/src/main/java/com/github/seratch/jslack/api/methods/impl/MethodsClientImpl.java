@@ -1423,13 +1423,7 @@ public class MethodsClientImpl implements MethodsClient {
 
     @Override
     public OAuthAccessResponse oauthAccess(OAuthAccessRequest req) throws IOException, SlackApiException {
-//        FormBody.Builder form = new FormBody.Builder();
-//        form.add("code", req.getCode());
-//        form.add("redirect_uri", req.getRedirectUri());
-//        form.add("single_channel", req.isSingleChannel() ? "1" : "0");
-//        String authorizationHeader = Credentials.basic(req.getClientId(), req.getClientSecret());
-//        return postFormWithAuthorizationHeaderAndParseResponse(form, endpointUrlPrefix + Methods.OAUTH_ACCESS, authorizationHeader, OAuthAccessResponse.class);
-        throw new IllegalStateException("Not supported");
+        return postFormAndParseResponse(toForm(req), Methods.OAUTH_ACCESS, OAuthAccessResponse.class);
     }
 
     @Override
